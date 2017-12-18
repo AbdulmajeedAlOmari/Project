@@ -10,6 +10,8 @@ $confirmPassword = addslashes($_POST['passwordconfirmation']); //TODO check the 
 $result = mysqli_query($con, "SELECT * FROM members");
 $error = '';
 
+//These are new conditions
+
 if(preg_match('/^[a-zA-Z0-9]{4,32}$/', $username)) {
     $error = "ERROR_R_USERNAME_NOTVALID";
 } else if(!is_email($email)) {
