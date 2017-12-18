@@ -1,7 +1,7 @@
 <?php
    $con = mysqli_connect("localhost","root","","users");
       if (mysqli_connect_errno()){
-       echo "Failed to connecct to database".mysqli_connect_error();
+       echo "Failed to connect to database".mysqli_connect_error();
       }
     $email = $_POST['email'];
     $username = $_POST['username'];

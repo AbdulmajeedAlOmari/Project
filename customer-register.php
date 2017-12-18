@@ -120,6 +120,13 @@
 
                     <div class="col-md-6">
                         <div class="box">
+                            <?php
+                                if(isset($_GET['msg'])) {
+                                    if ($_GET['msg'] == 4){
+                                        echo "<h3 style = 'color:red'>Email or password incorrect!</h3>";
+                                    }
+                                }
+                            ?>
                             <h2 class="text-uppercase">Login</h2>
 
                             <p class="lead">Already our customer?</p>
@@ -131,11 +138,11 @@
                             <form name="loginForm" action="validate-login.php" onsubmit="return validateLogin()" method="post">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="text" class="form-control" id="email-login">
+                                    <input type="text" class="form-control" id="email-login" name="email-login">
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password-login">
+                                    <input type="password" class="form-control" id="password-login" name="password-login">
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
