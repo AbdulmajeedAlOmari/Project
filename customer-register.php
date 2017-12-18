@@ -1,3 +1,13 @@
+<?php
+    //TODO check this code
+    if(session_status() != 2)
+        session_start();
+
+    if(isset($_COOKIE['auth']) || $_SESSION['auth']) {
+        header("Location: index.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,16 +85,17 @@
                     <div class="col-md-6">
                         <div class="box">
                            <?php
-                           if(isset($_GET['msg'])){
-                               if ($_GET['msg'] == 1){
-                                   echo "<h3 style = 'color:green'>You have been registered succesfully!</h3>";
-                                   }elseif ($_GET['msg'] == 2) {
-                                   echo "<h3 style = 'color:red'>username is already taken</h3>";
-                                   }elseif ($_GET['msg'] == 3){
-                                   echo "<h3 style = 'color:red'>There is an account registered with this email</h3>";
-                                   }
-                                   unset($_GET['msg']);
-                               }
+                           if(isset($_GET['register-error'])){
+                               require "utility/errors.php";
+
+                               $error = constant($_GET['error']);
+                               echo $error;
+
+                               unset($_GET['error']);
+                           } else if(isset($_GET['msg'])) {
+                               if($_GET['msg'] == 'successful')
+                                   echo "<div class='alert alert-success' role='alert'>You have been registered succesfully!</div>";
+                           }
                                 ?>
                             <h2 class="text-uppercase">New account</h2>
 
@@ -94,7 +105,7 @@
 
                             <hr>
                             <span id="error-register"></span>
-                            <form name="registerationForm" action="validate-registeration.php" onsubmit="return validateRegisteration()" method="post">
+                            <form name="registerationForm" action="validate-registeration.php" method="post">
                                 <div class="form-group">
                                     <label for="name-login">Username</label>
                                     <input type="text" class="form-control" name="username" id="name-register" required>

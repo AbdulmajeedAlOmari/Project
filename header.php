@@ -1,4 +1,7 @@
-
+<?php
+    if(session_status() != 2)
+        session_start();
+?>
 <header>
     <!-- *** TOP ***
 _________________________________________________________ -->
@@ -21,7 +24,7 @@ _________________________________________________________ -->
                     <div class="login">
                         <?php
                             $loggedIn = true; //TODO add loggedIn checker
-                            if($loggedIn) {
+                            if(!isset($_COOKIE['auth']) && !isset($_SESSION['auth'])) {
                                 ?>
                                 <!-- TODO add an href for login/logout-->
                                 <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i>
@@ -30,9 +33,14 @@ _________________________________________________________ -->
                                             class="hidden-xs text-uppercase">Sign up</span></a>
                                 <?php
                             } else {
-                                $username = "User"; //TODO retrieve username from database
+                                $username = 'NON';
+
+                                if(isset($_COOKIE['auth']))
+                                    $username = $_COOKIE['auth']; //TODO retrieve username from database
+                                else
+                                    $username = stripslashes($_SESSION['auth'])
                                 ?>
-                                <span class="hidden-sm hidden-xs">Welcome, <?php echo "$username"//TODO put firstName here?>!</span>
+                                <span class="hidden-sm hidden-xs">Welcome, <?php echo "$username"?>!</span>
                                 <a href="#"><i class="fa fa-sign-out"></i>
                                     <span class="hidden-xs text-uppercase">Logout</span></a>
                                 <a href="customer-account.php"><i class="fa fa-user"></i> <span
@@ -136,7 +144,7 @@ _________________________________________________________ -->
                 <h4 class="modal-title" id="Login">Customer login</h4>
             </div>
             <div class="modal-body">
-                <form action="customer-orders.php" method="post">
+                <form action="validate-login.php" method="post">
                     <div class="form-group">
                         <input type="text" class="form-control" id="email_modal" placeholder="email">
                     </div>
@@ -147,12 +155,10 @@ _________________________________________________________ -->
                     <p class="text-center">
                         <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
                     </p>
-
                 </form>
 
                 <p class="text-center text-muted">Not registered yet?</p>
                 <p class="text-center text-muted"><a href="customer-register.php"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
-
             </div>
         </div>
     </div>
