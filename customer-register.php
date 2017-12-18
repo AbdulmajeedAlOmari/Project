@@ -74,6 +74,18 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="box">
+                           <?php
+                           if(isset($_GET['msg'])){
+                               if ($_GET['msg'] == 1){
+                                   echo "<h3 style = 'color:green'>You have been registered succesfully!</h3>";
+                                   }elseif ($_GET['msg'] == 2) {
+                                   echo "<h3 style = 'color:red'>username is already taken</h3>";
+                                   }elseif ($_GET['msg'] == 3){
+                                   echo "<h3 style = 'color:red'>There is an account registered with this email</h3>";
+                                   }
+                                   unset($_GET['msg']);
+                               }
+                                ?>
                             <h2 class="text-uppercase">New account</h2>
 
                             <p class="lead">Not our registered customer yet?</p>
