@@ -144,7 +144,7 @@ _________________________________________________________ -->
                 <h4 class="modal-title" id="Login">Customer login</h4>
             </div>
             <div class="modal-body">
-                <form action="validate-login.php" method="post">
+                <form action="login_system/validate-login.php" method="post">
                     <div class="form-group">
                         <input type="text" class="form-control" id="email_modal" placeholder="email">
                     </div>

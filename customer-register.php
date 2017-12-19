@@ -109,7 +109,7 @@ if (isset($_COOKIE['auth']) || isset($_SESSION['auth'])) {
 
                         <hr>
                         <span id="error-register"></span>
-                        <form name="registerationForm" action="validate-registeration.php" method="post">
+                        <form name="registerationForm" action="login_system/validate-registeration.php" method="post">
                             <div class="form-group">
                                 <label for="name-login">Username</label>
                                 <input type="text" class="form-control" name="username" id="name-register" required>
@@ -156,7 +156,7 @@ if (isset($_COOKIE['auth']) || isset($_SESSION['auth'])) {
                             ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 
                         <hr>
-                        <form name="loginForm" action="validate-login.php" method="post">
+                        <form name="loginForm" action="login_system/validate-login.php" method="post">
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="text" class="form-control" id="email-login" name="email-login">
