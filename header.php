@@ -33,12 +33,13 @@ _________________________________________________________ -->
                                             class="hidden-xs text-uppercase">Sign up</span></a>
                                 <?php
                             } else {
-                                $username = 'NON';
+                                $username = '//';
 
                                 if(isset($_COOKIE['auth']))
-                                    $username = $_COOKIE['auth']; //TODO retrieve username from database
+                                    $username = $_COOKIE['auth'];
                                 else
-                                    $username = stripslashes($_SESSION['auth'])
+                                    $username = $_SESSION['auth'];
+
                                 ?>
                                 <span class="hidden-sm hidden-xs">Welcome, <?php echo "$username"?>!</span>
                                 <a href="#"><i class="fa fa-sign-out"></i>

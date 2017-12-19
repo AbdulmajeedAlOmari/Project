@@ -2,7 +2,15 @@
 require "db.php";
 require "../utility/is_email.php";
 
-//TODO prevent multi-registration "https://stackoverflow.com/questions/4614052/how-to-prevent-multiple-form-submission-on-multiple-clicks-in-php"
+if(isset($_COOKIE['formSubmitted']) || isset($_SESSION['formSubmitted']))
+    die('You can not submit multiple times');
+
+setcookie('formSubmitted', 'true', time()+1800, '/');
+
+if(!isset($_COOKIE['formSubmitted'])) {
+    session_start();
+    $_SESSION['formSubmitted'] = 'true';
+}
 
 $email = addslashes($_POST['email']);
 $username = addslashes($_POST['username']);
@@ -23,6 +31,8 @@ if(!preg_match('/^[a-zA-Z0-9]{4,32}$/', $username)) {
 } else if($password != $confirmPassword) {
     $error = "ERROR_R_PASSWORD_NOMATCH";
 } else {
+    $username = stripslashes($username); //TODO check if it affects the system
+
     while($row=mysqli_fetch_array($result) && empty($error)) {
         $u = $row['username'];
         $e = $row['email'];
