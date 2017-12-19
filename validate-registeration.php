@@ -39,7 +39,9 @@ if (!empty($error)) {
 //    die();
 }
 
-$query = "INSERT INTO `members`(`email`, `username`, `password`) VALUES ('$email', '$username', '$password')";
+//TODO check database
+$query = "INSERT INTO `Users`(`email`, `username`, `password`) VALUES ('$email', '$username', '$password')";
+
 if (!mysqli_query($con, $query)) {
     mysqli_close($con);
     die("Query Failed : " . mysqli_error($con));

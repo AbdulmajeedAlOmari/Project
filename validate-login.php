@@ -5,7 +5,7 @@ require "db.php";
 $email = addslashes($_POST['email-login']);
 $password = addslashes($_POST['password-login']);
 
-$query = "SELECT username,pass,email FROM members WHERE email='" . $email . "'";
+$query = "SELECT username,password,email FROM Users WHERE email='" . $email . "'";
 $result = mysqli_query($con, $query);
 
 if (!$result) {
@@ -14,9 +14,10 @@ if (!$result) {
     if (count($result) == 0) {
         header("location:customer-register.php?msg=4");
     } else {
-        setcookie("test", "", time() + 120, "/");
-        if (isset($_COOKIE['test'])) {
-            setcookie("auth", '$email', time() + 60 * 60 * 24, "/");
+        $user = mysqli_fetch_assoc();
+
+        setcookie("auth", $email, time() + 60 * 60 * 24, "/");
+        if (isset($_COOKIE['auth'])) {
             header("location:index.php");
         } else {
             session_start();
