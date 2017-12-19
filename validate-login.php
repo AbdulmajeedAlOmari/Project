@@ -25,7 +25,7 @@ if (!$result) {
                 $_SESSION['auth'] = $email;
             }
         } else {
-            header("location:customer-register.php?login-error=");
+            header("location:customer-register.php?login-error=ERROR_L_INCORRECT");
         }
     }
 }

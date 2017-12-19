@@ -12,7 +12,7 @@ $error = '';
 
 //These are new conditions
 
-if(preg_match('/^[a-zA-Z0-9]{4,32}$/', $username)) {
+if(!preg_match('/^[a-zA-Z0-9]{4,32}$/', $username)) {
     $error = "ERROR_R_USERNAME_NOTVALID";
 } else if(!is_email($email)) {
     $error = "ERROR_R_EMAIL_NOTVALID";

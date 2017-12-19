@@ -3,7 +3,7 @@
 if (session_status() != 2)
     session_start();
 
-if (isset($_COOKIE['auth']) || $_SESSION['auth']) {
+if (isset($_COOKIE['auth']) || isset($_SESSION['auth'])) {
     header("Location: index.php");
 }
 ?>
@@ -89,7 +89,7 @@ if (isset($_COOKIE['auth']) || $_SESSION['auth']) {
                         if (isset($_GET['register-error'])) {
                             require "utility/errors.php";
 
-                            $error = constant($_GET['error']);
+                            $error = constant($_GET['register-error']);
                             echo $error;
 
                             unset($_GET['error']);
@@ -225,7 +225,6 @@ _________________________________________________________ -->
 <script src="js/jquery.counterup.min.js"></script>
 <script src="js/jquery.parallax-1.1.3.js"></script>
 <script src="js/front.js"></script>
-<script src="js/form-validation.js"></script>
 
 
 </body>
