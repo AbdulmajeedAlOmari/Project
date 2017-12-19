@@ -1,48 +1,26 @@
 <?php
 require "db.php";
 
-//TODO prevent multi-login "https://stackoverflow.com/questions/4614052/how-to-prevent-multiple-form-submission-on-multiple-clicks-in-php"
-
-if(isset($_COOKIE['formSubmitted']) || isset($_SESSION['formSubmitted']))
-    die('You can not submit multiple times');
-
-setcookie('formSubmitted', 'true', time()+1800, '/');
-
-if(!isset($_COOKIE['formSubmitted'])) {
+//if(session_status() != 2)
     session_start();
-    $_SESSION['formSubmitted'] = 'true';
-}
 
 //To prevent sql injecting
 $email = addslashes($_POST['email-login']);
 $password = addslashes($_POST['password-login']);
 
 $query = "SELECT username,password,email FROM Users WHERE email='$email' AND password='$password'";
-$result = mysqli_query($con, $query);
+$result = mysqli_query($con, $query) OR die(mysqli_error($connection));
 
-if (!$result) {
-    die("Error : " . mysqli_error($con));
+if (mysqli_num_rows($result) == 0) {
+    header("Location: ../customer-register.php?login-error=ERROR_L_INCORRECT");
 } else {
-    if (count($result) == 0) {
+    $user = mysqli_fetch_assoc($result);
+    $username = $user['username'];
 
-        if(isset($_COOKIE['formSubmitted']))
-            setcookie('formSubmitted', '', time() - 3600);
-        else
-            unset($_SESSION['formSubmitted']);
+    setcookie("auth", stripslashes($username), time() + 60 * 60 * 24, "/");
 
-        header("location:customer-register.php?login-error=ERROR_L_INCORRECT");
-    } else {
-        $user = mysqli_fetch_assoc($results);
-        $username = $user['username'];
+    if(!isset($_COOKIE['auth']))
+        $_SESSION['auth'] = stripslashes($username);
 
-        setcookie("auth", $username, time() + 60 * 60 * 24, "/");
-        if (isset($_COOKIE['auth'])) {
-            setcookie('formSubmitted', '', time() - 3600); //Remove formSubmission Status
-        } else {
-            unset($_SESSION['formSubmitted']);
-            $_SESSION['auth'] = $username;
-        }
-
-        header("location:index.php");
-    }
+    header("location: ../index.php?" . uniqid());
 }

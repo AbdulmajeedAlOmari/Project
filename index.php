@@ -1,3 +1,8 @@
+<?php
+
+    if(isset($_GET['logout']) && $_GET['logout'] == 'true')
+        header("Location: index.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -483,10 +488,6 @@ _________________________________________________________ -->
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/jquery.parallax-1.1.3.js"></script>
     <script src="js/front.js"></script>
-
-    
-
-
 
 </body>
 

@@ -1,6 +1,4 @@
 <?php
-    if(session_status() != 2)
-        session_start();
 ?>
 <header>
     <!-- *** TOP ***
@@ -23,17 +21,9 @@ _________________________________________________________ -->
 
                     <div class="login">
                         <?php
-                            $loggedIn = true; //TODO add loggedIn checker
-                            if(!isset($_COOKIE['auth']) && !isset($_SESSION['auth'])) {
-                                ?>
-                                <!-- TODO add an href for login/logout-->
-                                <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i>
-                                    <span class="hidden-xs text-uppercase">Sign in</span></a>
-                                <a href="customer-register.php"><i class="fa fa-user"></i> <span
-                                            class="hidden-xs text-uppercase">Sign up</span></a>
-                                <?php
-                            } else {
-                                $username = '//';
+
+                            if(isset($_COOKIE['auth']) || isset($_SESSION['auth']) ) {
+                                $username = '';
 
                                 if(isset($_COOKIE['auth']))
                                     $username = $_COOKIE['auth'];
@@ -42,10 +32,18 @@ _________________________________________________________ -->
 
                                 ?>
                                 <span class="hidden-sm hidden-xs">Welcome, <?php echo "$username"?>!</span>
-                                <a href="#"><i class="fa fa-sign-out"></i>
+                                <a href="login_system/logout.php"><i class="fa fa-sign-out"></i>
                                     <span class="hidden-xs text-uppercase">Logout</span></a>
                                 <a href="customer-account.php"><i class="fa fa-user"></i> <span
                                             class="hidden-xs text-uppercase">Account</span></a>
+
+                                <?php
+                            } else {
+                                ?>
+                                <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i>
+                                    <span class="hidden-xs text-uppercase">Sign in</span></a>
+                                <a href="customer-register.php"><i class="fa fa-user"></i> <span
+                                            class="hidden-xs text-uppercase">Sign up</span></a>
                                 <?php
                             }
                         ?>
@@ -147,14 +145,14 @@ _________________________________________________________ -->
             <div class="modal-body">
                 <form action="login_system/validate-login.php" method="post">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="email_modal" placeholder="email">
+                        <input type="email" class="form-control" id="email_modal" placeholder="email" name="email-login" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password_modal" placeholder="password">
+                        <input type="password" class="form-control" id="password_modal" placeholder="password" name="password-login" required>
                     </div>
 
                     <p class="text-center">
-                        <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
+                        <button type="submit" class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
                     </p>
                 </form>
 
@@ -166,3 +164,4 @@ _________________________________________________________ -->
 </div>
 
 <!-- *** LOGIN MODAL END *** -->
+

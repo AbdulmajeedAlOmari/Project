@@ -1,11 +1,7 @@
 <?php
-//TODO check this code
-if (session_status() != 2)
-    session_start();
-
-if (isset($_COOKIE['auth']) || isset($_SESSION['auth'])) {
+include "login_system/check-login.php";
+if(isLoggedIn())
     header("Location: index.php");
-}
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +77,16 @@ if (isset($_COOKIE['auth']) || isset($_SESSION['auth'])) {
 
     <div id="content">
         <div class="container">
+            <?php
+                if(isset($_GET['error'])) {
+                    require "utility/errors.php";
 
+                    $error = constant($_GET['error']);
+                    echo $error;
+
+                    unset($_GET['error']);
+                }
+            ?>
             <div class="row">
                 <div class="col-md-6">
                     <div class="box">

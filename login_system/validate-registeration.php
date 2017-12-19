@@ -2,15 +2,8 @@
 require "db.php";
 require "../utility/is_email.php";
 
-if(isset($_COOKIE['formSubmitted']) || isset($_SESSION['formSubmitted']))
-    die('You can not submit multiple times');
-
-setcookie('formSubmitted', 'true', time()+1800, '/');
-
-if(!isset($_COOKIE['formSubmitted'])) {
+//if(session_status() != 2)
     session_start();
-    $_SESSION['formSubmitted'] = 'true';
-}
 
 $email = addslashes($_POST['email']);
 $username = addslashes($_POST['username']);
@@ -31,8 +24,6 @@ if(!preg_match('/^[a-zA-Z0-9]{4,32}$/', $username)) {
 } else if($password != $confirmPassword) {
     $error = "ERROR_R_PASSWORD_NOMATCH";
 } else {
-    $username = stripslashes($username); //TODO check if it affects the system
-
     while($row=mysqli_fetch_array($result) && empty($error)) {
         $u = $row['username'];
         $e = $row['email'];
@@ -47,11 +38,10 @@ if(!preg_match('/^[a-zA-Z0-9]{4,32}$/', $username)) {
 
 if (!empty($error)) {
     mysqli_close($con);
-    header("location: customer-register.php?register-error=$error");
+    header("Location: ../customer-register.php?register-error=$error");
 //    die();
 }
 
-//TODO check database
 $query = "INSERT INTO `Users`(`username`, `password`, `email`) VALUES ('$username', '$password', '$email')";
 
 if (!mysqli_query($con, $query)) {
@@ -59,5 +49,5 @@ if (!mysqli_query($con, $query)) {
     die("Query Failed : " . mysqli_error($con));
 } else {
     mysqli_close($con);
-    header("location: customer-register.php?register-msg=successful");
+    header("Location: ../customer-register.php?register-msg=successful");
 }

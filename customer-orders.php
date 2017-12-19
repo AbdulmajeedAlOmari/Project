@@ -1,3 +1,9 @@
+<?php
+include "login_system/check-login.php";
+if(!isLoggedIn())
+    header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -243,8 +249,6 @@ _________________________________________________________ -->
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/jquery.parallax-1.1.3.js"></script>
     <script src="js/front.js"></script>
-
-    
 
 
 

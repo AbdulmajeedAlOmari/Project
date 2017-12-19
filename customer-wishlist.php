@@ -1,3 +1,9 @@
+<?php
+include "login_system/check-login.php";
+if(!isLoggedIn())
+    header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
