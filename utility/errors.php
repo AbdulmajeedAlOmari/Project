@@ -5,9 +5,9 @@ define("ERROR_R_PASSWORD_NOMATCH", error("Passwords do not match!"));
 define("ERROR_R_PASSWORD_NOTVALID", isNotValidPassword());
 define("ERROR_R_EMAIL_EXIST", error("Email already exist!"));
 define("ERROR_R_EMAIL_NOTVALID", error("Email is not a valid!"));
+define("ERROR_L_INCORRECT", error("Email or password incorrect!"));
 
-function error($msg)
-{
+function error($msg) {
     return "<div class='alert alert-danger' role='alert'>" . $msg . "</div>";
 }
 

@@ -40,12 +40,12 @@ if (!empty($error)) {
 }
 
 //TODO check database
-$query = "INSERT INTO `Users`(`email`, `username`, `password`) VALUES ('$email', '$username', '$password')";
+$query = "INSERT INTO `Users`(`username`, `password`, `email`) VALUES ('$username', '$password', '$email')";
 
 if (!mysqli_query($con, $query)) {
     mysqli_close($con);
     die("Query Failed : " . mysqli_error($con));
 } else {
     mysqli_close($con);
-    header("location: customer-register.php?msg=successful");
+    header("location: customer-register.php?register-msg=successful");
 }

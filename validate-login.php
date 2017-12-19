@@ -16,12 +16,16 @@ if (!$result) {
     } else {
         $user = mysqli_fetch_assoc();
 
-        setcookie("auth", $email, time() + 60 * 60 * 24, "/");
-        if (isset($_COOKIE['auth'])) {
-            header("location:index.php");
+        if($password == $user['password']) {
+            setcookie("auth", $email, time() + 60 * 60 * 24, "/");
+            if (isset($_COOKIE['auth'])) {
+                header("location:index.php");
+            } else {
+                session_start();
+                $_SESSION['auth'] = $email;
+            }
         } else {
-            session_start();
-            $_SESSION['auth'] = $email;
+            header("location:customer-register.php?login-error=");
         }
     }
 }
