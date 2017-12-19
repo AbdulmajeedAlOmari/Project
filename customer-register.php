@@ -156,9 +156,7 @@ if (isset($_COOKIE['auth']) || isset($_SESSION['auth'])) {
                             ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 
                         <hr>
-                        <span id="error-login"></span>
-                        <form name="loginForm" action="validate-login.php" onsubmit="return validateLogin()"
-                              method="post">
+                        <form name="loginForm" action="validate-login.php" method="post">
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="text" class="form-control" id="email-login" name="email-login">

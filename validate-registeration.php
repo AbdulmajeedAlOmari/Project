@@ -18,7 +18,7 @@ if(!preg_match('/^[a-zA-Z0-9]{4,32}$/', $username)) {
     $error = "ERROR_R_EMAIL_NOTVALID";
 } else if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,32}$/', stripslashes($password))) {
     $error = "ERROR_R_PASSWORD_NOTVALID";
-} else if($password != $con) {
+} else if($password != $confirmPassword) {
     $error = "ERROR_R_PASSWORD_NOMATCH";
 } else {
     while($row=mysqli_fetch_array($result) && empty($error)) {
