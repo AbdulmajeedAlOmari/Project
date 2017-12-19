@@ -1,6 +1,8 @@
 <?php
 require "db.php";
-require "utility/is_email.php";
+require "../utility/is_email.php";
+
+//TODO prevent multi-registration "https://stackoverflow.com/questions/4614052/how-to-prevent-multiple-form-submission-on-multiple-clicks-in-php"
 
 $email = addslashes($_POST['email']);
 $username = addslashes($_POST['username']);

@@ -1,6 +1,8 @@
 <?php
 require "db.php";
 
+//TODO prevent multi-login "https://stackoverflow.com/questions/4614052/how-to-prevent-multiple-form-submission-on-multiple-clicks-in-php"
+
 //To prevent sql injecting
 $email = addslashes($_POST['email-login']);
 $password = addslashes($_POST['password-login']);
