@@ -2,7 +2,7 @@
 <?php
 include "login_system/check-login.php";
 if(!isLoggedIn())
-    header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN&page=wishlist");
+    header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN");
 ?>
 
 <!DOCTYPE html>
@@ -61,14 +61,14 @@ if(!isLoggedIn())
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h1>My account</h1>
+                    <h1>Sell Your Item</h1>
                 </div>
                 <div class="col-md-5">
                     <ul class="breadcrumb">
 
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li>My account</li>
+                        <li>Sell Item</li>
                     </ul>
                 </div>
             </div>
@@ -86,12 +86,12 @@ if(!isLoggedIn())
 
                 <div class="col-md-9 clearfix" id="customer-account">
 
-                    <p class="lead">Change your personal details or your password here.</p>
-                    <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    <p class="lead">Put your item's information here.</p>
+                    <p class="text-muted">It is necessary to fill the item description correctly to get as many customers as possible.</p>
 
                     <div class="box clearfix">
                         <div class="heading">
-                            <h3 class="text-uppercase">Personal details</h3>
+                            <h3 class="text-uppercase">Item Description</h3>
                         </div>
 
                         <form>
