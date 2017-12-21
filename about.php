@@ -244,8 +244,6 @@ _________________________________________________________ -->
     <script src="js/jquery.parallax-1.1.3.js"></script>
     <script src="js/front.js"></script>
 
-    
-
     <!-- owl carousel -->
     <script src="js/owl.carousel.min.js"></script>
 
