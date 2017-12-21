@@ -1,5 +1,13 @@
 <?php
+    include "login_system/check-login.php";
+    if(!isLoggedIn())
+        header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN");
+
+    if(!isset($_POST['submit']))
+        header("Location: ../index.php");
+
     require "db.php";
+
     if(isset($_COOKIE['auth'])) {
         $username = $_COOKIE['auth'];
     }else {

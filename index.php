@@ -1,7 +1,7 @@
 <?php
 
-    if(isset($_GET['logout']) && $_GET['logout'] == 'true')
-        header("Location: index.php");
+//    if(isset($_GET['logout']) && $_GET['logout'] == 'true')
+//        header("Location: index.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,14 +58,6 @@
                 <div class="row">
                     <div class="col-md-7">
                         <h1>Category with left sidebar</h1>
-                    </div>
-                    <div class="col-md-5">
-                        <ul class="breadcrumb">
-                            <li><a href="index.php">Home</a>
-                            </li>
-                            <li>Category with left sidebar</li>
-                        </ul>
-
                     </div>
                 </div>
             </div>

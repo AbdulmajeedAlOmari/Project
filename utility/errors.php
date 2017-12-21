@@ -6,8 +6,10 @@ define("ERROR_R_PASSWORD_NOTVALID", isNotValidPassword());
 define("ERROR_R_EMAIL_EXIST", error("Email already exist!"));
 define("ERROR_R_EMAIL_NOTVALID", error("Email is not a valid!"));
 define("ERROR_L_INCORRECT", error("Email or password incorrect!"));
+define("ERROR_L_INCORRECT_PASSWORD", error("Password is incorrect!"));
 define("ERROR_MUTIPLE_SUBMISSION", error("You can not submit mutiple of times!"));
 define("ERROR_NOT_LOGGED_IN", error("You have to login first!"));
+define("ERROR_NOT_SUBMITTED", error("You can not visit that page!"));
 
 function error($msg) {
     return "<div class='alert alert-danger' role='alert'>" . $msg . "</div>";

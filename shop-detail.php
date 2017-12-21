@@ -165,18 +165,23 @@
 
                         <div class="box" id="details">
                             <p>
-                                <h4>Product details</h4>
+                                <h4>Item Description</h4>
                                 <p>White lace top, woven, has a round neck, short sleeves, has knitted lining attached</p>
-                                <h4>Material & care</h4>
+
+                            <?php
+                            if(isset($_COOKIE['auth']) || isset($_SESSION['auth'])) {
+                                ?>
+
+                                <h4>Contact Details</h4>
                                 <ul>
-                                    <li>Polyester</li>
-                                    <li>Machine wash</li>
+                                    <li>Mobile Number: 055999933</li>
+                                    <li>Email: example_group59@ksu.sa</li>
+                                    <li>Shipping: World-Wide shipping</li>
                                 </ul>
-                                <h4>Size & Fit</h4>
-                                <ul>
-                                    <li>Regular fit</li>
-                                    <li>The model (height 5'8" and chest 33") is wearing a size S</li>
-                                </ul>
+                            <?php} else {?>
+                                <!--TODO change messaage here-->
+                            <h4>Please sign in to view contact detail</h4>
+                            <?php } ?>
 
                                 <blockquote>
                                     <p><em>Define style this season with Armani's new range of trendy tops, crafted with intricate details. Create a chic statement look by teaming this lace number with skinny jeans and pumps.</em>
