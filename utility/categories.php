@@ -14,41 +14,41 @@ _________________________________________________________ -->
         <div class="panel-body">
             <ul class="nav nav-pills nav-stacked category-menu">
                 <li>
-                    <a href="shop-category.html">Men <span class="badge pull-right">42</span></a>
+                    <a href="shop-category.php">Men <span class="badge pull-right">42</span></a>
                     <ul>
-                        <li><a href="shop-category.html">T-shirts</a>
+                        <li><a href="shop-category.php">T-shirts</a>
                         </li>
-                        <li><a href="shop-category.html">Shirts</a>
+                        <li><a href="shop-category.php">Shirts</a>
                         </li>
-                        <li><a href="shop-category.html">Pants</a>
+                        <li><a href="shop-category.php">Pants</a>
                         </li>
-                        <li><a href="shop-category.html">Accessories</a>
+                        <li><a href="shop-category.php">Accessories</a>
                         </li>
                     </ul>
                 </li>
                 <li class="active">
-                    <a href="shop-category.html">Ladies  <span class="badge pull-right">123</span></a>
+                    <a href="shop-category.php">Ladies  <span class="badge pull-right">123</span></a>
                     <ul>
-                        <li><a href="shop-category.html">T-shirts</a>
+                        <li><a href="shop-category.php">T-shirts</a>
                         </li>
-                        <li><a href="shop-category.html">Skirts</a>
+                        <li><a href="shop-category.php">Skirts</a>
                         </li>
-                        <li><a href="shop-category.html">Pants</a>
+                        <li><a href="shop-category.php">Pants</a>
                         </li>
-                        <li><a href="shop-category.html">Accessories</a>
+                        <li><a href="shop-category.php">Accessories</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="shop-category.html">Kids  <span class="badge pull-right">11</span></a>
+                    <a href="shop-category.php">Kids  <span class="badge pull-right">11</span></a>
                     <ul>
-                        <li><a href="shop-category.html">T-shirts</a>
+                        <li><a href="shop-category.php">T-shirts</a>
                         </li>
-                        <li><a href="shop-category.html">Skirts</a>
+                        <li><a href="shop-category.php">Skirts</a>
                         </li>
-                        <li><a href="shop-category.html">Pants</a>
+                        <li><a href="shop-category.php">Pants</a>
                         </li>
-                        <li><a href="shop-category.html">Accessories</a>
+                        <li><a href="shop-category.php">Accessories</a>
                         </li>
                     </ul>
                 </li>
@@ -146,7 +146,7 @@ _________________________________________________________ -->
     <!-- *** MENUS AND FILTERS END *** -->
 
     <div class="banner">
-        <a href="shop-category.html">
+        <a href="shop-category.php">
             <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
         </a>
     </div>
