@@ -128,24 +128,30 @@ if(!isLoggedIn())
                         </div>
                         <!-- /.box -->
 
-
+                        <?php
+                            if(isset($_GET['contactinfo-msg'])) {
+                                if ($_GET['contactinfo-msg'] == 'successful')
+                                    echo "<div class='alert alert-success' role='alert'>Your contact information has been updated successfully!</div>";
+                                unset($_GET['contactinfo-msg']);
+                            }
+                        ?>
                         <div class="box clearfix">
                             <div class="heading">
                                 <h3 class="text-uppercase">Personal details</h3>
                             </div>
 
-                            <form>
+                            <form name="contact-information" action="login_system/edit-contact-information.php" method="post">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="firstname">Firstname</label>
-                                            <input type="text" class="form-control" id="firstname">
+                                            <input type="text" class="form-control" id="firstname" name="firstname">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="lastname">Lastname</label>
-                                            <input type="text" class="form-control" id="lastname">
+                                            <input type="text" class="form-control" id="lastname" name="lastname">
                                         </div>
                                     </div>
                                 </div>
@@ -154,14 +160,14 @@ if(!isLoggedIn())
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="company">Company</label>
-                                            <input type="text" class="form-control" id="company">
+                                            <label for="phone">Telephone</label>
+                                            <input type="text" class="form-control" id="phone" name="phone">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="street">Street</label>
-                                            <input type="text" class="form-control" id="street">
+                                            <input type="text" class="form-control" id="street" name="street">
                                         </div>
                                     </div>
                                 </div>
@@ -170,39 +176,20 @@ if(!isLoggedIn())
                                 <div class="row">
                                     <div class="col-sm-6 col-md-3">
                                         <div class="form-group">
-                                            <label for="city">Company</label>
-                                            <input type="text" class="form-control" id="city">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
                                             <label for="zip">ZIP</label>
-                                            <input type="text" class="form-control" id="zip">
+                                            <input type="text" class="form-control" id="zip" name="zip">
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-3">
                                         <div class="form-group">
                                             <label for="state">State</label>
-                                            <select class="form-control" id="state"></select>
+                                            <input type="text" class="form-control" id="state" name="state">
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-3">
+                                    <div class="col-sm-6 col-md-6">
                                         <div class="form-group">
                                             <label for="country">Country</label>
-                                            <select class="form-control" id="country"></select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="phone">Telephone</label>
-                                            <input type="text" class="form-control" id="phone">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="email_account">Email</label>
-                                            <input type="text" class="form-control" id="email_account">
+                                            <input type="text" class="form-control" id="country" name="country">
                                         </div>
                                     </div>
                                     <div class="col-sm-12 text-center">
@@ -266,25 +253,6 @@ if(!isLoggedIn())
             <!-- /.container -->
         </div>
         <!-- /#content -->
-
-
-        <!-- *** GET IT ***
-_________________________________________________________ -->
-
-        <div id="get-it">
-            <div class="container">
-                <div class="col-md-8 col-sm-12">
-                    <h3>Do you want cool website like this one?</h3>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <a href="#" class="btn btn-template-transparent-primary">Buy this template now</a>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- *** GET IT END *** -->
-
 
         <!-- *** FOOTER ***
 _________________________________________________________ -->

@@ -42,7 +42,7 @@ if (!empty($error)) {
 //    die();
 }
 
-$query = "INSERT INTO `Users`(`username`, `password`, `email`) VALUES ('$username', '$password', '$email')";
+$query = "INSERT INTO `Users`(`username`, `password`, `email`,`firstName`, `lastName`, `phoneNumber`, `street`, `zip`, `state`, `country`) VALUES ('$username', '$password', '$email',' ',' ','0',' ','0',' ',' ')";
 
 if (!mysqli_query($con, $query)) {
     mysqli_close($con);
