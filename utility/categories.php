@@ -3,7 +3,7 @@
 <div class="col-sm-3">
 
     <div class="col-sm-12 text-center">
-        <a href="customer-sell.php" class="btn btn-template-main"><i class="fa fa-cart-plus fa-3x"></i>Sell Item </a>
+        <a href="customer-sell.php" class="btn btn-template-main paddingDown"><i class="fa fa-cart-plus fa-3x"></i>Sell Item </a>
     </div>
     <!-- *** MENUS AND FILTERS ***
 _________________________________________________________ -->
@@ -18,7 +18,7 @@ _________________________________________________________ -->
                 <li>
                     <a href="shop-category.php">Cars</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="shop-category.php">Plants</a>
                 </li>
                 <li>

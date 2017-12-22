@@ -100,8 +100,7 @@ if(!isLoggedIn())
                         <div class="heading">
                             <h3 class="text-uppercase">Item Description</h3>
                         </div>
-
-                        <form name="postItem" action="login_system/sell-item.php" method="post" enctype="multipart/form-data">
+                        <form action="login_system/sell-item.php" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -144,27 +143,30 @@ if(!isLoggedIn())
                                     </div>
                                 </div>
                             </div>
+                            <?php
+                                if(isset($_GET['error'])) {
+                                    require "utility/errors.php";
+                                    echo "<div class=\"row\">
+                                <div class=\"col-sm-12\">" . constant($_GET['error']) . "</div>
+                            </div>";
+                                }
+                            ?>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="image">Upload image</label>
-                                        <input type="file" name="imageUpload" id="imageUpload">
+                                        <input type="file" name="fileToUpload" id="fileToUpload">
                                     </div>
                                 </div>
                             </div>
                             <!-- /.row -->
 
                             <div class="row">
-
                                 <div class="col-sm-12 text-center">
-                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-save"></i> Save changes</button>
-
+                                    <button type="submit" name="submit" class="btn btn-template-main"><i class="fa fa-cart-plus"></i> SELL ITEM</button>
                                 </div>
-
                             </div>
-
                         </form>
-
                     </div>
 
                 </div>

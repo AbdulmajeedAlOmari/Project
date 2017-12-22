@@ -1,9 +1,7 @@
 <?php
-include "login_system/check-login.php";
+include "check-login.php";
 if(!isLoggedIn())
     header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN");
-
-//TODO add implementation : "https://stackoverflow.com/questions/26757659/how-to-store-images-in-mysql-database-using-php"
 
 require "db.php";
 if(isset($_COOKIE['auth'])) {
@@ -11,6 +9,8 @@ if(isset($_COOKIE['auth'])) {
 }else {
     $username = $_SESSION['auth'];
 }
+
+
 $query = "SELECT id FROM users WHERE username='$username'";
 $result = mysqli_query($con, $query) OR die(mysqli_error($con));
 $row = mysqli_fetch_assoc($result);
@@ -22,26 +22,53 @@ $description = $_POST['description'];
 $price = $_POST['price'];
 $quantity = $_POST['quantity'];
 
-if(isset($_POST['submit'])) {
-    $target_dir = "uploads/";
-    $target_file = $target_dir . basename($_FILES["imageUpload"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+$uploadOk = 0;
 
-    if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"], $target_file)) {
-        echo "The file " . basename($_FILES["imageUpload"]["name"]) . " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
+if(isset($_POST["submit"])) {
+    if(isset($_FILES['fileToUpload']['name'])) {
+        $target_dir = "uploads/";
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+        // Check if image file is a actual image or fake image
+        if(empty($_FILES['fileToUpload']['tmp_name']))
+            header("Location: ../customer-sell.php?error=ERROR_NOT_UPLOADED");
+
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+
+        $error = '';
+        if ($check === false) {
+            $error = "ERROR_NOT_AN_IMAGE";
+        } else if(file_exists($target_file)) {
+            $error = "ERROR_CHANGE_IMAGE_NAME";
+        } else if ($_FILES["fileToUpload"]["size"] > 500000) {
+            $error = "ERROR_IMAGE_TOO_LARGE";
+        } else if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif" ) {
+            $error = "ERROR_IMAGE_TYPE";
+        }
+
+        if(!empty($error))
+            header("Loaction: ../customer-sell.php?error=$error");
+
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            $uploadOk = 1;
+        }
+
+        $image = basename($_FILES["fileToUpload"]["name"], ".jpg"); // used to store the filename in a variable
     }
-
-    $image = basename($_FILES["imageUpload"]["name"], ".jpg"); // used to store the filename in a variable
 }
 
-$query = "INSERT INTO `items`(`sellerId`, `category`, `description`, `image`, `name`, `price`, `quantity`) VALUES ('$sellerId','$category','$description','$image','$itemName','$price','$quantity')";
-if (!mysqli_query($con, $query)) {
-    mysqli_close($con);
-    die("Query Failed : " . mysqli_error($con));
+if($uploadOk == 1) {
+    $query = "INSERT INTO `items`(`sellerId`, `category`, `description`, `image`, `name`, `price`, `quantity`) VALUES ('$sellerId','$category','$description','$image','$itemName','$price','$quantity')";
+    if (!mysqli_query($con, $query)) {
+        mysqli_close($con);
+        die("Query Failed : " . mysqli_error($con));
+    } else {
+        mysqli_close($con);
+        header("Location: ../customer-sell.php?neworder-msg=successful");
+    }
 } else {
-    mysqli_close($con);
-    header("Location: ../new-order.php?neworder-msg=successful");
+    header("Location: ../customer-sell.php?error=ERROR_COULD_NOT_UPLOAD");
 }

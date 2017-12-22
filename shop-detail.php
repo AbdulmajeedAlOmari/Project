@@ -106,7 +106,11 @@
                         <div class="col-sm-6">
                             <div class="box">
 
-                                <form>
+                                <?php
+                                //TODO get itemId
+                                $itemid = 0;
+                                echo "<form action='login_system/add-to-wishlist.php?itemid=$itemid' method='post'>"
+                                ?>
                                     <div class="sizes">
                                         <h3>Price</h3>
                                     </div>
@@ -117,8 +121,7 @@
                                     ?>
 
                                     <p class="text-center">
-                                        <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Add to cart</button>
-                                        <button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i class="fa fa-heart-o"></i>
+                                        <button type="submit" class="btn btn-template-main"><i class="fa fa-heart-o"></i> Add to wishlist</button>
                                         </button>
                                     </p>
 

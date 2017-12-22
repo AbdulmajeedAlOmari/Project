@@ -10,6 +10,12 @@ define("ERROR_L_INCORRECT_PASSWORD", error("Password is incorrect!"));
 define("ERROR_MUTIPLE_SUBMISSION", error("You can not submit mutiple of times!"));
 define("ERROR_NOT_LOGGED_IN", error("You have to login first!"));
 define("ERROR_NOT_SUBMITTED", error("You can not visit that page!"));
+define("ERROR_NOT_AN_IMAGE", error("Sorry, you can not upload a fake image."));
+define("ERROR_NOT_UPLOADED", error("Sorry, you have to upload an image of the item."));
+define("ERROR_CHANGE_IMAGE_NAME", error("Sorry, image name already exists, change the image's name."));
+define("ERROR_IMAGE_TOO_LARGE", error("Sorry, your image is too large."));
+define("ERROR_IMAGE_TYPE", error("Sorry, only JPG, JPEG, PNG & GIF files are allowed."));
+define("ERROR_COULD_NOT_UPLOAD", error("Sorry, there was an error uploading your file."));
 
 function error($msg) {
     return "<div class='alert alert-danger' role='alert'>" . $msg . "</div>";
