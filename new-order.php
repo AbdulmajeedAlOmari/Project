@@ -83,69 +83,44 @@ if(!isLoggedIn())
 
                 <!-- *** LEFT COLUMN ***
          _________________________________________________________ -->
+                <?php
+                if(isset($_GET['neworder-msg'])) {
+                    if ($_GET['neworder-msg'] == 'successful')
+                        echo "<div class='alert alert-success' role='alert'>Your order has been posted successfully!</div>";
+                    unset($_GET['neworder-msg']);
+                }
+                ?>
 
                 <div class="col-md-9 clearfix" id="customer-account">
-
-                    <p class="lead">Change your personal details or your password here.</p>
-                    <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-
-                    <div class="box">
-
-                        <div class="heading">
-                            <h3 class="text-uppercase">Change password</h3>
-                        </div>
-
-                        <form>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="password_old">Old password</label>
-                                        <input type="password" class="form-control" id="password_old">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="password_1">New password</label>
-                                        <input type="password" class="form-control" id="password_1">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="password_2">Retype new password</label>
-                                        <input type="password" class="form-control" id="password_2">
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.row -->
-
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-template-main"><i class="fa fa-save"></i> Save new password</button>
-                            </div>
-                        </form>
-
-                    </div>
-                    <!-- /.box -->
-
-
                     <div class="box clearfix">
                         <div class="heading">
-                            <h3 class="text-uppercase">Personal details</h3>
+                            <h3 class="text-uppercase">Order details</h3>
                         </div>
 
-                        <form>
+                        <form name="postItem" action="login_system/postOrder.php" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name">
+                                        <label for="category">Category</label>
+                                        <select name="category">
+                                            <option>Cars</option>
+                                            <option>Plants</option>
+                                            <option>Animals</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="name">Item name</label>
+                                        <input type="text" class="form-control" id="name" name="itemName">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="description">Description</label>
-                                        <input type="text" class="form-control" id="description">
+                                        <label for="description">Item description</label>
+                                        <input type="text" class="form-control" id="description" name="description">
                                     </div>
                                 </div>
                             </div>
@@ -154,14 +129,22 @@ if(!isLoggedIn())
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="price">Price</label>
-                                        <input type="text" class="form-control" id="price">
+                                        <label for="price">Item price</label>
+                                        <input type="text" class="form-control" id="price" name="price">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="quantity">Quantity</label>
-                                        <input type="number" class="form-control" id="quantity">
+                                        <input type="number" class="form-control" id="quantity" name="quantity">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="image">Upload image</label>
+                                        <input type="file" name="imageUpload" id="imageUpload">
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +153,7 @@ if(!isLoggedIn())
                             <div class="row">
 
                                 <div class="col-sm-12 text-center">
-                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-save"></i> Save changes</button>
+                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-save"></i>Post Order</button>
 
                                 </div>
 
