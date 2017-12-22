@@ -1,0 +1,113 @@
+
+            //(c) Copyright Modelworks Software 2005 - All rights reserved
+            
+            var XMLHttpRequestObject = new Array();
+            var prog, newimg;
+            
+            function setSectionAllocations(index){
+                onSectionAllocations(index);
+            }
+        
+            function onSectionAllocations(index)
+            {   
+                //dispalyValidNationalIdProgress();
+                
+                if (XMLHttpRequestObject == null)
+                {
+                    XMLHttpRequestObject = new Array();
+                }
+                
+                var requestObject = GetXMLHttpRequest();
+                if (requestObject)
+                {
+                    XMLHttpRequestObject[index] = new Object();
+                    XMLHttpRequestObject[index].requestObject = requestObject;
+  
+                    requestObject.onreadystatechange = new Function ("onSectionAllocationsProcess('" + index + "')");          
+    
+                    var url = "/psu/ajaxGetSectionAllocationsServlet?courseIndex=" + index;             
+                                                                       
+                    requestObject.open("POST", url, true);
+                    requestObject.setRequestHeader( "Content-Type" , 
+                     "application/x-www-form-urlencoded; charset=UTF-8" );
+                    requestObject.send("");                                                     
+                }
+            }
+            
+            function onSectionAllocationsProcess(index)
+            {
+            
+              
+                if (XMLHttpRequestObject[index] != null &&
+                    XMLHttpRequestObject[index].requestObject &&
+                    XMLHttpRequestObject[index].requestObject.readyState == 4) 
+                {
+                    
+                    if (XMLHttpRequestObject[index].requestObject.status == 200) 
+                    {
+                        var result = XMLHttpRequestObject[index].requestObject.responseText;
+                   	//hideValidNationalIdProgress();	
+                        if (result == "busy")
+                        {
+                            alert("The server is busy. Try again.");
+                            XMLHttpRequestObject[index] = null;
+                        }
+                        else{
+                            document.getElementById("sectionAllocationsDiv").innerHTML = result;
+                        }
+                    }
+                    else{}
+                }
+            }
+            
+            function GetXMLHttpRequest() 
+            {
+                var object = null;
+                
+                if (window.XMLHttpRequest) 
+                {
+                    object = new XMLHttpRequest();
+                } 
+                else if (window.ActiveXObject) 
+                {
+                    try
+                    {
+                        object = new ActiveXObject("Msxml2.XMLHTTP");
+                    }
+                    catch(e)
+                    {
+                    }
+                    
+                    if (object == null)
+                    {
+                        try
+                        {
+                            object = new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        catch(e)
+                        {
+                        }
+                    }
+                }
+                
+                if (object == null)
+                {
+                    alert("Your browser does not support AJAX");
+                }
+                
+                return object;
+            }
+
+            function dispalyValidNationalIdProgress(){
+                /*prog = document.getElementById("progNationalId");  
+                newimg=document.createElement('img');
+                newimg.src='/psu/images/load.gif';               
+                prog.appendChild(newimg);*/
+            }
+            
+            function hideValidNationalIdProgress(){
+                /*var progressText = document.getElementById("progNationalId");
+                progressText.style.visibility=='hidden';
+                progressText.removeChild(newimg);*/
+            }            
+            

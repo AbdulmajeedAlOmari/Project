@@ -1,0 +1,1113 @@
+
+DIV.tableContainer {
+       OVERFLOW: visible;
+       HEIGHT: 170px;
+       width: 400px;
+}
+
+DIV.textContainerAr {
+       OVERFLOW: auto; HEIGHT: 270px;
+}
+
+DIV.textContainerEn {
+       OVERFLOW: auto; HEIGHT: 140px;
+}
+
+.ButtonStyle{
+    font-family: UniversNextArabic;
+    font-size: 14px;
+}
+
+.selectStyle{
+    font-family: UniversNextArabic ;
+}
+
+.insertMarkSelectStyle{
+    text-align: center;
+}
+
+.applicationList{
+    width: 300px;
+    border: none ; 
+    border-style: none  ; 
+    border-color: White ; 
+    background-color: rgb(247,247,247); 
+    font-family: UniversNextArabic; 
+    font-size: 12px; 
+}
+
+.applicationDivList{
+    overflow-x: scroll; 
+    width:100%;
+    overflow: -moz-scrollbars-horizontal; 
+    border: 1px; 
+    border-style: solid; 
+    border-color: #000000; 
+}
+
+.HEADING_MIDDLE{
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    border: 0pt ;
+    color: White;
+    background-color: #26B6C9;
+    vertical-align: middle;
+    height: 16pt;
+}
+    
+.toolBar{
+    font-size: 10pt;
+    font-family: arial;
+    color: White;
+}
+
+.selectStyle{
+    width: 70pt;
+    text-align: center;
+}
+
+.selectNumber{
+    color:Black; text-decoration: none; font-family: UniversNextArabic ; font-size: 12px;
+}
+
+
+.DivHeader {
+      background: black;
+      color: white;
+      width: 100%;
+      height: 86px;
+      overflow: hidden;
+      background: rgb(0,247,247);
+}
+
+
+ .topHeader{
+    font-size: 12px; 
+    font-weight: normal; 
+    color: White; 
+    font-style:normal;
+    FONT-FAMILY:  UniversNextArabic; 
+    TEXT-DECORATION: none; 
+    font-weight: bold;
+    background-image: url("/psu/images/topHome.jpg");
+ }
+ 
+ .BodyHeader{
+    background-repeat: repeat;
+    background-image: url("/psu/images/bodyHome.jpg");
+ }
+ 
+ .bootomHeader{
+    background-image: url("/psu/images/bottomHome.jpg");
+ }
+ 
+ .sildeHeaderAr{
+    background-image: url("/psu/images/sideBorderAr.jpg");
+ }
+ 
+
+
+ 
+ .sildeHeaderEn{
+    background-image: url("/psu/images/sideBorderEn.jpg");
+ }
+ 
+.sildeBorderAr{
+    background-image: url("/psu/images/sideBordersAr.jpg");
+ }
+ 
+.sildeBorderEn{
+    background-image: url("/psu/images/sideBordersEn.jpg");
+ }
+ 
+.sildeBorder2Ar{
+    background-image: url("/psu/images/sideBorders2Ar.jpg");
+ }
+ 
+ .sildeBorder2En{
+    background-image: url("/psu/images/sideBorders2En.jpg");
+ }
+ 
+ .sildeHeader2Ar{
+    background-image: url("/psu/images/sideBorder2Ar.jpg");
+ }
+ 
+  .sildeHeader2En{
+    background-image: url("/psu/images/sideBorder2En.jpg");
+ }
+
+ .sildeWHeader2Ar{
+    background-image: url("/psu/images/sideWBorder2Ar.jpg");
+ }
+ 
+  .sildeWHeader2En{
+    background-image: url("/psu/images/sideWBorder2En.jpg");
+ }
+ 
+.NOTE{
+    font-family:arial;
+    font-size:10px;
+    color:#777777;
+}
+
+.HEADING{
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    border: 0pt ;
+    color: White;
+    background-color: #26B6C9;
+    vertical-align: middle;
+    height: 16pt;
+}
+
+
+
+.HEADING_CHECK{
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    border: 0pt ;
+    color: White;
+    background-color: #26B6C9;
+    vertical-align: middle;
+    height: 16pt;
+}
+
+.HEADING_PRINT{
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    border: 0pt ;
+    color: rgb(181,181,181);
+    background-color: #26B6C9;
+    vertical-align: middle;
+    height: 16pt;
+}
+
+.HEADING_ADMS{
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    border: 0pt ;
+    color: Black;
+    background-color: rgb(231,231,231);
+    height: 25px;
+}
+
+.SMALL_HEADING{
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    background-color:rgb(231,231,231);
+    color:rgb(198,0,0);
+}
+
+.ROWGrid {
+        text-align: center;
+        font-family: UniversNextArabic;
+	font-size: 12px;
+	color: #666;
+}
+
+.IMAGE_ROW1{
+ 	font-family: UniversNextArabic;
+	font-size: 12px;
+	color: black;
+	background-color:ActiveBorder ;
+        height: 15pt;
+        text-align: center;   
+}
+
+.IMAGE_ROW2{
+ 	font-family: UniversNextArabic;
+	font-size: 12px;
+	color: White;
+	background-color:Black ;
+        height: 15pt;
+        text-align: center;   
+}
+
+.IMAGE_ROW1 a {
+    padding-right:0px !important;
+}
+
+.IMAGE_ROW2 a {
+    padding-right:0px !important;
+}
+
+.ROW1 {
+	font-family: UniversNextArabic;
+	font-size: 12px;
+	color: black;
+	background-color:#D3E0E8 ;
+        height: 15pt;
+        text-align: center;
+}
+
+.ROW2 {
+	font-family: UniversNextArabic;
+	font-size: 12px;
+	color: black;
+	background-color: #F0F7FD;
+        height: 15pt;
+        text-align: center;
+}
+
+.ROW_WHITE {
+	font-family: UniversNextArabic;
+	font-size: 12px;
+	color: black;
+	background-color:White ;
+        height: 15pt;
+        text-align: center;
+}
+
+.ROW_LEFT1 {
+	font-family: UniversNextArabic;
+	font-size: 12px;
+	color: black;
+	background-color:#D3E0E8 ;
+        height: 15pt;
+        
+}
+
+.ROW_LEFT2 {
+	font-family: UniversNextArabic;
+	font-size: 12px;
+	color: black;
+	background-color: #F0F7FD;
+        height: 15pt;
+        
+}
+
+.ROW_SIDE1 {
+	font-family: UniversNextArabic;
+	font-size: 12px;
+	color: black;
+        height: 15pt;
+        text-align: center;
+}
+
+.ERR_MSG_SMALL{
+       color: red;     
+       font-size: 12px;
+       font-family: UniversNextArabic;
+}
+
+.ERR_MSG{
+       color: red;     
+       font-weight: bold; 
+       font-size: 12px;
+       font-family: UniversNextArabic;
+}
+
+.SUCC_MSG{
+       color: green;        
+       font-weight: bold; 
+       font-size: 12px;
+       font-family: UniversNextArabic;
+}
+
+
+.PAGE_TITLE{
+        color:#3f454e;
+        font-family: UniversNextArabic;
+        font-weight: bold;
+        font-size: 15px;
+}
+
+.tableText{
+    font-size: 8pt;
+    font-weight: bold;
+    font-family: arial;
+    color: Black;
+    }
+
+.topColor{
+    font-family: UniversNextArabic;
+    font-size: 9pt;
+    color: white;
+}
+
+.studentColor{
+    font-family: UniversNextArabic;
+    font-size: 9pt;
+    color: Black;
+    font-weight: bold;
+}
+
+.academicPart{
+    font-family: UniversNextArabic;
+    font-size: 13pt;
+    color: Black;
+    font-weight: bold;
+}
+
+.dear{
+    font-family: UniversNextArabic;
+    font-size: 8pt;
+    color: black;
+    
+}
+
+.user{
+    font-family: WinSoft Pro;
+    font-size: 8pt;
+    color: white;
+}
+
+.user2{
+    font-family: WinSoft Pro;
+    font-size: 9pt;
+    color: #F96A3F;      
+    font-weight: bold;
+}
+
+.reg{
+    font-family: UniversNextArabic;
+    font-size: 8pt;
+    color: white;
+}
+.text{
+    font-family: Arial;
+    font-size: 10pt;
+}
+
+.bodyHeader{
+    font-family: Arial;
+    color: white;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.instructorTableHead{
+    font-family: Arial;
+    color: #fc5819;
+    font-size: 12pt;
+    font-weight: bold;
+}
+.instructorTableHead2{
+    font-family: Arial;
+    color: black;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.nextBack{
+    
+    font-family: Arial;
+    color: black;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+
+.fontText10
+{   font-family:Times New Roman;            
+    color:white;
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+.ROW_BIG_1{
+    background-color:rgb(247,247,247);
+}
+
+.ROW_BIG_2{
+    background-color:rgb(255,255,255);
+}
+
+.CENTER_COLUMN{
+    text-align: center;
+}
+
+.FIXED_WIDTH_COLUMNS{
+   width:33%;
+   text-align: center;
+}
+
+a:link {color:#0773b9;padding-right:10px; font-family: UniversNextArabic ; font-size: 12px; text-decoration: none;}
+a:active {color:#0773b9;padding-right:10px; font-family: UniversNextArabic ; font-size: 12px; text-decoration: none;}
+a:visited {color:#0773b9;padding-right:10px; font-family: UniversNextArabic ; font-size: 12px; text-decoration: none;}
+a:hover {color:Gray; padding-right:10px; font-size: 12px; text-decoration: none;}
+
+
+a.file:link {color:#414141;padding-right:10px;display:block;font-family: UniversNextArabic ; }
+a.file:visited {color:#414141;padding-right:10px;display:block;font-family: UniversNextArabic ;}
+a.file:hover {color:Gray; padding-right:10px;}
+
+
+.TABLES{
+        border-color: White ;   
+        border-style: none ;
+}
+
+.MAROON { 
+       font-weight: bold; 
+       font-size: 14px;
+       color: Maroon; 
+}
+
+.GREEN { 
+       font-weight: bold; 
+       font-size: 14px;
+       color: Green; 
+}
+
+.BLACK { 
+       font-weight: bold; 
+       font-size: 15px;
+}
+
+.WHITE {
+        color: white;
+        font-family: UniversNextArabic,UniversNextArabic, Helvetica, sans-serif;
+        font-size: 9pt;
+        text-decoration : none;
+}
+
+.MENU{
+        color:White;
+        font-family: UniversNextArabic;    
+        font-size:9pt;
+        font-weight: bold
+}
+
+.TITLE{
+        color:White;
+        font-family: UniversNextArabic;
+        font-size:8pt;
+}
+
+.SIGN_OUT{
+        color:#DEC610 ;
+        font-family: UniversNextArabic;
+        font-size:9pt;
+        font-weight:bold;
+}
+
+.SEMESTER{
+        color:rgb(102,102,102) ;
+        font-family: UniversNextArabic;
+        font-size:10pt;
+        font-weight:bold;
+}
+
+.FOOTER{
+        color:#808080; 
+        font-family:UniversNextArabic; 
+        font-size:9px
+}
+
+
+
+
+.AbsenceToolTip{
+    background-color: #eeeeee;
+    color: Maroon;
+}
+
+.calendarAbsence{
+    color:Silver;
+    text-decoration: none; 
+    font-family: UniversNextArabic ; 
+    font-size: 12px; 
+}
+
+
+.toolTipText{
+    font-size: 12px; 
+    color: Black;
+    font-style:normal;
+    FONT-FAMILY: UniversNextArabic; 
+    TEXT-DECORATION: none; 
+    font-weight: bold;
+}
+
+.BigToolTipText{
+    font-size: 13px; 
+    color: Maroon; 
+    font-style:normal;
+    FONT-FAMILY: UniversNextArabic; 
+    TEXT-DECORATION: none; 
+    font-weight: bold;
+}
+
+.toolTipText2{
+    font-size: 11px; 
+    color: #333333; 
+    font-style:normal;
+    FONT-FAMILY:  UniversNextArabic; 
+    TEXT-DECORATION: none; 
+    font-weight: bold;
+}
+
+.dayCalendar{
+    color: Black;
+    font-weight: bold;
+    font-size: 8pt;
+    direction: rtl;
+}
+
+.eventBodyCalendar{
+    color:  Black;
+    font-weight: bold;
+    font-size: 8pt;
+    direction: rtl;
+    font-family: UniversNextArabic;
+}
+
+
+.bodyCalendar2{
+    background-image: url("header.jpg");
+}
+
+.headerCalendar{
+    color:  Black;
+    font-size: 8pt;
+    font-weight: bold;
+    font-family: UniversNextArabic;
+    background-color: #f0f7fd;
+}
+
+.headerCalendar2{
+    color: rgb(181,181,181);
+    font-size: 8pt;
+    font-weight: bold;
+    font-family: UniversNextArabic;
+    background-color: #385370;
+}
+
+.colorLine{
+    background-color: #221e1f;
+}
+
+.colorBorder{
+    background-color: #305385;
+}
+
+.colorHalfBorder{
+    background-color: #C6C7C9;
+}
+
+.colorBodyDetials{
+    background-color: Maroon;
+}
+
+.toolTipsFac1{
+     background-image: url("/psu/images/toolTipFac/top bubble.gif");
+}
+
+.toolTipsFac2{
+     background-image: url("/psu/images/toolTipFac/bottom bubble.gif");
+ }
+
+.toolTipsFac3{
+     background-image: url("/psu/images/toolTipFac/middle bubble.gif");
+ }
+ 
+
+.toolTips1_ar{
+     background-image: url("/psu/images/toolTipBox/header2.gif");
+}
+
+.toolTips2_ar{
+     background-image: url("/psu/images/toolTipBox/body2.gif");
+ }
+
+.toolTips3_ar{
+     background-image: url("/psu/images/toolTipBox/footer2.gif");
+ }
+ 
+.toolTips1_en{
+     background-image: url("/psu/images/toolTipBox/header.gif");
+}
+
+.toolTips2_en{
+     background-image: url("/psu/images/toolTipBox/body.gif");
+ }
+
+.toolTips3_en{
+     background-image: url("/psu/images/toolTipBox/footer.gif");
+ }
+ 
+ 
+.toolTipsEvent1{
+     background-image: url("/psu/images/toolTips/header.gif");
+}
+
+.toolTipsEvent2{
+     background-image: url("/psu/images/toolTips/footer.gif");
+ }
+
+.toolTipsEvent3{
+     background-image: url("/psu/images/toolTips/body.gif");
+ }
+
+
+.toolTipsDelete1{
+     background-image: url("/psu/images/toolTipDelete/header.gif");
+}
+
+.toolTipsDelete2{
+     background-image: url("/psu/images/toolTipDelete/footer.gif");
+ }
+
+.toolTipsDelete3{
+     background-image: url("/psu/images/toolTipDelete/body.gif");
+ }
+ 
+.toolTipNewBody{
+     background-image: url("/psu/images/toolTipEvent/body.gif");
+ }
+
+.toolTipNewFooter{
+     background-image: url("/psu/images/toolTipEvent/footer.gif");
+ }
+ 
+.toolTipNewHeader{
+     background-image: url("/psu/images/toolTipEvent/header.gif");
+ }
+ 
+ .toolTipMBoxesPart1Ar{
+     background-image: url("/psu/images/toolTipMBoxes/part1Ar.gif");
+ }
+ 
+ .toolTipMBoxesPart2Ar{
+     background-image: url("/psu/images/toolTipMBoxes/part2Ar.gif");
+ }
+ 
+ .toolTipMBoxesPart3Ar{
+     background-image: url("/psu/images/toolTipMBoxes/part3Ar.gif");
+ }
+ 
+ .toolTipMBoxesPart4Ar{
+     background-image: url("/psu/images/toolTipMBoxes/part4Ar.gif");
+ }
+ 
+ .toolTipMBoxesPart5Ar{
+     background-image: url("/psu/images/toolTipMBoxes/part5Ar.gif");
+ }
+ 
+ .toolTipMBoxesPart6Ar{
+     background-image: url("/psu/images/toolTipMBoxes/part6Ar.gif");
+ }
+ 
+ .toolTipMBoxesPart7Ar{
+     background-image: url("/psu/images/toolTipMBoxes/part7Ar.gif");
+ }
+ 
+ .toolTipMBoxesPart8Ar{
+     background-image: url("/psu/images/toolTipMBoxes/part8Ar.gif");
+ }
+ 
+ 
+ .toolTipMBoxesPart1En{
+     background-image: url("/psu/images/toolTipMBoxes/part1En.gif");
+ }
+ 
+ .toolTipMBoxesPart2En{
+     background-image: url("/psu/images/toolTipMBoxes/part2En.gif");
+ }
+ 
+ .toolTipMBoxesPart3En{
+     background-image: url("/psu/images/toolTipMBoxes/part3En.gif");
+ }
+ 
+ .toolTipMBoxesPart4En{
+     background-image: url("/psu/images/toolTipMBoxes/part4En.gif");
+ }
+ 
+ .toolTipMBoxesPart5En{
+     background-image: url("/psu/images/toolTipMBoxes/part5En.gif");
+ }
+ 
+ .toolTipMBoxesPart6En{
+     background-image: url("/psu/images/toolTipMBoxes/part6En.gif");
+ }
+ 
+ .toolTipMBoxesPart7En{
+     background-image: url("/psu/images/toolTipMBoxes/part7En.gif");
+ }
+ 
+ .toolTipMBoxesPart8En{
+     background-image: url("/psu/images/toolTipMBoxes/part8En.gif");
+ }
+ 
+.factBorder1En{
+     background-image: url("/psu/images/insInfo/corner rightEn.jpg");
+}
+ 
+.factBorder1Ar{
+     background-image: url("/psu/images/insInfo/corner rightAr.jpg");
+}
+ 
+  
+.factBorder2En{
+     background-image: url("/psu/images/insInfo/corner leftEn.jpg");
+}
+ 
+.factBorder2Ar{
+     background-image: url("/psu/images/insInfo/corner leftAr.jpg");
+}
+
+.factBorderSideEn{
+     background-image: url("/psu/images/insInfo/sidesEn.jpg");
+}
+ 
+.factBorderSideAr{
+     background-image: url("/psu/images/insInfo/sidesAr.jpg");
+}
+ 
+.factBorderSide2En{
+     background-image: url("/psu/images/insInfo/sides2En.jpg");
+}
+ 
+.factBorderSide2Ar{
+     background-image: url("/psu/images/insInfo/sides2Ar.jpg");
+}
+ 
+.factBorder3En{
+     background-image: url("/psu/images/insInfo/right midEn.jpg");
+}
+
+.factBorder3Ar{
+     background-image: url("/psu/images/insInfo/right midAr.jpg");
+}
+ 
+.factBorder4En{
+     background-image: url("/psu/images/insInfo/left mid dEn.jpg");
+}
+
+.factBorder4Ar{
+     background-image: url("/psu/images/insInfo/left mid dAr.jpg");
+}
+  
+.factBorder5En{
+     background-image: url("/psu/images/insInfo/right corner bEn.jpg");
+}
+  
+.factBorder5Ar{
+     background-image: url("/psu/images/insInfo/right corner bAr.jpg");
+}
+ 
+.factBorder6En{
+     background-image: url("/psu/images/insInfo/left corner bEn.jpg");
+}
+
+.factBorder6Ar{
+     background-image: url("/psu/images/insInfo/left corner bAr.jpg");
+}
+ 
+.factBorder7En{
+     background-image: url("/psu/images/insInfo/1En.jpg");
+}
+
+.factBorder7Ar{
+     background-image: url("/psu/images/insInfo/1Ar.jpg");
+}
+ 
+.factBorder8En{
+     background-image: url("/psu/images/insInfo/2En.jpg");
+}
+
+.factBorder8Ar{
+     background-image: url("/psu/images/insInfo/2Ar.jpg");
+}
+
+.factBorderSides1En{
+     background-image: url("/psu/images/insInfo/sidesingEn.jpg");
+}
+
+.factBorderSides1Ar{
+     background-image: url("/psu/images/insInfo/sidesingAr.jpg");
+}
+ 
+.factBorderSides2En{
+     background-image: url("/psu/images/insInfo/sidesing2En.jpg");
+}
+
+.factBorderSides2Ar{
+     background-image: url("/psu/images/insInfo/sidesing2Ar.jpg");
+}
+ 
+.factBorderSidesfinal1En{
+     background-image: url("/psu/images/insInfo/sidesing3En.jpg");
+}
+
+.factBorderSidesfinal1Ar{
+     background-image: url("/psu/images/insInfo/sidesing3Ar.jpg");
+}
+
+.factBorderSidesfinal2En{
+     background-image: url("/psu/images/insInfo/sidesing4En.jpg");
+}
+
+.factBorderSidesfinal2Ar{
+     background-image: url("/psu/images/insInfo/sidesing4Ar.jpg");
+}
+ 
+ .fontText {   
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    color: black;
+ }
+ 
+
+.fontTextSmall {   
+    font-family: UniversNextArabic;
+    font-size: 12px;
+ }
+
+.fontTextSmallBlue {   
+    font-family: UniversNextArabic;
+    font-size: 12px;
+    color: #006aa5;
+ }
+ 
+.fontTextSmallRed {   
+    font-family: UniversNextArabic;
+    font-size: 12px;
+    color: Red;
+ }
+
+ .fontTextRegistration {   
+    font-size: 11px; 
+    color: Black; 
+    font-style:normal;
+    FONT-FAMILY: UniversNextArabic; 
+    TEXT-DECORATION: none; 
+    font-weight: bold;
+ }
+ 
+ 
+.fontTextRegistrationLarge {   
+    font-size: 12px; 
+    color: Black; 
+    font-style:normal;
+    FONT-FAMILY: UniversNextArabic; 
+    TEXT-DECORATION: none; 
+    font-weight: bold;
+ }
+
+ .fontTextRegistrationRed {   
+    font-size: 11px; 
+    color: Red; 
+    font-style:normal;
+    FONT-FAMILY: UniversNextArabic; 
+    TEXT-DECORATION: none; 
+    font-weight: bold;
+ }
+
+ .fontTextUserAr {   
+    font-size: 10px; 
+    color: #4976A0; 
+    font-style:normal;
+    FONT-FAMILY: UniversNextArabic; 
+    TEXT-DECORATION: none; 
+    font-weight: bold;
+ } 
+ 
+ .fontTextUserEn {   
+    font-size: 11px; 
+    color: #4976A0; 
+    font-style:normal;
+    FONT-FAMILY: UniversNextArabic; 
+    TEXT-DECORATION: none; 
+    font-weight: bold;
+ } 
+ 
+  .fontTextMain {   
+    font-size: 12px; 
+    color: Black; 
+    font-style:normal;
+    FONT-FAMILY: UniversNextArabic; 
+    TEXT-DECORATION: none; 
+    font-weight: bold;
+ }
+ 
+ .fontTextLarge {   
+    font-size: 15px; 
+    color: #333333; 
+    font-style:normal;
+    FONT-FAMILY: Arabic Transparent, UniversNextArabic, Helvetica; 
+    TEXT-DECORATION: none; 
+    font-weight: bold;
+ }
+ 
+ .fontTextStudent {   
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    color: black;
+    color: #3686bb; 
+ }
+ 
+ 
+  .fontTextSemester {   
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    color: black;
+    color: #3E925E; 
+ }
+ 
+
+ .fontTextWhite {   
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    color: White;
+ }
+ 
+ .fontTextRed {   
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    color: Red;
+ }
+ 
+  .fontTextSmallRed {
+    font-family: UniversNextArabic;
+    font-size: 12px;
+    color: Red;
+ }
+ 
+ .fontTextGreen {   
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    color: Green; 
+ }
+ 
+ .fontTextGreenSmall {   
+    font-family: UniversNextArabic;
+    font-size: 12px;
+    color: Green; 
+ }
+ 
+ .fontTextBlack {   
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    color: black;
+ }
+ 
+ h1 {   
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 15px;
+    color: #006aa5;
+ }
+ 
+  .fontTextTitle {   
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 15px;
+    color: Black;
+ }
+ 
+ .fontTextGroundGreen {   
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    color: White; 
+    background-color: rgb(0,181,0);
+ }
+ 
+ .fontTextGroundRed {   
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    color: White;
+    background-color: Red;
+ }
+ 
+  .fontTextGroundWhite {   
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 12px;
+    color: Black;
+    background-color: White;
+ }
+ 
+ 
+ .fontTextWhiteSmall {   
+    font-family: UniversNextArabic;
+    font-weight: bold;
+    font-size: 9px;
+    color: White;
+ }
+
+ .fontTextWelcomeMsgAr {   
+    font-family: Traditional Arabic;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    text-align:justify; 
+    text-justify:inter-word;
+ }
+ 
+ .fontTextWelcomeMsgEn {   
+    font-family: Times New Roman;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    text-align:justify; 
+    text-justify:inter-word; 
+ }
+ 
+ .homeMarquee{    
+    height:170px ;
+}
+
+.HomeNewsText{   
+    font-family: UniversNextArabic;
+    font-size: 12px;
+    color: #006aa5;
+    font-weight: bold;  
+}
+ 
+.HomeNewsTitle{  height: 31px;
+    font-family: tahoma;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgb(7, 115, 185);
+}
+
+.HomeNewsDesc{    
+    font-family: UniversNextArabic;
+    font-weight: normal;
+    font-size: 12px;
+    color: Black;
+}
+
+.headerColor{
+    padding: 2pt;
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    font-family: UniversNextArabic;
+}
+
+.AppMaleFont{
+    color: #7d85f6;
+  font-weight: bold;
+
+}
+
+.AppMaleFontGray{
+    color: Gray;
+    font-weight: bold;
+    font-family: UniversNextArabic;
+    font-size: 12px;
+}
+
+.AppFemaleFont{
+    color: #8f57e0;
+  font-weight: bold;
+
+}

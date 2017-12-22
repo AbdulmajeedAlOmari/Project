@@ -2,7 +2,7 @@
 <?php
 include "login_system/check-login.php";
 if(!isLoggedIn())
-    header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN");
+    header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN&page=wishlist");
 ?>
 
 <!DOCTYPE html>
@@ -61,14 +61,14 @@ if(!isLoggedIn())
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h1>Sell Your Item</h1>
+                    <h1>My account</h1>
                 </div>
                 <div class="col-md-5">
                     <ul class="breadcrumb">
 
-                        <li><a href="index.php">Home</a>
+                        <li><a href="index.html">Home</a>
                         </li>
-                        <li>Sell Item</li>
+                        <li>My account</li>
                     </ul>
                 </div>
             </div>
@@ -83,8 +83,49 @@ if(!isLoggedIn())
 
                 <!-- *** LEFT COLUMN ***
          _________________________________________________________ -->
+                <?php
+                if(isset($_GET['neworder-msg'])) {
+                    if ($_GET['neworder-msg'] == 'successful')
+                        echo "<div class='alert alert-success' role='alert'>Your order has been posted successfully!</div>";
+                    unset($_GET['neworder-msg']);
+                }
+                ?>
 
                 <div class="col-md-9 clearfix" id="customer-account">
+                    <div class="box clearfix">
+                        <div class="heading">
+                            <h3 class="text-uppercase">Order details</h3>
+                        </div>
+
+                        <form name="postItem" action="login_system/postOrder.php" method="post" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="category">Category</label>
+                                        <select name="category">
+                                            <option>Cars</option>
+                                            <option>Plants</option>
+                                            <option>Animals</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="name">Item name</label>
+                                        <input type="text" class="form-control" id="name" name="itemName">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="description">Item description</label>
+                                        <input type="text" class="form-control" id="description" name="description">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+
 
                     <p class="lead">Put your item's information here.</p>
                     <p class="text-muted">It is necessary to fill the item description correctly to get as many customers as possible.</p>
@@ -98,30 +139,22 @@ if(!isLoggedIn())
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="description">Description</label>
-                                        <input type="text" class="form-control" id="description">
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.row -->
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="price">Price</label>
-                                        <input type="text" class="form-control" id="price">
+                                        <label for="price">Item price</label>
+                                        <input type="text" class="form-control" id="price" name="price">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="quantity">Quantity</label>
-                                        <input type="number" class="form-control" id="quantity">
+                                        <input type="number" class="form-control" id="quantity" name="quantity">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="image">Upload image</label>
+                                        <input type="file" name="imageUpload" id="imageUpload">
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +163,7 @@ if(!isLoggedIn())
                             <div class="row">
 
                                 <div class="col-sm-12 text-center">
-                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-save"></i> Save changes</button>
+                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-save"></i>Post Order</button>
 
                                 </div>
 
