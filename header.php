@@ -36,7 +36,9 @@ _________________________________________________________ -->
                                     <span class="hidden-xs text-uppercase">Logout</span></a>
                                 <a href="customer-account.php"><i class="fa fa-user"></i> <span
                                             class="hidden-xs text-uppercase">Account</span></a>
-
+<!--                                fa-bell-->
+                                <a href="customer-notifications.php"><i class="fa fa-bell"></i> <span
+                                            class="hidden-xs text-uppercase">Notifications</span></a>
                                 <?php
                             } else {
                                 ?>

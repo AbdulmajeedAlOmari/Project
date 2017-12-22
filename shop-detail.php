@@ -3,7 +3,7 @@
         require "login_system/db.php";
         $itemId = $_GET['itemId'];
 
-        $query = "SELECT itemId,description,image,itemName,price FROM items WHERE itemId='$itemId'";
+        $query = "SELECT itemId,sellerId,description,image,itemName,price FROM items WHERE itemId='$itemId'";
         $result = mysqli_query($con,$query);
 
         if(mysqli_num_rows($result) == 0)
@@ -133,27 +133,47 @@
 
                         <?php
                             //TODO post item details here
-                            echo "<h4>Item Description</h4>
-                        <p>White lace top, woven, has a round neck, short sleeves, has knitted lining attached</p>";
+                            echo "<h4>Item Description</h4>";
+                            echo $row['description'] . "<br><br>";
                         ?>
 
 
                         <?php
                         if(isset($_COOKIE['auth']) || isset($_SESSION['auth'])) {
+                            $sellerId = $row['sellerId'];
+                            $query = "SELECT email,firstName,lastName,phoneNumber,street,zip,state,country FROM users WHERE id='$sellerId'";
+                            $result = mysqli_query($con, $query) OR die(mysqli_error($con));
+                            $contactInfo = mysqli_fetch_array($result);
+
+                            $firstName = $contactInfo['firstName'];
+                            $lastName = $contactInfo['lastName'];
+                            $name = empty($firstName) && empty($lastName) ? 'Unknown' : $firstName." ".$lastName;
+
+                            $phoneNumber = empty($contactInfo['phoneNumber']) ? 'Unknown' : $contactInfo['phoneNumber'];
+                            $email = empty($contactInfo['email']) ? 'Unknown' : $contactInfo['email'];
+                            $country = empty($contactInfo['country']) ? 'Unknown' : $contactInfo['country'];
+                            $state = empty($contactInfo['state']) ? 'Unknown' : $contactInfo['state'];
+                            $street = empty($contactInfo['street']) ? 'Unknown' : $contactInfo['street'];
+                            $zip = empty($contactInfo['zip']) ? 'Unknown' : $contactInfo['zip'];
+
                             echo "<h4>Contact Details</h4>
                             <ul>
-                                <li>Mobile Number: 055999933</li>
-                                <li>Email: example_group59@ksu.sa</li>
-                                <li>Shipping: World-Wide shipping</li>
+                                <li>Name: $name</li>
+                                <li>Mobile Number: $phoneNumber</li>
+                                <li>Email: $email</li>
+                                <li>Country: $country</li>
+                                <li>State: $state</li>
+                                <li>Street: $street</li>
+                                <li>Zip: $zip</li>
                             </ul>";
                         } else {
                             echo "<div class=\"alert alert-warning\" role=\"alert\">You have to login to see contact details</div>";
                         } ?>
 
-                        <blockquote>
-                            <p><em>Define style this season with Armani's new range of trendy tops, crafted with intricate details. Create a chic statement look by teaming this lace number with skinny jeans and pumps.</em>
-                            </p>
-                        </blockquote>
+<!--                        <blockquote>-->
+<!--                            <p><em>Define style this season with Armani's new range of trendy tops, crafted with intricate details. Create a chic statement look by teaming this lace number with skinny jeans and pumps.</em>-->
+<!--                            </p>-->
+<!--                        </blockquote>-->
                     </div>
 
                     <div class="box social" id="product-social">

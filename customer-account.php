@@ -2,7 +2,40 @@
 <?php
 include "login_system/check-login.php";
 if(!isLoggedIn())
-    header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN&page=wishlist");
+    header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN");
+
+if(isset($_COOKIE['auth'])) {
+    $username = $_COOKIE['auth'];
+} else {
+    $username = $_SESSION['auth'];
+}
+//id
+//username
+//password
+//email
+//firstName
+//lastName
+//phoneNumber
+//street
+//zip
+//state
+//country
+//registered
+
+require "login_system/db.php";
+
+$query = "SELECT firstName,lastName,phoneNumber,street,zip,state,country FROM users WHERE username='$username'";
+$result = mysqli_query($con, $query) OR die(mysqli_error($con));
+$row = mysqli_fetch_array($result);
+
+$firstName = $row['firstName'];
+$lastName = $row['lastName'];
+$phoneNumber = $row['phoneNumber'];
+$country = $row['country'];
+$state = $row['state'];
+$street = $row['street'];
+$zip = $row['zip'];
+
 ?>
 
 <!DOCTYPE html>
@@ -156,13 +189,13 @@ if(!isLoggedIn())
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="firstname">Firstname</label>
-                                            <input type="text" class="form-control" id="firstname" name="firstname">
+                                            <input type="text" class="form-control" id="firstname" name="firstname" <?php echo "value='$firstName'"?>>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="lastname">Lastname</label>
-                                            <input type="text" class="form-control" id="lastname" name="lastname">
+                                            <input type="text" class="form-control" id="lastname" name="lastname" <?php echo "value='$lastName'"?>>
                                         </div>
                                     </div>
                                 </div>
@@ -172,13 +205,13 @@ if(!isLoggedIn())
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="phone">Telephone</label>
-                                            <input type="text" class="form-control" id="phone" name="phone">
+                                            <input type="text" class="form-control" id="phone" name="phone" <?php echo "value='$phoneNumber'"?>>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="street">Street</label>
-                                            <input type="text" class="form-control" id="street" name="street">
+                                            <input type="text" class="form-control" id="street" name="street" <?php echo "value='$street'"?>>
                                         </div>
                                     </div>
                                 </div>
@@ -188,19 +221,19 @@ if(!isLoggedIn())
                                     <div class="col-sm-6 col-md-3">
                                         <div class="form-group">
                                             <label for="zip">ZIP</label>
-                                            <input type="text" class="form-control" id="zip" name="zip">
+                                            <input type="text" class="form-control" id="zip" name="zip" <?php echo "value='$zip'"?>>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-3">
                                         <div class="form-group">
                                             <label for="state">State</label>
-                                            <input type="text" class="form-control" id="state" name="state">
+                                            <input type="text" class="form-control" id="state" name="state" <?php echo "value='$state'"?>>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-6">
                                         <div class="form-group">
                                             <label for="country">Country</label>
-                                            <input type="text" class="form-control" id="country" name="country">
+                                            <input type="text" class="form-control" id="country" name="country" <?php echo "value='$country'"?>>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 text-center">

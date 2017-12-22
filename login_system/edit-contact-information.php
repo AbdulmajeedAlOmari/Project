@@ -1,5 +1,5 @@
 <?php
-    include "login_system/check-login.php";
+    include "check-login.php";
     if(!isLoggedIn())
         header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN");
 

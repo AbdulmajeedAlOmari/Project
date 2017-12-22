@@ -2,7 +2,7 @@
 <?php
 include "login_system/check-login.php";
 if(!isLoggedIn())
-    header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN&page=wishlist");
+    header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN");
 ?>
 
 <!DOCTYPE html>
@@ -90,6 +90,10 @@ if(!isLoggedIn())
                     unset($_GET['neworder-msg']);
                 }
                 ?>
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Important!</strong> You need to make sure that you filled all your contact details in (Account) tab, so customers can contact you!
+                </div>
 
                 <div class="col-md-9 clearfix" id="customer-account">
 
