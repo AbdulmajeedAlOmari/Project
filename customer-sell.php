@@ -101,7 +101,7 @@ if(!isLoggedIn())
                             <h3 class="text-uppercase">Item Description</h3>
                         </div>
 
-                        <form name="postItem" action="login_system/postOrder.php" method="post" enctype="multipart/form-data">
+                        <form name="postItem" action="login_system/sell-item.php" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
