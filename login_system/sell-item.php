@@ -4,15 +4,16 @@ if(!isLoggedIn())
     header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN");
 
 require "db.php";
+
 if(isset($_COOKIE['auth'])) {
     $username = $_COOKIE['auth'];
 }else {
     $username = $_SESSION['auth'];
 }
 
-
 $query = "SELECT id FROM users WHERE username='$username'";
 $result = mysqli_query($con, $query) OR die(mysqli_error($con));
+
 $row = mysqli_fetch_assoc($result);
 $sellerId = $row['id'];
 
@@ -28,7 +29,6 @@ if(isset($_POST["submit"])) {
     if(isset($_FILES['fileToUpload']['name'])) {
         $target_dir = "uploads/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-        $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
         // Check if image file is a actual image or fake image
@@ -36,7 +36,6 @@ if(isset($_POST["submit"])) {
             header("Location: ../customer-sell.php?error=ERROR_NOT_UPLOADED");
 
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-
         $error = '';
         if ($check === false) {
             $error = "ERROR_NOT_AN_IMAGE";
@@ -56,7 +55,7 @@ if(isset($_POST["submit"])) {
             $uploadOk = 1;
         }
 
-        $image = basename($_FILES["fileToUpload"]["name"], ".jpg"); // used to store the filename in a variable
+        $image = basename($_FILES["fileToUpload"]["name"]); // used to store the filename in a variable
     }
 }
 

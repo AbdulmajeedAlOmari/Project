@@ -101,6 +101,7 @@ if(isLoggedIn())
                         } else if (isset($_GET['register-msg'])) {
                             if ($_GET['register-msg'] == 'successful')
                                 echo "<div class='alert alert-success' role='alert'>You have been registered succesfully!</div>";
+                            
                             unset($_GET['register-msg']);
                         }
                         ?>
@@ -146,9 +147,7 @@ if(isLoggedIn())
                         <?php
                         if (isset($_GET['login-error'])) {
                             require "utility/errors.php";
-
-                            echo constant($_GET['login-error']); //TODO do I have to check the kind?
-
+                            echo constant($_GET['login-error']);
                             unset($_GET['login-error']);
                         }
                         ?>

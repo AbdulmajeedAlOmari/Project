@@ -9,7 +9,7 @@ if(!isLoggedIn())
 $oldPassword = addslashes($_POST['oldPassword']);//OK
 $newPassword = addslashes($_POST['newPassword']);//OK
 $newPasswordConf = addslashes($_POST['newPasswordConf']);//OK
-$error = '';//OK
+$error = ''; //OK
 
 if($newPassword != $newPasswordConf) {
     $error = "ERROR_R_PASSWORD_NOMATCH";//OK
@@ -18,7 +18,7 @@ if($newPassword != $newPasswordConf) {
 }
 
 if(!empty($error)) {
-    header("Location: ../customer-account.php?password-change-error=$error");//OK
+    header("Location: ../customer-account.php?password-change-error=$error");
 } else {
     require "db.php";
 
@@ -28,7 +28,6 @@ if(!empty($error)) {
     else if(isset($_SESSION['auth']))
         $username = $_SESSION['auth'];//OK
 
-
     $query="SELECT * FROM users WHERE username='$username' AND password='$oldPassword'";
     $result = mysqli_query($con, $query) OR die(mysqli_error($connection));
 
@@ -36,7 +35,7 @@ if(!empty($error)) {
         $query = "UPDATE `users` SET `password`='$newPassword' WHERE username='$username' AND password='$oldPassword'";
         $result = mysqli_query($con, $query) OR die(mysqli_error($connection));
         mysqli_close($con);
-        header("Location: ../customer-account.php?password-change-msg=successful&debug=$username+$oldPassword+$newPassword");
+        header("Location: ../customer-account.php?password-change-msg=successful");
     } else {
         mysqli_close($con);
         header("Location: ../customer-account.php?password-change-error=ERROR_L_INCORRECT_PASSWORD");

@@ -1,5 +1,23 @@
 <?php
-    require "login_system/db.php"
+    require "login_system/db.php";
+
+    $query = "SELECT `itemId`,`image`,`name`,`price` FROM items";
+
+    if(isset($_GET['category'])){
+        switch($_GET['category']) {
+            case "cars":
+                $query = "SELECT `itemId`,`image`,`name`,`price` FROM items WHERE category='cars'";
+                break;
+            case "animals":
+                $query = "SELECT `itemId`,`image`,`name`,`price` FROM items WHERE category='animals'";
+                break;
+            case "plants":
+                $query = "SELECT `itemId`,`image`,`name`,`price` FROM items WHERE category='plants'";
+                break;
+        }
+    }
+
+    $result = mysqli_query($con, $query) OR die(mysqli_error($connection));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,67 +98,46 @@
 
                         <p class="text-muted lead">We guarantee that those products are high quality products and it was carefully selected to satisfy our customers.</p>
 
+                        <?php
+                            if(isset($_GET['error'])) {
+                                require "utility/errors.php";
+                                echo constant($_GET['error']);
+                                unset($_GET['error']);
+                            }
+                        ?>
+
                         <div class="row products">
 
                             <?php
-                                $query = "SELECT ";
-                                if(isset($_GET['category'])){
-                                    switch($_GET['category']) {
+                                if(mysqli_num_rows($result) == 0)
+                                    echo "<div class=\"alert alert-info\" role=\"alert\"> There are no items now, <strong>comeback later!</strong> </div>";
+                                else {
+                                    while($row = mysqli_fetch_array($result)) {
+                                        echo "<div class=\"col-md-4 col-sm-6\">";
+                                        echo "<div class=\"product\">";
+                                        /* image */
+                                        echo "<div class=\"image\">";
+                                        echo "<a href=\"shop-detail.php?itemId=". $row['itemId'] ."\">";
+                                        echo "<img src=\"login_system/uploads/".$row['image']."\" alt=\"\" class=\"img-responsive image1\">";
+                                        echo "</a>";
+                                        echo "</div>";
+                                        /* END image */
 
+                                        /* text */
+                                        echo "<div class=\"text\">";
+                                        echo "<h3><a href=\"shop-detail.php\">". $row['name'] ."</a></h3>";
+                                        echo "<p class=\"price\">". $row['price'] ."&#36;</p>";
+                                        echo "<p class=\"buttons\">";
+                                        echo "<a href=\"shop-detail.php?itemId=". $row['itemId'] ."\" class=\"btn btn-default\">View detail</a>";
+                                        echo "</p>";
+                                        echo "</div>";
+                                        /* END text */
+
+                                        echo "</div>";
+                                        echo "</div>";
                                     }
                                 }
                             ?>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product">
-                                    <div class="image">
-                                        <a href="shop-detail.php">
-                                            <img src="img/product1.jpg" alt="" class="img-responsive image1">
-                                        </a>
-                                    </div>
-                                    <!-- /.image -->
-                                    <div class="text">
-                                        <h3><a href="shop-detail.php">Fur coat with very but very very long name</a></h3>
-                                        <p class="price">$143.00</p>
-                                        <p class="buttons">
-                                            <a href="shop-detail.php" class="btn btn-default">View detail</a>
-                                            <a href="shop-basket.php" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </p>
-                                    </div>
-                                    <!-- /.text -->
-                                </div>
-                                <!-- /.product -->
-                            </div>
-<!--                            <div class="col-md-4 col-sm-6">-->
-<!--                                <div class="product">-->
-<!--                                    <div class="image">-->
-<!--                                        <a href="shop-detail.php">-->
-<!--                                            <img src="img/product2.jpg" alt="" class="img-responsive image1">-->
-<!--                                        </a>-->
-<!--                                    </div>-->
-<!--                                    <!-- /.image -->-->
-<!--                                    <div class="text">-->
-<!--                                        <h3><a href="shop-detail.php">White Blouse Armani</a></h3>-->
-<!--                                        <p class="price"><del>$280</del> $143.00</p>-->
-<!--                                        <p class="buttons">-->
-<!--                                            <a href="shop-detail.php" class="btn btn-default">View detail</a>-->
-<!--                                            <a href="shop-basket.php" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i>Add to cart</a>-->
-<!--                                        </p>-->
-<!--                                    </div>-->
-<!--                                    <!-- /.text -->-->
-<!---->
-<!--                                    <div class="ribbon sale">-->
-<!--                                        <div class="theribbon">SALE</div>-->
-<!--                                        <div class="ribbon-background"></div>-->
-<!--                                    </div>-->
-<!--                                    <!-- /.ribbon -->-->
-<!---->
-<!--                                    <div class="ribbon new">-->
-<!--                                        <div class="theribbon">NEW</div>-->
-<!--                                        <div class="ribbon-background"></div>-->
-<!--                                    </div>-->
-<!--                                    <!-- /.ribbon -->-->
-<!--                                </div>-->
-                                <!-- /.product -->
                             </div>
                         </div>
                         <!-- /.products -->

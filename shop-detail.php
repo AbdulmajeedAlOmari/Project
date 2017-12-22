@@ -1,3 +1,21 @@
+<?php
+    $found = false;
+    if(isset($_GET['itemId'])) {
+        require "login_system/db.php";
+        $itemId = $_GET['itemId'];
+        if(is_int($itemid)) {
+            $query = "SELECT `itemId`,`description`,`image`,`name`,`price` FROM items WHERE itemId='$itemid'";
+            $result = mysqli_query($con,$query);
+
+            if(mysqli_num_rows($result) != 0)
+                $found = true;
+        }
+    }
+
+    if(!$found)
+        header("Location: index.php?error=ERROR_INCORRECT_ITEM_ID");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -16,13 +16,13 @@ _________________________________________________________ -->
         <div class="panel-body">
             <ul class="nav nav-pills nav-stacked category-menu">
                 <li>
-                    <a href="shop-category.php">Cars</a>
+                    <a href="index.php?category=cars">Cars</a>
                 </li>
                 <li>
-                    <a href="shop-category.php">Plants</a>
+                    <a href="index.php?category=plants">Plants</a>
                 </li>
                 <li>
-                    <a href="shop-category.php">Animals</a>
+                    <a href="index.php?category=animals">Animals</a>
                 </li>
 
             </ul>

@@ -13,6 +13,7 @@
     }else {
         $username = $_SESSION['auth'];
     }
+
     $fname = $_POST['firstname'];
     $lname = $_POST['lastname'];
     $street = $_POST['street'];

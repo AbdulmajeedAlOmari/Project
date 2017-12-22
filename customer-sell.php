@@ -149,6 +149,7 @@ if(!isLoggedIn())
                                     echo "<div class=\"row\">
                                 <div class=\"col-sm-12\">" . constant($_GET['error']) . "</div>
                             </div>";
+                                    unset($_GET['error']);
                                 }
                             ?>
                             <div class="row">

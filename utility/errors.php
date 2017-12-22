@@ -14,8 +14,9 @@ define("ERROR_NOT_AN_IMAGE", error("Sorry, you can not upload a fake image."));
 define("ERROR_NOT_UPLOADED", error("Sorry, you have to upload an image of the item."));
 define("ERROR_CHANGE_IMAGE_NAME", error("Sorry, image name already exists, change the image's name."));
 define("ERROR_IMAGE_TOO_LARGE", error("Sorry, your image is too large."));
-define("ERROR_IMAGE_TYPE", error("Sorry, only JPG, JPEG, PNG & GIF files are allowed."));
+define("ERROR_IMAGE_TYPE", error("Sorry, only PNG files are allowed."));
 define("ERROR_COULD_NOT_UPLOAD", error("Sorry, there was an error uploading your file."));
+define("ERROR_INCORRECT_ITEM_ID", error("You can only choose items only from here."));
 
 function error($msg) {
     return "<div class='alert alert-danger' role='alert'>" . $msg . "</div>";
@@ -23,7 +24,6 @@ function error($msg) {
 
 function isNotValidPassword()
 {
-    //TODO check special characters
     return "<div class='alert alert-danger' role='alert'>
                     <ul>
                         <li>Password may contain letter and numbers</li>

@@ -17,10 +17,10 @@ if (mysqli_num_rows($result) == 0) {
     $user = mysqli_fetch_assoc($result);
     $username = $user['username'];
 
-    setcookie("auth", stripslashes($username), time() + 60 * 60 * 24, "/");
+    setcookie("auth", $username, time() + 60 * 60 * 24, "/");
 
     if(!isset($_COOKIE['auth']))
-        $_SESSION['auth'] = stripslashes($username);
+        $_SESSION['auth'] = $username;
 
     header("location: ../index.php?" . uniqid());
 }
