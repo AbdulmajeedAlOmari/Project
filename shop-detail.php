@@ -8,6 +8,8 @@
 
         if(mysqli_num_rows($result) == 0)
             header("Location: index.php?error=ERROR_INCORRECT_ITEM_ID");
+
+        $row = mysqli_fetch_array($result);
     }
 ?>
 
@@ -67,18 +69,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h1>Item</h1>
+                    <?php echo "<h1>" . $row['itemName'] . "</h1>"?>
                 </div>
 
                 <div class="col-md-5">
                     <ul class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li><a href="shop-category.php">Ladies</a>
-                        </li>
-                        <li><a href="shop-category.php">Tops</a>
-                        </li>
-                        <li>White Blouse Armani</li>
+                        <?php echo "<li>" . $row['itemName'] . "</li>"?>
                     </ul>
 
                 </div>
@@ -100,21 +98,8 @@
                     <div class="row" id="productMain">
                         <div class="col-sm-6">
                             <div id="mainImage">
-                                <img src="img/detailbig1.jpg" alt="" class="img-responsive">
+                                <?php echo "<img src=\"login_system/uploads/". $row['image'] ."\" alt=\"\" class=\"img-responsive\">"?>
                             </div>
-
-                            <div class="ribbon sale">
-                                <div class="theribbon">SALE</div>
-                                <div class="ribbon-background"></div>
-                            </div>
-                            <!-- /.ribbon -->
-
-                            <div class="ribbon new">
-                                <div class="theribbon">NEW</div>
-                                <div class="ribbon-background"></div>
-                            </div>
-                            <!-- /.ribbon -->
-
                         </div>
                         <div class="col-sm-6">
                             <div class="box">
@@ -134,11 +119,10 @@
                                     ?>
 
                                     <p class="text-center">
-                                        <button type="submit" class="btn btn-template-main"><i class="fa fa-heart-o"></i> Add to wishlist</button>
-                                        </button>
+                                        <form action="login_system/add-to-wishlist.php" method="post">
+                                            <button type="submit" class="btn btn-template-main"><i class="fa fa-heart-o"></i> Add to wishlist</button>
+                                        </form>
                                     </p>
-
-                                </form>
                             </div>
                         </div>
 
