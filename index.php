@@ -234,43 +234,6 @@
                             <!-- /.col-md-4 -->
                         </div>
                         <!-- /.products -->
-
-                        <div class="row">
-
-                            <div class="col-md-12 banner">
-                                <a href="#">
-                                    <img src="img/banner2.jpg" alt="" class="img-responsive">
-                                </a>
-                            </div>
-
-                        </div>
-
-
-                        <div class="pages">
-
-                            <p class="loadMore">
-                                <a href="#" class="btn btn-template-main"><i class="fa fa-chevron-down"></i> Load more</a>
-                            </p>
-
-                            <ul class="pagination">
-                                <li><a href="#">&laquo;</a>
-                                </li>
-                                <li class="active"><a href="#">1</a>
-                                </li>
-                                <li><a href="#">2</a>
-                                </li>
-                                <li><a href="#">3</a>
-                                </li>
-                                <li><a href="#">4</a>
-                                </li>
-                                <li><a href="#">5</a>
-                                </li>
-                                <li><a href="#">&raquo;</a>
-                                </li>
-                            </ul>
-                        </div>
-
-
                     </div>
                     <!-- /.col-md-9 -->
 
