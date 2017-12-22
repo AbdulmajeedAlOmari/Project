@@ -1,0 +1,1747 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0086)https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE">
+        <title>جامعة الأمير سلطان :: البوابة الإلكترونية للنظام الأكاديمي</title>
+        <link rel="StyleSheet" href="./psu_files/style.css" type="text/css"> 
+        <script type="text/javascript" src="./psu_files/table.js.download"></script><style></style>
+        <script type="text/javascript" src="./psu_files/styleswitcher.js.download"></script>
+        <link href="./psu_files/style_en.css" rel="stylesheet" type="text/css">
+        <link rel="STYLESHEET" href="./psu_files/style_en(1).css" type="text/css">   
+        
+        <link rel="stylesheet" href="./psu_files/jquery-ui.css">  
+        <link rel="stylesheet" href="./psu_files/theme_en.css">  
+        <link rel="stylesheet" href="./psu_files/primeui_en.css">  
+        <script type="text/javascript" src="./psu_files/jquery.js.download"></script>  
+        <script type="text/javascript" src="./psu_files/jquery-ui.js.download"></script>  
+        <script type="text/javascript" src="./psu_files/primeui.js.download"></script>  
+        <script type="text/javascript" src="./psu_files/primeui.js(1).download"></script>  
+        <script type="text/javascript" src="./psu_files/validatePrimeUI.js.download"></script>
+
+        <script language="javascript" type="text/javascript">
+            function clearText(field){
+                if (field.defaultValue == field.value) field.value = '';
+                else if (field.value == '') field.value = field.defaultValue;
+            }
+        </script>
+    </head>
+        
+    <body dir="LTR" style="cursor: auto;"><center>
+
+    <script type="text/javascript">  
+    function  showDilaogCal(){
+        showDilaogFramePrimeUI('dlgCal','frameCal','http://dar.yu.edu.sa/Calendar_currentyear',750,550);
+    }
+    function  showDilaogContact(){
+        showDilaogFramePrimeUI('dlgCon','frameContact','/psu/ui/guest/contactUs/contactUs.faces',750,400);
+    }
+    function  showDilaogVote(url){
+        showDilaogFramePrimeUI('dlgVote','frameVote',url,655,370);
+    }
+</script>  
+        
+<div id="dlgCal" title="Academic Calendar" style="display:none">
+    <iframe id="frameCal" width="1" height="1" frameborder="0" src="./psu_files/saved_resource.html"></iframe>
+</div>
+
+<div id="dlgCon" title="Contact Us" style="display:none">
+    <iframe id="frameContact" width="1" height="1" frameborder="0" src="./psu_files/saved_resource(1).html"></iframe>
+</div>
+
+<div id="dlgVote" title="Voting" style="display:none">
+    <iframe id="frameVote" width="1" height="1" frameborder="0" src="./psu_files/saved_resource(2).html"></iframe>
+</div>
+    
+                 
+
+
+<div id="dlgPrint" title=" Print" style="display:none">
+    <table align="right" cellpadding="0" cellspacing="0">
+        <tbody><tr><td><a id="printFrameLink" href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:printFrame(&#39;framePrint&#39;);return false;" class="printButton"></a></td></tr>
+    </tbody></table>
+    <iframe id="framePrint" width="1" height="1" frameborder="0" src="./psu_files/saved_resource(3).html"></iframe>
+</div>
+
+<div id="dlgPrintPDF" title=" Print" style="display:none">
+    <iframe id="framePrintPDF" width="1" height="1" frameborder="0" src="./psu_files/saved_resource(4).html"></iframe>
+</div>
+
+<div id="msgBar" style="display:none">
+    <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody><tr><td height="5"></td></tr>
+        <tr>
+            <td align="center" class="fontText"><label id="msgLabel"></label></td>
+            <td width="12"></td>
+            <td><div class="pui-growl-image-warn-image"></div></td>
+        </tr>
+        <tr><td height="5"></td></tr>
+    </tbody></table>
+</div>      
+
+<div id="msgInfoBar" style="display:none">
+    <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody><tr><td height="5"></td></tr>
+        <tr>
+            <td align="center" class="fontText"><label id="msgInfoLabel"></label></td>
+            <td width="12"></td>
+            <td><div class="pui-growl-image-info-image"></div></td>
+        </tr>
+        <tr><td height="5"></td></tr>
+    </tbody></table>
+</div>      
+
+
+<div id="msgDialog" title="" style="display:none">
+    <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody><tr><td height="5"></td></tr>
+        <tr>
+            <td align="center" class="fontText"><label id="msgDialogLabel"></label></td>
+            <td width="12"></td>
+            <td><div class="pui-growl-image-warn-image"></div></td>
+        </tr>
+        <tr><td height="5"></td></tr>
+    </tbody></table>
+</div>
+
+<div id="doneMsgDialog" title="" style="display:none">
+    <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody><tr><td height="5"></td></tr>
+        <tr>
+            <td align="center" class="toolTipText"><label style="font-color:green" id="doneMsgDialogLabel"></label></td>
+            <td width="12"></td>
+            <td><div class="pui-growl-image-done-image"></div></td>
+        </tr>
+        <tr><td height="5"></td></tr>
+    </tbody></table>
+</div>
+
+
+<div id="msgLoadDialog" title="" style="display:none">
+    <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody><tr><td height="5"></td></tr>
+        <tr>
+            <td align="center" class="fontText"><label id="msgLoadDialogLabel"></label></td>
+            <td width="12"></td>
+            <td><img src="./psu_files/loading2.gif" style="border-width: 0pt;"></td>
+        </tr>
+        <tr><td height="5"></td></tr>
+    </tbody></table>
+</div>
+
+<div class="fontText" id="msgGrowl"></div>
+    <div id="container">
+    <div id="all">
+    	<div id="top">
+            <div class="logo">&nbsp;</div>
+            <div class="links">
+            <form id="headerForm" method="post" action="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleCoursesIndex.faces" enctype="application/x-www-form-urlencoded">
+
+            	<ul>
+                    <li>
+                        
+                           
+                        <a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showDilaogContact();return false;">Contact Us</a>
+                    </li>
+                    <li>
+                        
+                            
+                        <a href="https://edugate.psu.edu.sa/psu/ui/home.faces">Home Page</a>
+                    </li>
+                </ul>
+                <input type="hidden" name="com.sun.faces.VIEW" id="com.sun.faces.VIEW" value="_id48595:_id48601"><input type="hidden" name="headerForm" value="headerForm">
+<script type="text/javascript">
+<!--
+function clearFormHiddenParams_headerForm(curFormName) {
+  var curForm = document.forms[curFormName];
+}
+//-->
+</script>
+</form>
+            </div>
+        </div></div>
+    
+
+
+
+
+    <script type="text/javascript" src="./psu_files/ajaxHome.js.download"></script>  
+    <script language="javascript" type="text/javascript">
+        function ajaxCategoryMenu(id){
+            var value1 = id.id.replace("menuForm:menuTable:", "");
+            var value2 = value1.replace(":menuDivH3", "");
+            if(document.getElementById("menuForm:menuTable:"+value2+":menuDivH3").getAttribute("aria-expanded") == 'false'){
+                onAjaxHome('guestCategory',value2+"");
+            }
+            else{
+                onAjaxHome('guestCategory','-1');
+            }
+        }
+    </script>
+            
+    
+    <div id="center">
+            <div id="top_bar">
+            
+            <div id="data">
+                <div id="right">
+                    <div id="menu">
+                    	<div class="top_menu_skin"><h2>Main Menu</h2></div>
+                        <div class="all_menu">
+                        <form id="menuForm" method="post" action="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleCoursesIndex.faces" enctype="application/x-www-form-urlencoded">
+
+                            
+                                
+                                    
+                                        
+                                            
+                                                
+                                                    
+                                                    
+                                                        
+                                                    
+                                                
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                
+                                                     
+                                                        
+                                                        
+                                                            
+                                                        
+                                                    
+                                                
+                                            
+                                        
+                                    
+                                
+                            <table id="menuForm:menuTable" border="0" cellpadding="0" cellspacing="0" style="" width="100%">
+<tbody>
+<tr>
+<td><div id="menuForm:menuTable:0:menuDiv" class="pui-accordion ui-widget ui-helper-reset"><h3 id="menuForm:menuTable:0:menuDivH3" onclick="javascript:ajaxCategoryMenu(this)" class="pui-accordion-header ui-helper-reset ui-state-default1 ui-corner-all" aria-expanded="false"><span class="ui-icon ui-icon-triangle-1-e"></span><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces#"><table id="menuForm:menuTable:0:categories" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entry Application</td>
+</tr>
+</tbody>
+</table>
+</a></h3><div class="pui-accordion-content-1 ui-helper-reset ui-widget-content" aria-hidden="true" style="display: none;"><table id="menuForm:menuTable:0:services" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><a id="menuForm:menuTable:0:services:0:urlMenu" href="https://edugate.psu.edu.sa/psu/ui/guest/request_scholarship/index/forwardScholarship.faces"></a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:1:urlMenu" href="https://edugate.psu.edu.sa/psu/ui/guest/application_online/index/universityTransferHomeIndex.faces"></a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:0:services:2:urlMenu" href="https://edugate.psu.edu.sa/psu/ui/guest/outside_guest_request/index/outsideGuestMainPageIndex.faces"></a></td>
+</tr>
+</tbody>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td><div id="menuForm:menuTable:1:menuDiv" class="pui-accordion ui-widget ui-helper-reset"><h3 id="menuForm:menuTable:1:menuDivH3" onclick="javascript:ajaxCategoryMenu(this)" class="pui-accordion-header ui-helper-reset ui-state-default1 ui-corner-all" aria-expanded="false"><span class="ui-icon ui-icon-triangle-1-e"></span><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces#"><table id="menuForm:menuTable:1:categories" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Admission</td>
+</tr>
+</tbody>
+</table>
+</a></h3><div class="pui-accordion-content-1 ui-helper-reset ui-widget-content" aria-hidden="true" style="display: none;"><table id="menuForm:menuTable:1:services" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><a id="menuForm:menuTable:1:services:0:urlMenu" href="https://edugate.psu.edu.sa/psu/ui/guest/application_online/index/forwardApplicationMarks.faces"></a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:1:urlMenu" href="https://edugate.psu.edu.sa/psu/ui/guest/application_online/index/typeApplicationOnlineIndex.faces">Application Online for Bachelor</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:2:urlMenu" href="https://edugate.psu.edu.sa/psu/ui/guest/application_online/index/typeHighApplicationOnlineIndex.faces">High Application Online</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:3:urlMenu" href="https://edugate.psu.edu.sa/psu/Common"></a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:1:services:4:urlMenu" href="https://edugate.psu.edu.sa/psu/Common"></a></td>
+</tr>
+</tbody>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td><div id="menuForm:menuTable:2:menuDiv" class="pui-accordion ui-widget ui-helper-reset"><h3 id="menuForm:menuTable:2:menuDivH3" onclick="javascript:ajaxCategoryMenu(this)" class="pui-accordion-header ui-helper-reset ui-state-default1 ui-state-active1 ui-corner-top"><span class="ui-icon ui-icon-triangle-1-s"></span><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces#"><table id="menuForm:menuTable:2:categories" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Academic</td>
+</tr>
+</tbody>
+</table>
+</a></h3><div class="pui-accordion-content-1 ui-helper-reset ui-widget-content"><table id="menuForm:menuTable:2:services" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><a id="menuForm:menuTable:2:services:0:urlMenu" href="https://edugate.psu.edu.sa/psu/ui/guest/academic_calendar/index/academicCalendarIndex.faces">Academic Calendar</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:2:services:1:urlMenu" href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" style="background: rgb(210, 211, 213); color: rgb(255, 255, 255);">Courses Schedule</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:2:services:2:urlMenu" href="https://edugate.psu.edu.sa/psu/ui/guest/major_plans/index/facultiesMajorsIndex.faces">Major Plans</a></td>
+</tr>
+<tr>
+<td><a id="menuForm:menuTable:2:services:3:urlMenu" href="https://edugate.psu.edu.sa/psu/ui/faculties_staff/index/typeFacultiesStaffIndex.faces">Faculties and Staff</a></td>
+</tr>
+</tbody>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td><div id="menuForm:menuTable:3:menuDiv" class="pui-accordion ui-widget ui-helper-reset"><h3 id="menuForm:menuTable:3:menuDivH3" onclick="javascript:ajaxCategoryMenu(this)" class="pui-accordion-header ui-helper-reset ui-state-default1 ui-corner-all" aria-expanded="false"><span class="ui-icon ui-icon-triangle-1-e"></span><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces#"><table id="menuForm:menuTable:3:categories" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Check documentations</td>
+</tr>
+</tbody>
+</table>
+</a></h3><div class="pui-accordion-content-1 ui-helper-reset ui-widget-content" aria-hidden="true" style="display: none;"><table id="menuForm:menuTable:3:services" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><a id="menuForm:menuTable:3:services:0:urlMenu" href="https://edugate.psu.edu.sa/psu/ui/guest/graduation_document/index/graduationDocIndex.faces">Graduation Document</a></td>
+</tr>
+</tbody>
+</table>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+
+                        <input type="hidden" name="com.sun.faces.VIEW" id="com.sun.faces.VIEW" value="_id48595:_id48601"><input type="hidden" name="menuForm" value="menuForm">
+<script type="text/javascript">
+<!--
+function clearFormHiddenParams_menuForm(curFormName) {
+  var curForm = document.forms[curFormName];
+}
+//-->
+</script>
+</form>
+                        </div>
+                    </div>
+                </div>
+                <div id="left">
+                <div class="forget">
+                    <h1><span id="title" class="titel">Courses Schedule</span></h1>
+                    
+                    
+                       <span id="regSemester">Second Semester 2017/2018</span>
+                    
+                     
+                     
+                </div>
+                <div class="data_in">
+                    <table width="699px" cellpadding="0" cellspacing="0">
+                    	<tbody><tr><td></td></tr>
+                    </tbody></table>
+                </div>
+                  
+                <div class="data_in">
+                  
+               <script type="text/javascript">
+                    var index = parseInt('2');
+                    var root ='/psu';
+                    $(function() {
+                        try{
+                            for(k = 0; k < 10; k++){
+                               $(document.getElementById('menuForm:menuTable:'+k+':menuDiv')).puiaccordion({  
+                                    change: function(event, panel) {
+                                        try{
+                                            for (i = 0; i < 10; i++){
+                                                if(event.target.id != 'menuForm:menuTable:'+i+':menuDiv'){
+                                                    $(document.getElementById('menuForm:menuTable:'+i+':menuDiv')).puiaccordion('unselect',0);  
+                                                }
+                                            }
+                                        }catch(e){}
+                                    }  
+                                }); 
+                                if(k != index){
+                                    $(document.getElementById('menuForm:menuTable:'+k+':menuDiv')).puiaccordion('unselect',0);  
+                                }
+                                else{
+                                    try{
+                                        var pageUrl = document.location.href;
+                                        var indexUrl= "/index/";
+                                        
+                                        for(n = 0; n < 20 ; n++){
+                                            var menuUrl = document.getElementById("menuForm:menuTable:"+k+":services:"+n+":urlMenu").href;
+                                            var index1 = pageUrl.search(root);
+                                            var index2 = pageUrl.search(indexUrl);
+                                            var index3 = menuUrl.search(root);
+                                            var index4 = menuUrl.search(indexUrl);
+                                            if(index2 == -1)
+                                               index2 = pageUrl.length;
+                                            if(index4 == -1)
+                                               index4 = menuUrl.length;
+                                               
+                                            if(pageUrl.substring(index1,index2) == menuUrl.substring(index3,index4)){
+                                                document.getElementById("menuForm:menuTable:"+k+":services:"+n+":urlMenu").style.background="#d2d3d5";
+                                                document.getElementById("menuForm:menuTable:"+k+":services:"+n+":urlMenu").style.color="#ffffff";
+                                            }
+                                        }
+                                    }catch(e){}
+                                }
+                            }
+                        }catch(e){}
+                        document.getElementById('menuForm:menuTable').style.display='';
+                    });
+                </script>
+    
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+  
+    
+      
+      <title>plans</title>
+      <script type="text/javascript" src="./psu_files/AjaxGetSectionAllocationsServlet.js.download"></script>
+
+      <script type="text/javascript">  
+          paginatorPrimeUI('pag','myForm:timetable');
+      </script>   
+
+      <script type="text/javascript">  
+         var dayLabel = 'Day';
+         var timeLabel = 'Time';
+         var roomLabel = 'Room';
+         var noSectionTime = 'There is no time for this Section';   
+        
+         function  showToolTipDilaog(event,index){
+             setSectionAllocations(index);
+             document.getElementById("instructorDiv").innerHTML = document.getElementById("myForm:timetable:"+index+":instructor").value;
+             document.getElementById("sectionDiv").innerHTML = splitTimePrimeUI(document.getElementById("myForm:timetable:"+index+":section").value,
+                                                                                dayLabel, timeLabel, roomLabel, noSectionTime);
+             document.getElementById("finalExamDiv").innerHTML = document.getElementById("myForm:timetable:"+index+":finalExamDate").value;                                                                                
+             showDilaogPrimeUI('dlg', 400, 260);
+         }
+      </script>
+   
+    
+    
+    <form id="myForm" method="post" action="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleCoursesIndex.faces" enctype="application/x-www-form-urlencoded">
+        
+        
+        <div id="tableDiv" class="tip_Table"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr> <td></td></tr></tbody></table></div>
+
+        <div style="width: 400px; height: auto; left: 1124.5px; top: 337px; display: block; z-index: 1001;" id="dlg" class="pui-dialog ui-widget ui-widget-content ui-helper-hidden ui-corner-all pui-shadow ui-draggable" role="dialog" aria-labelledby="dlg_title" aria-hidden="false" aria-live="polite"><div class="pui-dialog-titlebar ui-widget-header1 ui-helper-clearfix ui-corner-top"><span id="dlg_label" class="pui-dialog-title"></span><a class="pui-dialog-titlebar-icon pui-dialog-titlebar-close ui-corner-all" href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces#" role="button"><span class="ui-icon ui-icon-close"></span></a></div><div class="pui-dialog-content ui-widget-content" style="height: 260px;">  
+            <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tbody><tr>
+                    <td valign="top">
+                        <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr><td height="5"></td></tr>
+                            <tr>
+                                <td align="center" class="toolTipText">
+                                    Section Times
+                                </td>
+                            </tr>
+                            <tr><td height="5"></td></tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td class="toolTipText2"><div id="sectionDiv"><table width="100%" border="0" cellspacing="1" cellpadding="1"> <tbody><tr><td align="center" class="HEADING">Day<!--/td--></td><td align="center" class="HEADING">Time<!--/td--></td><td align="center" class="HEADING">Room<!--/td--><!--/tr--></td></tr><tr><td align="center" width="40" class="ROW1"><nobr> U T Th <!--/NOBR--><!--/td--></nobr></td><td align="center" width="140" class="ROW1"><nobr>&nbsp; 10:00 AM - 11:00 AM <!--/NOBR--><!--/td--></nobr></td><td dir="LTR" align="center" width="110" class="ROW1"><nobr>&nbsp; N115<!--/NOBR--><!--/td--><!--/tr--><!--/table--></nobr></td></tr></tbody></table></div></td>
+                            </tr>
+                            <tr><td height="25"></td></tr>
+                            <tr>
+                                <td class="toolTipText" align="center">
+                                    Faculty and Department  section reserved<label class="toolTipText2" id="sectionAllocationsDiv"><table width="100%" border="0"><tbody><tr><td height="2"></td></tr></tbody></table><table width="100%" border="0" cellpadding="1" cellspacing="1"><thead><tr><th align="center" class="HEADING">Faculty</th><th align="center" class="HEADING">Department</th><th align="center" class="HEADING">allocation Percentage</th></tr></thead><tbody><tr class="ROW1"><td align="center" width="40" class="fontTextSmall"><nobr>College for Women</nobr></td><td align="center" width="140" class="fontTextSmall"><nobr>&nbsp;English</nobr></td><td dir="LTR" align="center" width="110" class="fontTextSmall"><nobr>&nbsp;%100</nobr></td></tr></tbody></table></label>
+                                </td>
+                            </tr>
+                            <tr> <td colspan="2" height="25"></td></tr>
+                            <tr>
+                                <td class="toolTipText">
+                                    Instructor&nbsp;:&nbsp;&nbsp;<label class="toolTipText2" id="instructorDiv">Dr. Orchida Fayes</label>
+                                </td>
+                            </tr>
+                            <tr> <td colspan="2" height="25"></td></tr>
+                            <tr>
+                                <td class="toolTipText">
+                                    Final Exam&nbsp;:&nbsp;&nbsp;<label class="toolTipText2" id="finalExamDiv">13-05-2018  08:30 AM</label>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+       </div></div>
+        
+        
+        <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="word-break: keep-all;">    
+            <tbody><tr>
+                <td>
+                    <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="word-break: keep-all;">  
+                        <tbody><tr>
+                            <td>
+                                <span class="fontTextMain">Academic Degree</span>&nbsp;:&nbsp;
+                                <span id="myForm:degreeCodeDesc" class="fontText">Bachelor</span>
+                            </td>
+                            <td width="30"></td> 
+                            <td>
+                                <span class="fontTextMain">Campus</span>&nbsp;:&nbsp;
+                                <span id="myForm:campusName" class="fontText">Female Campus</span>
+                            </td>
+                        </tr>
+                         <tr> <td height="10"></td></tr>
+                        <tr>
+                            <td>
+                                <span id="myForm:semesterLbl" class="fontTextMain">Semester</span>&nbsp;:&nbsp;
+                                <span id="myForm:semesterDesc" class="fontText">Second Semester 2017/2018</span>
+                            </td>
+                            <td width="30"></td> 
+                            <td>
+                            </td>
+                        </tr>
+                        
+                    </tbody></table>
+                </td>
+            </tr>
+            
+            <tr><td height="15"></td></tr>
+            
+            <tr>
+                <td>
+                    <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="word-break: keep-all;">  
+                        <tbody><tr><td>
+                            <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="word-break: keep-all;"> 
+                                <tbody><tr>
+                                    <td width="22"><img src="./psu_files/listEn.gif" style="border-width: 0pt;" alt=""></td>
+                                    <td><span class="fontTextMain">Search</span></td>    
+                                </tr>
+                            </tbody></table>
+                        </td></tr>
+                        <tr><td height="7"></td></tr>
+                        <tr><td>
+                            <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="word-break: keep-all;"> 
+                                <tbody><tr>
+                                    <td><span class="fontText">Course Code</span></td>
+                                    <td><input type="text" name="myForm:_id40" value="" title="Course Code"></td>
+                                    <td width="10">&nbsp;</td>
+                                    <td><span class="fontText">Course Name</span></td>
+                                    <td><input type="text" name="myForm:_id42" value="" title="Course Name"></td>
+                                    <td width="15">
+                                        
+                                            
+                                        <a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces#" onclick="clearFormHiddenParams_myForm(&#39;myForm&#39;);document.forms[&#39;myForm&#39;][&#39;myForm:_idcl&#39;].value=&#39;myForm:_id43&#39;; document.forms[&#39;myForm&#39;].submit(); return false;"><img src="./psu_files/search.gif" style="border-width: 0pt;" alt=""></a>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td></tr>
+                    </tbody></table>
+                </td>
+            </tr>
+            
+            <tr><td height="10"></td></tr>
+            
+            <tr>
+                <td align="center" width="100%">    
+                    
+                        
+                            
+                                
+                            
+                            
+                                        
+                        
+                        
+                            
+                                
+                            
+                            
+                        
+                          
+                                  
+                            
+                                
+                            
+                            
+                        
+
+                                  
+                            
+                                
+                            
+                            
+                        
+
+                        
+                                  
+                            
+                                
+                            
+                            
+                        
+                            
+                        
+                            
+                                
+                            
+                            
+                                        
+                        
+                        
+                            
+                                
+                            
+                            
+                         
+                        
+                        
+                            
+                                
+                            
+                            
+                        
+                            
+                        
+                            
+                                
+                            
+                            
+                                
+                                
+                                
+                                
+                            
+                        
+                        
+                    <table id="myForm:timetable" border="0" cellpadding="1" cellspacing="1" width="100%">
+<thead>
+<tr>
+<th class="HEADING" scope="col">Course Code</th>
+<th class="HEADING" scope="col">Course Name</th>
+<th class="HEADING" scope="col">Section&nbsp;</th>
+<th class="HEADING" scope="col"><span id="myForm:timetable:sectionLbl">Seq.&nbsp;</span></th>
+<th class="HEADING" scope="col">&nbsp;Activity&nbsp;</th>
+<th class="HEADING" scope="col">&nbsp;Credit Hours&nbsp;</th>
+<th class="HEADING" scope="col">&nbsp;Gender&nbsp;</th>
+<th class="HEADING" scope="col">&nbsp;Status&nbsp;</th>
+<th class="HEADING" scope="col">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="ROW1" style="display: none;">
+<td>ARAB101</td>
+<td>Arab Writing 1</td>
+<td>845</td>
+<td><span id="myForm:timetable:0:sectionTxt">30</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;0&#39;);return false;">Details<input id="myForm:timetable:0:instructor" type="hidden" name="myForm:timetable:0:instructor" value="Ms. Jamila Arnous"><input id="myForm:timetable:0:section" type="hidden" name="myForm:timetable:0:section" value=" M W @t 01:00 PM - 02:00 PM @r A179"><input id="myForm:timetable:0:finalExamDate" type="hidden" name="myForm:timetable:0:finalExamDate" value="09-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ARAB101</td>
+<td>Arab Writing 1</td>
+<td>161</td>
+<td><span id="myForm:timetable:1:sectionTxt">71</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;1&#39;);return false;">Details<input id="myForm:timetable:1:instructor" type="hidden" name="myForm:timetable:1:instructor" value="Ms. Noura Al Baker"><input id="myForm:timetable:1:section" type="hidden" name="myForm:timetable:1:section" value=" M W @t 09:00 AM - 10:00 AM @r W131"><input id="myForm:timetable:1:finalExamDate" type="hidden" name="myForm:timetable:1:finalExamDate" value="09-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ARAB101</td>
+<td>Arab Writing 1</td>
+<td>685</td>
+<td><span id="myForm:timetable:2:sectionTxt">920</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;2&#39;);return false;">Details<input id="myForm:timetable:2:instructor" type="hidden" name="myForm:timetable:2:instructor" value="Dr. Shaden AbdulQudos AbuSaleh"><input id="myForm:timetable:2:section" type="hidden" name="myForm:timetable:2:section" value=" M W @t 01:00 PM - 02:00 PM @r A181"><input id="myForm:timetable:2:finalExamDate" type="hidden" name="myForm:timetable:2:finalExamDate" value="09-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ARAB103</td>
+<td>Arabic Writing II</td>
+<td>849</td>
+<td><span id="myForm:timetable:3:sectionTxt">35</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;3&#39;);return false;">Details<input id="myForm:timetable:3:instructor" type="hidden" name="myForm:timetable:3:instructor" value="Ms. Eman Al Mokhalid"><input id="myForm:timetable:3:section" type="hidden" name="myForm:timetable:3:section" value=" M W @t 02:00 PM - 03:00 PM @r N211"><input id="myForm:timetable:3:finalExamDate" type="hidden" name="myForm:timetable:3:finalExamDate" value="09-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ARAB103</td>
+<td>Arabic Writing II</td>
+<td>510</td>
+<td><span id="myForm:timetable:4:sectionTxt">53</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;4&#39;);return false;">Details<input id="myForm:timetable:4:instructor" type="hidden" name="myForm:timetable:4:instructor" value="Dr. Amira A.  Al-Zahrani"><input id="myForm:timetable:4:section" type="hidden" name="myForm:timetable:4:section" value=" M W @t 10:00 AM - 11:00 AM @r N204"><input id="myForm:timetable:4:finalExamDate" type="hidden" name="myForm:timetable:4:finalExamDate" value="09-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ARAB103</td>
+<td>Arabic Writing II</td>
+<td>177</td>
+<td><span id="myForm:timetable:5:sectionTxt">73</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;5&#39;);return false;">Details<input id="myForm:timetable:5:instructor" type="hidden" name="myForm:timetable:5:instructor" value="Dr. Amira A.  Al-Zahrani"><input id="myForm:timetable:5:section" type="hidden" name="myForm:timetable:5:section" value=" M W @t 08:00 AM - 09:00 AM @r W130"><input id="myForm:timetable:5:finalExamDate" type="hidden" name="myForm:timetable:5:finalExamDate" value="09-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ARAB103</td>
+<td>Arabic Writing II</td>
+<td>536</td>
+<td><span id="myForm:timetable:6:sectionTxt">103</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;6&#39;);return false;">Details<input id="myForm:timetable:6:instructor" type="hidden" name="myForm:timetable:6:instructor" value="Ms. Eman Al Mokhalid"><input id="myForm:timetable:6:section" type="hidden" name="myForm:timetable:6:section" value=" M W @t 09:00 AM - 10:00 AM @r N306"><input id="myForm:timetable:6:finalExamDate" type="hidden" name="myForm:timetable:6:finalExamDate" value="09-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ARAB103</td>
+<td>Arabic Writing II</td>
+<td>43</td>
+<td><span id="myForm:timetable:7:sectionTxt">504</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;7&#39;);return false;">Details<input id="myForm:timetable:7:instructor" type="hidden" name="myForm:timetable:7:instructor" value="Ms.Samar Al Kahtani"><input id="myForm:timetable:7:section" type="hidden" name="myForm:timetable:7:section" value=" M W @t 01:00 PM - 02:00 PM @r L202"><input id="myForm:timetable:7:finalExamDate" type="hidden" name="myForm:timetable:7:finalExamDate" value="09-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ARAB103</td>
+<td>Arabic Writing II</td>
+<td>687</td>
+<td><span id="myForm:timetable:8:sectionTxt">940</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;8&#39;);return false;">Details<input id="myForm:timetable:8:instructor" type="hidden" name="myForm:timetable:8:instructor" value="Dr. Amira A.  Al-Zahrani"><input id="myForm:timetable:8:section" type="hidden" name="myForm:timetable:8:section" value=" U T @t 09:00 AM - 10:00 AM @r N112"><input id="myForm:timetable:8:finalExamDate" type="hidden" name="myForm:timetable:8:finalExamDate" value="09-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>COM201</td>
+<td>Communication Skills</td>
+<td>778</td>
+<td><span id="myForm:timetable:9:sectionTxt">34</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;9&#39;);return false;">Details<input id="myForm:timetable:9:instructor" type="hidden" name="myForm:timetable:9:instructor" value="Ms. Neelofar Nadeem"><input id="myForm:timetable:9:section" type="hidden" name="myForm:timetable:9:section" value=" U T Th @t 09:00 AM - 10:00 AM @r N301"><input id="myForm:timetable:9:finalExamDate" type="hidden" name="myForm:timetable:9:finalExamDate" value="10-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>COM201</td>
+<td>Communication Skills</td>
+<td>502</td>
+<td><span id="myForm:timetable:10:sectionTxt">56</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;10&#39;);return false;">Details<input id="myForm:timetable:10:instructor" type="hidden" name="myForm:timetable:10:instructor" value="Ms. Ghazala Imran"><input id="myForm:timetable:10:section" type="hidden" name="myForm:timetable:10:section" value=" U T Th @t 11:00 AM - 12:00 PM @r N210"><input id="myForm:timetable:10:finalExamDate" type="hidden" name="myForm:timetable:10:finalExamDate" value="10-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>COM201</td>
+<td>Communication Skills</td>
+<td>192</td>
+<td><span id="myForm:timetable:11:sectionTxt">74</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;11&#39;);return false;">Details<input id="myForm:timetable:11:instructor" type="hidden" name="myForm:timetable:11:instructor" value="Ms. Farah Obaid"><input id="myForm:timetable:11:section" type="hidden" name="myForm:timetable:11:section" value=" U T Th @t 08:00 AM - 09:00 AM @r N412"><input id="myForm:timetable:11:finalExamDate" type="hidden" name="myForm:timetable:11:finalExamDate" value="10-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>COM201</td>
+<td>Communication Skills</td>
+<td>522</td>
+<td><span id="myForm:timetable:12:sectionTxt">105</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;12&#39;);return false;">Details<input id="myForm:timetable:12:instructor" type="hidden" name="myForm:timetable:12:instructor" value="Ms. Tahira Hoke"><input id="myForm:timetable:12:section" type="hidden" name="myForm:timetable:12:section" value=" Th @t 09:00 AM - 10:00 AM @r N105 @n  U T @t 09:00 AM - 10:00 AM @r N405"><input id="myForm:timetable:12:finalExamDate" type="hidden" name="myForm:timetable:12:finalExamDate" value="10-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>COM201</td>
+<td>Communication Skills</td>
+<td>22</td>
+<td><span id="myForm:timetable:13:sectionTxt">502</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;13&#39;);return false;">Details<input id="myForm:timetable:13:instructor" type="hidden" name="myForm:timetable:13:instructor" value="Ms. Ghazala Imran"><input id="myForm:timetable:13:section" type="hidden" name="myForm:timetable:13:section" value=" U T Th @t 02:00 PM - 03:00 PM @r N309"><input id="myForm:timetable:13:finalExamDate" type="hidden" name="myForm:timetable:13:finalExamDate" value="10-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>COM201</td>
+<td>Communication Skills</td>
+<td>29</td>
+<td><span id="myForm:timetable:14:sectionTxt">503</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;14&#39;);return false;">Details<input id="myForm:timetable:14:instructor" type="hidden" name="myForm:timetable:14:instructor" value="Ms. Neelofar Nadeem"><input id="myForm:timetable:14:section" type="hidden" name="myForm:timetable:14:section" value=" U T @t 11:00 AM - 12:00 PM @r N313 @n  Th @t 11:00 AM - 12:00 PM @r L202"><input id="myForm:timetable:14:finalExamDate" type="hidden" name="myForm:timetable:14:finalExamDate" value="10-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>COM201</td>
+<td>Communication Skills</td>
+<td>692</td>
+<td><span id="myForm:timetable:15:sectionTxt">941</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;15&#39;);return false;">Details<input id="myForm:timetable:15:instructor" type="hidden" name="myForm:timetable:15:instructor" value="Ms. Arooj Yaswi"><input id="myForm:timetable:15:section" type="hidden" name="myForm:timetable:15:section" value=" U T Th @t 01:00 PM - 02:00 PM @r N205"><input id="myForm:timetable:15:finalExamDate" type="hidden" name="myForm:timetable:15:finalExamDate" value="10-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ENG101</td>
+<td>Intensive Writing</td>
+<td>902</td>
+<td><span id="myForm:timetable:16:sectionTxt">2</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;16&#39;);return false;">Details<input id="myForm:timetable:16:instructor" type="hidden" name="myForm:timetable:16:instructor" value="Weam Baashen"><input id="myForm:timetable:16:section" type="hidden" name="myForm:timetable:16:section" value=" U T Th @t 08:00 AM - 09:00 AM @r W232"><input id="myForm:timetable:16:finalExamDate" type="hidden" name="myForm:timetable:16:finalExamDate" value="10-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ENG101</td>
+<td>Intensive Writing</td>
+<td>497</td>
+<td><span id="myForm:timetable:17:sectionTxt">150</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;17&#39;);return false;">Details<input id="myForm:timetable:17:instructor" type="hidden" name="myForm:timetable:17:instructor" value="Ms. Adwaa Alyousef"><input id="myForm:timetable:17:section" type="hidden" name="myForm:timetable:17:section" value=" U T Th @t 11:00 AM - 12:00 PM @r W 260"><input id="myForm:timetable:17:finalExamDate" type="hidden" name="myForm:timetable:17:finalExamDate" value="10-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ENG101</td>
+<td>Intensive Writing</td>
+<td>498</td>
+<td><span id="myForm:timetable:18:sectionTxt">155</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;18&#39;);return false;">Details<input id="myForm:timetable:18:instructor" type="hidden" name="myForm:timetable:18:instructor" value="Nefeesah Sunghar"><input id="myForm:timetable:18:section" type="hidden" name="myForm:timetable:18:section" value=" U T Th @t 02:00 PM - 03:00 PM @r N210"><input id="myForm:timetable:18:finalExamDate" type="hidden" name="myForm:timetable:18:finalExamDate" value="10-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ISC101</td>
+<td>Islamic Ethics</td>
+<td>880</td>
+<td><span id="myForm:timetable:19:sectionTxt">30</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;19&#39;);return false;">Details<input id="myForm:timetable:19:instructor" type="hidden" name="myForm:timetable:19:instructor" value="New ISC teacher"><input id="myForm:timetable:19:section" type="hidden" name="myForm:timetable:19:section" value=" U T @t 02:00 PM - 03:00 PM @r W 260"><input id="myForm:timetable:19:finalExamDate" type="hidden" name="myForm:timetable:19:finalExamDate" value="07-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ISC101</td>
+<td>Islamic Ethics</td>
+<td>178</td>
+<td><span id="myForm:timetable:20:sectionTxt">73</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;20&#39;);return false;">Details<input id="myForm:timetable:20:instructor" type="hidden" name="myForm:timetable:20:instructor" value="New ISC teacher"><input id="myForm:timetable:20:section" type="hidden" name="myForm:timetable:20:section" value=" M W @t 09:00 AM - 10:00 AM @r W130"><input id="myForm:timetable:20:finalExamDate" type="hidden" name="myForm:timetable:20:finalExamDate" value="07-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ISC103</td>
+<td>Islamic Economic System</td>
+<td>884</td>
+<td><span id="myForm:timetable:21:sectionTxt">32</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;21&#39;);return false;">Details<input id="myForm:timetable:21:instructor" type="hidden" name="myForm:timetable:21:instructor" value="New ISC teacher"><input id="myForm:timetable:21:section" type="hidden" name="myForm:timetable:21:section" value=" M W @t 08:00 AM - 09:00 AM @r N113"><input id="myForm:timetable:21:finalExamDate" type="hidden" name="myForm:timetable:21:finalExamDate" value="08-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ISC103</td>
+<td>Islamic Economic System</td>
+<td>191</td>
+<td><span id="myForm:timetable:22:sectionTxt">74</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;22&#39;);return false;">Details<input id="myForm:timetable:22:instructor" type="hidden" name="myForm:timetable:22:instructor" value="Ms. Aneesa Al Jeaan"><input id="myForm:timetable:22:section" type="hidden" name="myForm:timetable:22:section" value=" M W @t 01:00 PM - 02:00 PM @r W130"><input id="myForm:timetable:22:finalExamDate" type="hidden" name="myForm:timetable:22:finalExamDate" value="08-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ISC103</td>
+<td>Islamic Economic System</td>
+<td>528</td>
+<td><span id="myForm:timetable:23:sectionTxt">103</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;23&#39;);return false;">Details<input id="myForm:timetable:23:instructor" type="hidden" name="myForm:timetable:23:instructor" value="Ms. Aneesa Al Jeaan"><input id="myForm:timetable:23:section" type="hidden" name="myForm:timetable:23:section" value=" U T @t 02:00 PM - 03:00 PM @r N306"><input id="myForm:timetable:23:finalExamDate" type="hidden" name="myForm:timetable:23:finalExamDate" value="08-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ISC103</td>
+<td>Islamic Economic System</td>
+<td>42</td>
+<td><span id="myForm:timetable:24:sectionTxt">504</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;24&#39;);return false;">Details<input id="myForm:timetable:24:instructor" type="hidden" name="myForm:timetable:24:instructor" value="Dr. Elham B. Al-Jabry"><input id="myForm:timetable:24:section" type="hidden" name="myForm:timetable:24:section" value=" M W @t 11:00 AM - 12:00 PM @r A177"><input id="myForm:timetable:24:finalExamDate" type="hidden" name="myForm:timetable:24:finalExamDate" value="08-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>PSY101</td>
+<td>Introduction to Psychology</td>
+<td>776</td>
+<td><span id="myForm:timetable:25:sectionTxt">37</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;25&#39;);return false;">Details<input id="myForm:timetable:25:instructor" type="hidden" name="myForm:timetable:25:instructor" value="Dr. Suraya Hamid"><input id="myForm:timetable:25:section" type="hidden" name="myForm:timetable:25:section" value=" U @t 11:00 AM - 12:00 PM @r N115 @n  Th @t 11:00 AM - 12:00 PM @r N205 @n  T @t 11:00 AM - 12:00 PM @r N213"><input id="myForm:timetable:25:finalExamDate" type="hidden" name="myForm:timetable:25:finalExamDate" value="15-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>PSY101</td>
+<td>Introduction to Psychology</td>
+<td>220</td>
+<td><span id="myForm:timetable:26:sectionTxt">76</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;26&#39;);return false;">Details<input id="myForm:timetable:26:instructor" type="hidden" name="myForm:timetable:26:instructor" value="Dr. Suraya Hamid"><input id="myForm:timetable:26:section" type="hidden" name="myForm:timetable:26:section" value=" U T Th @t 08:00 AM - 09:00 AM @r W130"><input id="myForm:timetable:26:finalExamDate" type="hidden" name="myForm:timetable:26:finalExamDate" value="15-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>PSY101</td>
+<td>Introduction to Psychology</td>
+<td>520</td>
+<td><span id="myForm:timetable:27:sectionTxt">103</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;27&#39;);return false;">Details<input id="myForm:timetable:27:instructor" type="hidden" name="myForm:timetable:27:instructor" value="Dr. Seema Gul"><input id="myForm:timetable:27:section" type="hidden" name="myForm:timetable:27:section" value=" U T Th @t 09:00 AM - 10:00 AM @r N406"><input id="myForm:timetable:27:finalExamDate" type="hidden" name="myForm:timetable:27:finalExamDate" value="15-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>PSY101</td>
+<td>Introduction to Psychology</td>
+<td>521</td>
+<td><span id="myForm:timetable:28:sectionTxt">104</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;28&#39;);return false;">Details<input id="myForm:timetable:28:instructor" type="hidden" name="myForm:timetable:28:instructor" value="Ms. Babita Mukherjee"><input id="myForm:timetable:28:section" type="hidden" name="myForm:timetable:28:section" value=" U T Th @t 02:00 PM - 03:00 PM @r N307"><input id="myForm:timetable:28:finalExamDate" type="hidden" name="myForm:timetable:28:finalExamDate" value="15-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>PSY101</td>
+<td>Introduction to Psychology</td>
+<td>74</td>
+<td><span id="myForm:timetable:29:sectionTxt">508</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;29&#39;);return false;">Details<input id="myForm:timetable:29:instructor" type="hidden" name="myForm:timetable:29:instructor" value="Dr. Seema Gul"><input id="myForm:timetable:29:section" type="hidden" name="myForm:timetable:29:section" value=" U T Th @t 08:00 AM - 09:00 AM @r W332"><input id="myForm:timetable:29:finalExamDate" type="hidden" name="myForm:timetable:29:finalExamDate" value="15-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>PSY101</td>
+<td>Introduction to Psychology</td>
+<td>693</td>
+<td><span id="myForm:timetable:30:sectionTxt">930</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;30&#39;);return false;">Details<input id="myForm:timetable:30:instructor" type="hidden" name="myForm:timetable:30:instructor" value="Dr. Suraya Hamid"><input id="myForm:timetable:30:section" type="hidden" name="myForm:timetable:30:section" value=" M W @t 01:00 PM - 02:15 PM @r N312"><input id="myForm:timetable:30:finalExamDate" type="hidden" name="myForm:timetable:30:finalExamDate" value="15-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>STAT101</td>
+<td>Intro. to Statistics &amp; Probability</td>
+<td>772</td>
+<td><span id="myForm:timetable:31:sectionTxt">31</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;31&#39;);return false;">Details<input id="myForm:timetable:31:instructor" type="hidden" name="myForm:timetable:31:instructor" value="Dr. Rafida Elobaid"><input id="myForm:timetable:31:section" type="hidden" name="myForm:timetable:31:section" value=" U T Th @t 03:00 PM - 04:00 PM @r N206"><input id="myForm:timetable:31:finalExamDate" type="hidden" name="myForm:timetable:31:finalExamDate" value="15-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>STAT101</td>
+<td>Intro. to Statistics &amp; Probability</td>
+<td>773</td>
+<td><span id="myForm:timetable:32:sectionTxt">31</span></td>
+<td>Tutorial</td>
+<td></td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;32&#39;);return false;">Details<input id="myForm:timetable:32:instructor" type="hidden" name="myForm:timetable:32:instructor" value="Dr. Rafida Elobaid"><input id="myForm:timetable:32:section" type="hidden" name="myForm:timetable:32:section" value=" M @t 03:00 PM - 04:00 PM @r N301"><input id="myForm:timetable:32:finalExamDate" type="hidden" name="myForm:timetable:32:finalExamDate" value=""></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>STAT101</td>
+<td>Intro. to Statistics &amp; Probability</td>
+<td>514</td>
+<td><span id="myForm:timetable:33:sectionTxt">68</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;33&#39;);return false;">Details<input id="myForm:timetable:33:instructor" type="hidden" name="myForm:timetable:33:instructor" value="Ms. Vijaya Mary"><input id="myForm:timetable:33:section" type="hidden" name="myForm:timetable:33:section" value=" Th @t 01:00 PM - 02:00 PM @r W 260 @n  Th @t 02:00 PM - 03:00 PM @r W 260 @n  U @t 02:00 PM - 03:00 PM @r N207"><input id="myForm:timetable:33:finalExamDate" type="hidden" name="myForm:timetable:33:finalExamDate" value="15-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>STAT101</td>
+<td>Intro. to Statistics &amp; Probability</td>
+<td>515</td>
+<td><span id="myForm:timetable:34:sectionTxt">68</span></td>
+<td>Tutorial</td>
+<td></td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;34&#39;);return false;">Details<input id="myForm:timetable:34:instructor" type="hidden" name="myForm:timetable:34:instructor" value="Ms. Vijaya Mary"><input id="myForm:timetable:34:section" type="hidden" name="myForm:timetable:34:section" value=" T @t 02:00 PM - 03:00 PM @r N207"><input id="myForm:timetable:34:finalExamDate" type="hidden" name="myForm:timetable:34:finalExamDate" value=""></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>STAT101</td>
+<td>Intro. to Statistics &amp; Probability</td>
+<td>546</td>
+<td><span id="myForm:timetable:35:sectionTxt">105</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;35&#39;);return false;">Details<input id="myForm:timetable:35:instructor" type="hidden" name="myForm:timetable:35:instructor" value="Ms. Saima Rashid"><input id="myForm:timetable:35:section" type="hidden" name="myForm:timetable:35:section" value=" W @t 08:00 AM - 09:00 AM @r N310 @n  M @t 09:00 AM - 10:00 AM @r W351 @n  W @t 09:00 AM - 10:00 AM @r N310"><input id="myForm:timetable:35:finalExamDate" type="hidden" name="myForm:timetable:35:finalExamDate" value="15-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>STAT101</td>
+<td>Intro. to Statistics &amp; Probability</td>
+<td>547</td>
+<td><span id="myForm:timetable:36:sectionTxt">105</span></td>
+<td>Tutorial</td>
+<td></td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;36&#39;);return false;">Details<input id="myForm:timetable:36:instructor" type="hidden" name="myForm:timetable:36:instructor" value="Ms. Saima Rashid"><input id="myForm:timetable:36:section" type="hidden" name="myForm:timetable:36:section" value=" M @t 08:00 AM - 09:00 AM @r W351"><input id="myForm:timetable:36:finalExamDate" type="hidden" name="myForm:timetable:36:finalExamDate" value=""></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>STAT101</td>
+<td>Intro. to Statistics &amp; Probability</td>
+<td>548</td>
+<td><span id="myForm:timetable:37:sectionTxt">106</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;37&#39;);return false;">Details<input id="myForm:timetable:37:instructor" type="hidden" name="myForm:timetable:37:instructor" value="Ms. Vijaya Mary"><input id="myForm:timetable:37:section" type="hidden" name="myForm:timetable:37:section" value=" U T Th @t 10:00 AM - 11:00 AM @r N312"><input id="myForm:timetable:37:finalExamDate" type="hidden" name="myForm:timetable:37:finalExamDate" value="15-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>STAT101</td>
+<td>Intro. to Statistics &amp; Probability</td>
+<td>549</td>
+<td><span id="myForm:timetable:38:sectionTxt">106</span></td>
+<td>Tutorial</td>
+<td></td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;38&#39;);return false;">Details<input id="myForm:timetable:38:instructor" type="hidden" name="myForm:timetable:38:instructor" value="Ms. Vijaya Mary"><input id="myForm:timetable:38:section" type="hidden" name="myForm:timetable:38:section" value=" M @t 02:00 PM - 03:00 PM @r W351"><input id="myForm:timetable:38:finalExamDate" type="hidden" name="myForm:timetable:38:finalExamDate" value=""></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>STAT101</td>
+<td>Intro. to Statistics &amp; Probability</td>
+<td>550</td>
+<td><span id="myForm:timetable:39:sectionTxt">116</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;39&#39;);return false;">Details<input id="myForm:timetable:39:instructor" type="hidden" name="myForm:timetable:39:instructor" value="Dr. Tasneem Ali"><input id="myForm:timetable:39:section" type="hidden" name="myForm:timetable:39:section" value=" U T Th @t 02:00 PM - 03:00 PM @r L202"><input id="myForm:timetable:39:finalExamDate" type="hidden" name="myForm:timetable:39:finalExamDate" value="15-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>STAT101</td>
+<td>Intro. to Statistics &amp; Probability</td>
+<td>551</td>
+<td><span id="myForm:timetable:40:sectionTxt">116</span></td>
+<td>Tutorial</td>
+<td></td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;40&#39;);return false;">Details<input id="myForm:timetable:40:instructor" type="hidden" name="myForm:timetable:40:instructor" value="Dr. Tasneem Ali"><input id="myForm:timetable:40:section" type="hidden" name="myForm:timetable:40:section" value=" W @t 02:00 PM - 03:00 PM @r LAB F"><input id="myForm:timetable:40:finalExamDate" type="hidden" name="myForm:timetable:40:finalExamDate" value=""></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ISC105</td>
+<td>Studies of The Holy Quran</td>
+<td>887</td>
+<td><span id="myForm:timetable:41:sectionTxt">37</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;41&#39;);return false;">Details<input id="myForm:timetable:41:instructor" type="hidden" name="myForm:timetable:41:instructor" value="Ms. Shadia Al-Najy"><input id="myForm:timetable:41:section" type="hidden" name="myForm:timetable:41:section" value=" Th @t 02:00 PM - 03:00 PM @r W 261 @n  T @t 02:00 PM - 03:00 PM @r N401"><input id="myForm:timetable:41:finalExamDate" type="hidden" name="myForm:timetable:41:finalExamDate" value="11-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ISC105</td>
+<td>Studies of The Holy Quran</td>
+<td>505</td>
+<td><span id="myForm:timetable:42:sectionTxt">53</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;42&#39;);return false;">Details<input id="myForm:timetable:42:instructor" type="hidden" name="myForm:timetable:42:instructor" value="Ms. Shadia Al-Najy"><input id="myForm:timetable:42:section" type="hidden" name="myForm:timetable:42:section" value=" U T @t 01:00 PM - 02:00 PM @r N209"><input id="myForm:timetable:42:finalExamDate" type="hidden" name="myForm:timetable:42:finalExamDate" value="11-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ISC105</td>
+<td>Studies of The Holy Quran</td>
+<td>208</td>
+<td><span id="myForm:timetable:43:sectionTxt">75</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;43&#39;);return false;">Details<input id="myForm:timetable:43:instructor" type="hidden" name="myForm:timetable:43:instructor" value="Ms. Norah Alfulij"><input id="myForm:timetable:43:section" type="hidden" name="myForm:timetable:43:section" value=" U T @t 11:00 AM - 12:00 PM @r W130"><input id="myForm:timetable:43:finalExamDate" type="hidden" name="myForm:timetable:43:finalExamDate" value="11-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ISC105</td>
+<td>Studies of The Holy Quran</td>
+<td>532</td>
+<td><span id="myForm:timetable:44:sectionTxt">230</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;44&#39;);return false;">Details<input id="myForm:timetable:44:instructor" type="hidden" name="myForm:timetable:44:instructor" value="Ms. Norah Alfulij"><input id="myForm:timetable:44:section" type="hidden" name="myForm:timetable:44:section" value=" M W @t 08:00 AM - 09:00 AM @r N212"><input id="myForm:timetable:44:finalExamDate" type="hidden" name="myForm:timetable:44:finalExamDate" value="11-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ISC105</td>
+<td>Studies of The Holy Quran</td>
+<td>51</td>
+<td><span id="myForm:timetable:45:sectionTxt">505</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;45&#39;);return false;">Details<input id="myForm:timetable:45:instructor" type="hidden" name="myForm:timetable:45:instructor" value="Ms. Shadia Al-Najy"><input id="myForm:timetable:45:section" type="hidden" name="myForm:timetable:45:section" value=" M W @t 08:00 AM - 09:00 AM @r W 262"><input id="myForm:timetable:45:finalExamDate" type="hidden" name="myForm:timetable:45:finalExamDate" value="11-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ISC105</td>
+<td>Studies of The Holy Quran</td>
+<td>682</td>
+<td><span id="myForm:timetable:46:sectionTxt">921</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;46&#39;);return false;">Details<input id="myForm:timetable:46:instructor" type="hidden" name="myForm:timetable:46:instructor" value="Ms. Shadia Al-Najy"><input id="myForm:timetable:46:section" type="hidden" name="myForm:timetable:46:section" value=" M W @t 11:00 AM - 12:00 PM @r A180"><input id="myForm:timetable:46:finalExamDate" type="hidden" name="myForm:timetable:46:finalExamDate" value="11-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ARAB203</td>
+<td>Arabic Language</td>
+<td>877</td>
+<td><span id="myForm:timetable:47:sectionTxt">50</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;47&#39;);return false;">Details<input id="myForm:timetable:47:instructor" type="hidden" name="myForm:timetable:47:instructor" value="Ms. Noura Al Baker"><input id="myForm:timetable:47:section" type="hidden" name="myForm:timetable:47:section" value=" W @t 02:00 PM - 03:00 PM @r N212 @n  M @t 02:00 PM - 03:00 PM @r N306"><input id="myForm:timetable:47:finalExamDate" type="hidden" name="myForm:timetable:47:finalExamDate" value="09-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ARAB203</td>
+<td>Arabic Language</td>
+<td>206</td>
+<td><span id="myForm:timetable:48:sectionTxt">75</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;48&#39;);return false;">Details<input id="myForm:timetable:48:instructor" type="hidden" name="myForm:timetable:48:instructor" value="Dr. Tahani Safadi"><input id="myForm:timetable:48:section" type="hidden" name="myForm:timetable:48:section" value=" U T @t 09:00 AM - 10:00 AM @r W130"><input id="myForm:timetable:48:finalExamDate" type="hidden" name="myForm:timetable:48:finalExamDate" value="09-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ARAB203</td>
+<td>Arabic Language</td>
+<td>538</td>
+<td><span id="myForm:timetable:49:sectionTxt">105</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;49&#39;);return false;">Details<input id="myForm:timetable:49:instructor" type="hidden" name="myForm:timetable:49:instructor" value="Dr. Tahani Safadi"><input id="myForm:timetable:49:section" type="hidden" name="myForm:timetable:49:section" value=" T Th @t 08:00 AM - 09:00 AM @r N115"><input id="myForm:timetable:49:finalExamDate" type="hidden" name="myForm:timetable:49:finalExamDate" value="09-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ARAB203</td>
+<td>Arabic Language</td>
+<td>48</td>
+<td><span id="myForm:timetable:50:sectionTxt">505</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;50&#39;);return false;">Details<input id="myForm:timetable:50:instructor" type="hidden" name="myForm:timetable:50:instructor" value="Ms. Eman Al Mokhalid"><input id="myForm:timetable:50:section" type="hidden" name="myForm:timetable:50:section" value=" U T @t 08:00 AM - 09:00 AM @r W331"><input id="myForm:timetable:50:finalExamDate" type="hidden" name="myForm:timetable:50:finalExamDate" value="09-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ARAB203</td>
+<td>Arabic Language</td>
+<td>63</td>
+<td><span id="myForm:timetable:51:sectionTxt">506</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;51&#39;);return false;">Details<input id="myForm:timetable:51:instructor" type="hidden" name="myForm:timetable:51:instructor" value="Ms. Noura Al Baker"><input id="myForm:timetable:51:section" type="hidden" name="myForm:timetable:51:section" value=" M W @t 11:00 AM - 12:00 PM @r L202"><input id="myForm:timetable:51:finalExamDate" type="hidden" name="myForm:timetable:51:finalExamDate" value="09-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ARAB203</td>
+<td>Arabic Language</td>
+<td>689</td>
+<td><span id="myForm:timetable:52:sectionTxt">950</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;52&#39;);return false;">Details<input id="myForm:timetable:52:instructor" type="hidden" name="myForm:timetable:52:instructor" value="Ms. Eman Al Mokhalid"><input id="myForm:timetable:52:section" type="hidden" name="myForm:timetable:52:section" value=" U T @t 09:00 AM - 10:00 AM @r N111"><input id="myForm:timetable:52:finalExamDate" type="hidden" name="myForm:timetable:52:finalExamDate" value="09-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>EUR102</td>
+<td>European Language II</td>
+<td>495</td>
+<td><span id="myForm:timetable:53:sectionTxt">67</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;53&#39;);return false;">Details<input id="myForm:timetable:53:instructor" type="hidden" name="myForm:timetable:53:instructor" value="Sabrina Achouri"><input id="myForm:timetable:53:section" type="hidden" name="myForm:timetable:53:section" value=" Th @t 03:00 PM - 04:00 PM @r N202 @n  U T @t 03:00 PM - 04:00 PM @r N211"><input id="myForm:timetable:53:finalExamDate" type="hidden" name="myForm:timetable:53:finalExamDate" value="14-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>HPE102</td>
+<td>Health &amp; Physical Education II</td>
+<td>910</td>
+<td><span id="myForm:timetable:54:sectionTxt">37</span></td>
+<td>Lecture</td>
+<td>1</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;54&#39;);return false;">Details<input id="myForm:timetable:54:instructor" type="hidden" name="myForm:timetable:54:instructor" value="Ruby Defensor"><input id="myForm:timetable:54:section" type="hidden" name="myForm:timetable:54:section" value=" M @t 02:00 PM - 03:00 PM @r N407"><input id="myForm:timetable:54:finalExamDate" type="hidden" name="myForm:timetable:54:finalExamDate" value=""></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>HPE102</td>
+<td>Health &amp; Physical Education II</td>
+<td>911</td>
+<td><span id="myForm:timetable:55:sectionTxt">37</span></td>
+<td>Tutorial</td>
+<td></td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;55&#39;);return false;">Details<input id="myForm:timetable:55:instructor" type="hidden" name="myForm:timetable:55:instructor" value="Maria Isip"><input id="myForm:timetable:55:section" type="hidden" name="myForm:timetable:55:section" value=" W @t 02:00 PM - 03:00 PM @r W209"><input id="myForm:timetable:55:finalExamDate" type="hidden" name="myForm:timetable:55:finalExamDate" value=""></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>HPE102</td>
+<td>Health &amp; Physical Education II</td>
+<td>560</td>
+<td><span id="myForm:timetable:56:sectionTxt">105</span></td>
+<td>Lecture</td>
+<td>1</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;56&#39;);return false;">Details<input id="myForm:timetable:56:instructor" type="hidden" name="myForm:timetable:56:instructor" value="Ruby Defensor"><input id="myForm:timetable:56:section" type="hidden" name="myForm:timetable:56:section" value=" M @t 03:00 PM - 04:00 PM @r N304"><input id="myForm:timetable:56:finalExamDate" type="hidden" name="myForm:timetable:56:finalExamDate" value=""></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>HPE102</td>
+<td>Health &amp; Physical Education II</td>
+<td>561</td>
+<td><span id="myForm:timetable:57:sectionTxt">105</span></td>
+<td>Tutorial</td>
+<td></td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;57&#39;);return false;">Details<input id="myForm:timetable:57:instructor" type="hidden" name="myForm:timetable:57:instructor" value="Maria Isip"><input id="myForm:timetable:57:section" type="hidden" name="myForm:timetable:57:section" value=" W @t 03:00 PM - 04:00 PM @r W209"><input id="myForm:timetable:57:finalExamDate" type="hidden" name="myForm:timetable:57:finalExamDate" value=""></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>HPE102</td>
+<td>Health &amp; Physical Education II</td>
+<td>562</td>
+<td><span id="myForm:timetable:58:sectionTxt">116</span></td>
+<td>Lecture</td>
+<td>1</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;58&#39;);return false;">Details<input id="myForm:timetable:58:instructor" type="hidden" name="myForm:timetable:58:instructor" value="Ruby Defensor"><input id="myForm:timetable:58:section" type="hidden" name="myForm:timetable:58:section" value=" U @t 08:00 AM - 09:00 AM @r W 261"><input id="myForm:timetable:58:finalExamDate" type="hidden" name="myForm:timetable:58:finalExamDate" value=""></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>HPE102</td>
+<td>Health &amp; Physical Education II</td>
+<td>563</td>
+<td><span id="myForm:timetable:59:sectionTxt">116</span></td>
+<td>Tutorial</td>
+<td></td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;59&#39;);return false;">Details<input id="myForm:timetable:59:instructor" type="hidden" name="myForm:timetable:59:instructor" value="Maria Isip"><input id="myForm:timetable:59:section" type="hidden" name="myForm:timetable:59:section" value=" T @t 08:00 AM - 09:00 AM @r W209"><input id="myForm:timetable:59:finalExamDate" type="hidden" name="myForm:timetable:59:finalExamDate" value=""></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ISC205</td>
+<td>Family in Islam</td>
+<td>506</td>
+<td><span id="myForm:timetable:60:sectionTxt">56</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;60&#39;);return false;">Details<input id="myForm:timetable:60:instructor" type="hidden" name="myForm:timetable:60:instructor" value="Ms. Amal Sharaf"><input id="myForm:timetable:60:section" type="hidden" name="myForm:timetable:60:section" value=" M W @t 08:00 AM - 09:00 AM @r N204"><input id="myForm:timetable:60:finalExamDate" type="hidden" name="myForm:timetable:60:finalExamDate" value="06-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ISC205</td>
+<td>Family in Islam</td>
+<td>507</td>
+<td><span id="myForm:timetable:61:sectionTxt">156</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;61&#39;);return false;">Details<input id="myForm:timetable:61:instructor" type="hidden" name="myForm:timetable:61:instructor" value="Ms. Amal Sharaf"><input id="myForm:timetable:61:section" type="hidden" name="myForm:timetable:61:section" value=" U T @t 01:00 PM - 02:00 PM @r N207"><input id="myForm:timetable:61:finalExamDate" type="hidden" name="myForm:timetable:61:finalExamDate" value="06-05-2018  04:00 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>EUR101</td>
+<td>European Language I</td>
+<td>493</td>
+<td><span id="myForm:timetable:62:sectionTxt">60</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;62&#39;);return false;">Details<input id="myForm:timetable:62:instructor" type="hidden" name="myForm:timetable:62:instructor" value="Sabrina Achouri"><input id="myForm:timetable:62:section" type="hidden" name="myForm:timetable:62:section" value=" Th @t 01:00 PM - 02:00 PM @r N202 @n  U T @t 01:00 PM - 02:00 PM @r N211"><input id="myForm:timetable:62:finalExamDate" type="hidden" name="myForm:timetable:62:finalExamDate" value="07-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>EUR101</td>
+<td>European Language I</td>
+<td>494</td>
+<td><span id="myForm:timetable:63:sectionTxt">61</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;63&#39;);return false;">Details<input id="myForm:timetable:63:instructor" type="hidden" name="myForm:timetable:63:instructor" value="Sabrina Achouri"><input id="myForm:timetable:63:section" type="hidden" name="myForm:timetable:63:section" value=" Th @t 02:00 PM - 03:00 PM @r N202 @n  U T @t 02:00 PM - 03:00 PM @r N211"><input id="myForm:timetable:63:finalExamDate" type="hidden" name="myForm:timetable:63:finalExamDate" value="07-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ARAB303</td>
+<td>Arabic Rhetoric</td>
+<td>513</td>
+<td><span id="myForm:timetable:64:sectionTxt">67</span></td>
+<td>Lecture</td>
+<td>2</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;64&#39;);return false;">Details<input id="myForm:timetable:64:instructor" type="hidden" name="myForm:timetable:64:instructor" value="Dr. Shaden AbdulQudos AbuSaleh"><input id="myForm:timetable:64:section" type="hidden" name="myForm:timetable:64:section" value=" U T @t 01:00 PM - 02:00 PM @r N210"><input id="myForm:timetable:64:finalExamDate" type="hidden" name="myForm:timetable:64:finalExamDate" value="07-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ARAB201</td>
+<td>Functional Grammar</td>
+<td>512</td>
+<td><span id="myForm:timetable:65:sectionTxt">60</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;65&#39;);return false;">Details<input id="myForm:timetable:65:instructor" type="hidden" name="myForm:timetable:65:instructor" value="Dr. Tahani Safadi"><input id="myForm:timetable:65:section" type="hidden" name="myForm:timetable:65:section" value=" M W @t 01:00 PM - 02:00 PM @r N212 @n  M @t 02:00 PM - 03:00 PM @r N212"><input id="myForm:timetable:65:finalExamDate" type="hidden" name="myForm:timetable:65:finalExamDate" value="08-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ELAN104</td>
+<td>Analytic Reading &amp; Writing</td>
+<td>421</td>
+<td><span id="myForm:timetable:66:sectionTxt">53</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;66&#39;);return false;">Details<input id="myForm:timetable:66:instructor" type="hidden" name="myForm:timetable:66:instructor" value="Dr. Safa Abdullah Eissa"><input id="myForm:timetable:66:section" type="hidden" name="myForm:timetable:66:section" value=" U T Th @t 08:00 AM - 09:00 AM @r N205"><input id="myForm:timetable:66:finalExamDate" type="hidden" name="myForm:timetable:66:finalExamDate" value="05-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ELAN108</td>
+<td>English Grammar II</td>
+<td>422</td>
+<td><span id="myForm:timetable:67:sectionTxt">53</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;67&#39;);return false;">Details<input id="myForm:timetable:67:instructor" type="hidden" name="myForm:timetable:67:instructor" value="Lamia Almadi"><input id="myForm:timetable:67:section" type="hidden" name="myForm:timetable:67:section" value=" U T Th @t 10:00 AM - 11:00 AM @r W 260"><input id="myForm:timetable:67:finalExamDate" type="hidden" name="myForm:timetable:67:finalExamDate" value="13-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ELAN205</td>
+<td>Advanced Reading &amp; Writing</td>
+<td>439</td>
+<td><span id="myForm:timetable:68:sectionTxt">56</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;68&#39;);return false;">Details<input id="myForm:timetable:68:instructor" type="hidden" name="myForm:timetable:68:instructor" value="Rawan Shaaban"><input id="myForm:timetable:68:section" type="hidden" name="myForm:timetable:68:section" value=" U T Th @t 10:00 AM - 11:00 AM @r N211"><input id="myForm:timetable:68:finalExamDate" type="hidden" name="myForm:timetable:68:finalExamDate" value="13-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ELAN240</td>
+<td>Introduction to Literature</td>
+<td>445</td>
+<td><span id="myForm:timetable:69:sectionTxt">56</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;69&#39;);return false;">Details<input id="myForm:timetable:69:instructor" type="hidden" name="myForm:timetable:69:instructor" value="Dr. Eman M. El Sherief"><input id="myForm:timetable:69:section" type="hidden" name="myForm:timetable:69:section" value=" U T Th @t 08:00 AM - 09:00 AM @r N206"><input id="myForm:timetable:69:finalExamDate" type="hidden" name="myForm:timetable:69:finalExamDate" value="05-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ETRA250</td>
+<td>Introduction to Translation Theories</td>
+<td>446</td>
+<td><span id="myForm:timetable:70:sectionTxt">56</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;70&#39;);return false;">Details<input id="myForm:timetable:70:instructor" type="hidden" name="myForm:timetable:70:instructor" value="Weam Baashen"><input id="myForm:timetable:70:section" type="hidden" name="myForm:timetable:70:section" value=" U T Th @t 01:00 PM - 02:00 PM @r W 262"><input id="myForm:timetable:70:finalExamDate" type="hidden" name="myForm:timetable:70:finalExamDate" value="07-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ELAN206</td>
+<td>Research Writing</td>
+<td>452</td>
+<td><span id="myForm:timetable:71:sectionTxt">60</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;71&#39;);return false;">Details<input id="myForm:timetable:71:instructor" type="hidden" name="myForm:timetable:71:instructor" value="Maisoon Dorra"><input id="myForm:timetable:71:section" type="hidden" name="myForm:timetable:71:section" value=" U T Th @t 11:00 AM - 12:00 PM @r N211"><input id="myForm:timetable:71:finalExamDate" type="hidden" name="myForm:timetable:71:finalExamDate" value="10-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ELAN232</td>
+<td>English Morphology &amp; Syntax</td>
+<td>447</td>
+<td><span id="myForm:timetable:72:sectionTxt">60</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;72&#39;);return false;">Details<input id="myForm:timetable:72:instructor" type="hidden" name="myForm:timetable:72:instructor" value="Dr. Safa Abdullah Eissa"><input id="myForm:timetable:72:section" type="hidden" name="myForm:timetable:72:section" value=" U T Th @t 10:00 AM - 11:00 AM @r N212"><input id="myForm:timetable:72:finalExamDate" type="hidden" name="myForm:timetable:72:finalExamDate" value="13-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ELAN241</td>
+<td>Fiction</td>
+<td>448</td>
+<td><span id="myForm:timetable:73:sectionTxt">60</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;73&#39;);return false;">Details<input id="myForm:timetable:73:instructor" type="hidden" name="myForm:timetable:73:instructor" value="Dr. Eman M. El Sherief"><input id="myForm:timetable:73:section" type="hidden" name="myForm:timetable:73:section" value=" U T Th @t 09:00 AM - 10:00 AM @r N212"><input id="myForm:timetable:73:finalExamDate" type="hidden" name="myForm:timetable:73:finalExamDate" value="12-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ETRA353</td>
+<td>Computer Applications in Translation</td>
+<td>476</td>
+<td><span id="myForm:timetable:74:sectionTxt">63</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;74&#39;);return false;">Details<input id="myForm:timetable:74:instructor" type="hidden" name="myForm:timetable:74:instructor" value="Razan  Al-Othaimeen"><input id="myForm:timetable:74:section" type="hidden" name="myForm:timetable:74:section" value=" U T Th @t 08:00 AM - 09:00 AM @r N202"><input id="myForm:timetable:74:finalExamDate" type="hidden" name="myForm:timetable:74:finalExamDate" value="05-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ELAN334</td>
+<td>Semantics &amp; Pragmatics</td>
+<td>475</td>
+<td><span id="myForm:timetable:75:sectionTxt">61</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;75&#39;);return false;">Details<input id="myForm:timetable:75:instructor" type="hidden" name="myForm:timetable:75:instructor" value="Dr. Hala Emara"><input id="myForm:timetable:75:section" type="hidden" name="myForm:timetable:75:section" value=" U T Th @t 11:00 AM - 12:00 PM @r N212"><input id="myForm:timetable:75:finalExamDate" type="hidden" name="myForm:timetable:75:finalExamDate" value="10-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ETRA351</td>
+<td>Sight Translation</td>
+<td>481</td>
+<td><span id="myForm:timetable:76:sectionTxt">63</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;76&#39;);return false;">Details<input id="myForm:timetable:76:instructor" type="hidden" name="myForm:timetable:76:instructor" value="Dr. Mona Salem"><input id="myForm:timetable:76:section" type="hidden" name="myForm:timetable:76:section" value=" M W @t 01:00 PM - 02:15 PM @r LAB H"><input id="myForm:timetable:76:finalExamDate" type="hidden" name="myForm:timetable:76:finalExamDate" value="08-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ETRA355</td>
+<td>Business &amp; Media Translation</td>
+<td>482</td>
+<td><span id="myForm:timetable:77:sectionTxt">63</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;77&#39;);return false;">Details<input id="myForm:timetable:77:instructor" type="hidden" name="myForm:timetable:77:instructor" value="Nadia Sabbah"><input id="myForm:timetable:77:section" type="hidden" name="myForm:timetable:77:section" value=" U T Th @t 10:00 AM - 11:00 AM @r N201"><input id="myForm:timetable:77:finalExamDate" type="hidden" name="myForm:timetable:77:finalExamDate" value="13-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ETRA354</td>
+<td>Lexicography &amp; Terminology</td>
+<td>485</td>
+<td><span id="myForm:timetable:78:sectionTxt">67</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;78&#39;);return false;">Details<input id="myForm:timetable:78:instructor" type="hidden" name="myForm:timetable:78:instructor" value="Dr. Mona Salem"><input id="myForm:timetable:78:section" type="hidden" name="myForm:timetable:78:section" value=" U T Th @t 08:00 AM - 09:00 AM @r N212"><input id="myForm:timetable:78:finalExamDate" type="hidden" name="myForm:timetable:78:finalExamDate" value="05-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ETRA233</td>
+<td>Text Linguistics</td>
+<td>449</td>
+<td><span id="myForm:timetable:79:sectionTxt">60</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;79&#39;);return false;">Details<input id="myForm:timetable:79:instructor" type="hidden" name="myForm:timetable:79:instructor" value="Maisoon Dorra"><input id="myForm:timetable:79:section" type="hidden" name="myForm:timetable:79:section" value=" U T Th @t 02:00 PM - 03:00 PM @r N212"><input id="myForm:timetable:79:finalExamDate" type="hidden" name="myForm:timetable:79:finalExamDate" value="15-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ETRA356</td>
+<td>Scientific and Medical Translation</td>
+<td>486</td>
+<td><span id="myForm:timetable:80:sectionTxt">67</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;80&#39;);return false;">Details<input id="myForm:timetable:80:instructor" type="hidden" name="myForm:timetable:80:instructor" value="Dr. Mona Salem"><input id="myForm:timetable:80:section" type="hidden" name="myForm:timetable:80:section" value=" U T Th @t 09:00 AM - 10:00 AM @r N202"><input id="myForm:timetable:80:finalExamDate" type="hidden" name="myForm:timetable:80:finalExamDate" value="12-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ELAN311</td>
+<td>Western Thought</td>
+<td>483</td>
+<td><span id="myForm:timetable:81:sectionTxt">67</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;81&#39;);return false;">Details<input id="myForm:timetable:81:instructor" type="hidden" name="myForm:timetable:81:instructor" value="Dr. Hadeer R. Abouelnagah"><input id="myForm:timetable:81:section" type="hidden" name="myForm:timetable:81:section" value=" U T Th @t 11:00 AM - 12:00 PM @r W 262"><input id="myForm:timetable:81:finalExamDate" type="hidden" name="myForm:timetable:81:finalExamDate" value="10-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ETRA352</td>
+<td>Consecutive Interpreting</td>
+<td>484</td>
+<td><span id="myForm:timetable:82:sectionTxt">67</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;82&#39;);return false;">Details<input id="myForm:timetable:82:instructor" type="hidden" name="myForm:timetable:82:instructor" value="Dr. Saadia Elamin"><input id="myForm:timetable:82:section" type="hidden" name="myForm:timetable:82:section" value=" M W @t 08:00 AM - 09:15 AM @r LAB H"><input id="myForm:timetable:82:finalExamDate" type="hidden" name="myForm:timetable:82:finalExamDate" value="06-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ETRA453</td>
+<td>Simultaneous interpreting</td>
+<td>490</td>
+<td><span id="myForm:timetable:83:sectionTxt">68</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;83&#39;);return false;">Details<input id="myForm:timetable:83:instructor" type="hidden" name="myForm:timetable:83:instructor" value="Nadia Sabbah"><input id="myForm:timetable:83:section" type="hidden" name="myForm:timetable:83:section" value=" M W @t 10:00 AM - 11:15 AM @r LAB H"><input id="myForm:timetable:83:finalExamDate" type="hidden" name="myForm:timetable:83:finalExamDate" value="14-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ETRA456</td>
+<td>Editing and Publishing</td>
+<td>492</td>
+<td><span id="myForm:timetable:84:sectionTxt">68</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;84&#39;);return false;">Details<input id="myForm:timetable:84:instructor" type="hidden" name="myForm:timetable:84:instructor" value="Dr. Hadeer R. Abouelnagah"><input id="myForm:timetable:84:section" type="hidden" name="myForm:timetable:84:section" value=" M W @t 01:00 PM - 02:15 PM @r N202"><input id="myForm:timetable:84:finalExamDate" type="hidden" name="myForm:timetable:84:finalExamDate" value="08-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ETRA455</td>
+<td>Legal &amp; Political Translation</td>
+<td>491</td>
+<td><span id="myForm:timetable:85:sectionTxt">68</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;85&#39;);return false;">Details<input id="myForm:timetable:85:instructor" type="hidden" name="myForm:timetable:85:instructor" value="Dr. Saadia Elamin"><input id="myForm:timetable:85:section" type="hidden" name="myForm:timetable:85:section" value=" U T Th @t 10:00 AM - 11:00 AM @r N202"><input id="myForm:timetable:85:finalExamDate" type="hidden" name="myForm:timetable:85:finalExamDate" value="13-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ETRA495</td>
+<td>Cooperative learning</td>
+<td>946</td>
+<td><span id="myForm:timetable:86:sectionTxt">1</span></td>
+<td>Lecture</td>
+<td>10</td>
+<td>Female</td>
+<td><span style="color:red">Closed</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;86&#39;);return false;">Details<input id="myForm:timetable:86:instructor" type="hidden" name="myForm:timetable:86:instructor" value="No Specify Staff"><input id="myForm:timetable:86:section" type="hidden" name="myForm:timetable:86:section" value=""><input id="myForm:timetable:86:finalExamDate" type="hidden" name="myForm:timetable:86:finalExamDate" value=""></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ELAN131</td>
+<td>Phonetics and Phonology</td>
+<td>435</td>
+<td><span id="myForm:timetable:87:sectionTxt">53</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;87&#39;);return false;">Details<input id="myForm:timetable:87:instructor" type="hidden" name="myForm:timetable:87:instructor" value="Dr. Hala Dalbani"><input id="myForm:timetable:87:section" type="hidden" name="myForm:timetable:87:section" value=" U T Th @t 09:00 AM - 10:00 AM @r N211"><input id="myForm:timetable:87:finalExamDate" type="hidden" name="myForm:timetable:87:finalExamDate" value="12-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="display: none;">
+<td>ELAN336</td>
+<td>Sociolinguistics</td>
+<td>671</td>
+<td><span id="myForm:timetable:88:sectionTxt">67</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;88&#39;);return false;">Details<input id="myForm:timetable:88:instructor" type="hidden" name="myForm:timetable:88:instructor" value="Dr. Safa Abdullah Eissa"><input id="myForm:timetable:88:section" type="hidden" name="myForm:timetable:88:section" value=" U T Th @t 01:00 PM - 02:00 PM @r W 261"><input id="myForm:timetable:88:finalExamDate" type="hidden" name="myForm:timetable:88:finalExamDate" value="07-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="display: none;">
+<td>ELP201</td>
+<td>Writing for Professional Communication</td>
+<td>450</td>
+<td><span id="myForm:timetable:89:sectionTxt">60</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;89&#39;);return false;">Details<input id="myForm:timetable:89:instructor" type="hidden" name="myForm:timetable:89:instructor" value="Dr. Dina Dakhs"><input id="myForm:timetable:89:section" type="hidden" name="myForm:timetable:89:section" value=" U T Th @t 08:00 AM - 09:00 AM @r N209"><input id="myForm:timetable:89:finalExamDate" type="hidden" name="myForm:timetable:89:finalExamDate" value="05-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW1" style="">
+<td>ELP202</td>
+<td>Oral Communication for Social &amp; Occupational Purposes</td>
+<td>473</td>
+<td><span id="myForm:timetable:90:sectionTxt">61</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;90&#39;);return false;">Details<input id="myForm:timetable:90:instructor" type="hidden" name="myForm:timetable:90:instructor" value="Dr. Orchida Fayes"><input id="myForm:timetable:90:section" type="hidden" name="myForm:timetable:90:section" value=" U T Th @t 10:00 AM - 11:00 AM @r N115"><input id="myForm:timetable:90:finalExamDate" type="hidden" name="myForm:timetable:90:finalExamDate" value="13-05-2018  08:30 AM"></a></td>
+</tr>
+<tr class="ROW2" style="">
+<td>ELAN425</td>
+<td>Selected Works in British &amp; American Literature</td>
+<td>808</td>
+<td><span id="myForm:timetable:91:sectionTxt">61</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;91&#39;);return false;">Details<input id="myForm:timetable:91:instructor" type="hidden" name="myForm:timetable:91:instructor" value="Dr. Eman M. El Sherief"><input id="myForm:timetable:91:section" type="hidden" name="myForm:timetable:91:section" value=" U T Th @t 02:00 PM - 03:00 PM @r W 262"><input id="myForm:timetable:91:finalExamDate" type="hidden" name="myForm:timetable:91:finalExamDate" value="15-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="">
+<td>ELAN341</td>
+<td>World Englishes</td>
+<td>668</td>
+<td><span id="myForm:timetable:92:sectionTxt">67</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;92&#39;);return false;">Details<input id="myForm:timetable:92:instructor" type="hidden" name="myForm:timetable:92:instructor" value="Dr. Eman M. El Sherief"><input id="myForm:timetable:92:section" type="hidden" name="myForm:timetable:92:section" value=" U T Th @t 10:00 AM - 11:00 AM @r N405"><input id="myForm:timetable:92:finalExamDate" type="hidden" name="myForm:timetable:92:finalExamDate" value="13-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW2" style="">
+<td>ETRA454</td>
+<td>Literary Translation</td>
+<td>670</td>
+<td><span id="myForm:timetable:93:sectionTxt">68</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;93&#39;);return false;">Details<input id="myForm:timetable:93:instructor" type="hidden" name="myForm:timetable:93:instructor" value="Dr. Orchida Fayes"><input id="myForm:timetable:93:section" type="hidden" name="myForm:timetable:93:section" value=" U T Th @t 09:00 AM - 10:00 AM @r N204"><input id="myForm:timetable:93:finalExamDate" type="hidden" name="myForm:timetable:93:finalExamDate" value="12-05-2018  12:30 PM"></a></td>
+</tr>
+<tr class="ROW1" style="">
+<td>ETRA357</td>
+<td>Problems of Translation</td>
+<td>816</td>
+<td><span id="myForm:timetable:94:sectionTxt">61</span></td>
+<td>Lecture</td>
+<td>3</td>
+<td>Female</td>
+<td><span style="color:">Opened</span></td>
+<td><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:showToolTipDilaog(event,&#39;94&#39;);return false;">Details<input id="myForm:timetable:94:instructor" type="hidden" name="myForm:timetable:94:instructor" value="Dr. Mona Salem"><input id="myForm:timetable:94:section" type="hidden" name="myForm:timetable:94:section" value=" U T Th @t 01:00 PM - 02:00 PM @r N201"><input id="myForm:timetable:94:finalExamDate" type="hidden" name="myForm:timetable:94:finalExamDate" value="07-05-2018  04:00 PM"></a></td>
+</tr>
+</tbody>
+</table>
+
+                </td>
+            </tr>
+            <tr><td height="5"></td></tr>
+            <tr>
+                <td><div dir="ltr" id="pag" class="pui-paginator"><span class="pui-paginator-first pui-paginator-element ui-state-default ui-corner-all"><span class="ui-icon ui-icon-seek-first">p</span></span><span class="pui-paginator-prev pui-paginator-element ui-state-default ui-corner-all"><span class="ui-icon ui-icon-seek-prev">p</span></span><span class="pui-paginator-pages"><span class="pui-paginator-page pui-paginator-element ui-state-default ui-corner-all">3</span><span class="pui-paginator-page pui-paginator-element ui-state-default ui-corner-all">4</span><span class="pui-paginator-page pui-paginator-element ui-state-default ui-corner-all">5</span><span class="pui-paginator-page pui-paginator-element ui-state-default ui-corner-all">6</span><span class="pui-paginator-page pui-paginator-element ui-state-default ui-corner-all ui-state-active">7</span></span><span class="pui-paginator-next pui-paginator-element ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-next">p</span></span><span class="pui-paginator-last pui-paginator-element ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-end">p</span></span></div></td>
+                <td style="display:none"><div id="tableNB"><table border="0" align="center" cellpadding="0" cellspacing="0" width="28%"><tbody><tr><td height="10"></td></tr><tr><td align="center" width="24"><a id="backHref" href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:startMoveTimer(event,&#39;back&#39;,0);return false;" style=""><img src="./psu_files/backs.gif" border="0"></a></td><td align="center"><span id="numbers"><span class="selectNumber" id="spanNumbers1">1</span>&nbsp;&nbsp;<span id="spanNumbers2"><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:startMoveTimer(event,&#39;no&#39;,2);return false;">2</a></span>&nbsp;&nbsp;<span id="spanNumbers3"><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:startMoveTimer(event,&#39;no&#39;,3);return false;">3</a></span>&nbsp;&nbsp;<span id="spanNumbers4"><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:startMoveTimer(event,&#39;no&#39;,4);return false;">4</a></span>&nbsp;&nbsp;</span></td><td width="40"><a id="nextHref" href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces" onclick="javascript:startMoveTimer(event,&#39;next&#39;,0);return false;" style="display: none;"><img src="./psu_files/nexts.gif" border="0"></a></td></tr></tbody></table></div></td>
+            </tr>
+        </tbody></table>
+        
+        <br><table align="right" border="0" cellpadding="0" cellspacing="0" style="width:10%; word-break: keep-all;">
+            <tbody><tr>
+                <td height="18">
+                    
+                    <a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces#" title="Back" onclick="clearFormHiddenParams_myForm(&#39;myForm&#39;);document.forms[&#39;myForm&#39;][&#39;myForm:_idcl&#39;].value=&#39;myForm:_id80&#39;; document.forms[&#39;myForm&#39;].submit(); return false;" class="backButton"></a>
+                </td>
+            </tr>
+        </tbody></table> 
+    
+    <input type="hidden" name="com.sun.faces.VIEW" id="com.sun.faces.VIEW" value="_id48595:_id48601"><input type="hidden" name="myForm" value="myForm"><input type="hidden" name="myForm:_idcl">
+<script type="text/javascript">
+<!--
+function clearFormHiddenParams_myForm(curFormName) {
+  var curForm = document.forms[curFormName];
+ curForm.elements['myForm:_idcl'].value = null;
+}
+//-->
+</script>
+</form>
+    
+    <script type="text/javascript" language="javascript">
+      	tableIndex('myForm:timetable','tableDiv','tableNB','En');
+    </script>
+    
+
+
+
+
+        </div></div></div></div>
+        <div id="footer">
+        	<div class="texter">&nbsp;</div>
+            <div class="bottom_links">
+            	<ul>
+                    <li><a href="https://edugate.psu.edu.sa/psu/ui/guest/timetable/index/scheduleTreeCoursesIndex.faces#">&nbsp;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+</center><div style="clear: both"></div>
+
+ <div class="pui-dialog-docking-zone"></div><div id="dlg_modal" class="ui-widget-overlay" style="width: 1920px; height: 974px; z-index: 1000;"></div></body></html>
