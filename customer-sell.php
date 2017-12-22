@@ -126,6 +126,16 @@ if(!isLoggedIn())
                             </div>
                             <!-- /.row -->
 
+
+                    <p class="lead">Put your item's information here.</p>
+                    <p class="text-muted">It is necessary to fill the item description correctly to get as many customers as possible.</p>
+
+                    <div class="box clearfix">
+                        <div class="heading">
+                            <h3 class="text-uppercase">Item Description</h3>
+                        </div>
+
+                        <form>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -171,35 +181,7 @@ if(!isLoggedIn())
                 <!-- *** RIGHT COLUMN ***
          _________________________________________________________ -->
 
-                <div class="col-md-3">
-                    <!-- *** CUSTOMER MENU ***
-_________________________________________________________ -->
-                    <div class="panel panel-default sidebar-menu">
-
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Customer section</h3>
-                        </div>
-
-                        <div class="panel-body">
-
-                            <ul class="nav nav-pills nav-stacked">
-                                <li class="active">
-                                    <a href="customer-orders.html"><i class="fa fa-list"></i> My orders</a>
-                                </li>
-                                <li>
-                                    <a href="customer-wishlist.html"><i class="fa fa-heart"></i> My wishlist</a>
-                                </li>
-                                <li>
-                                    <a href="customer-account.html"><i class="fa fa-user"></i> My account</a>
-                                </li>
-                                <li>
-                                    <a href="index.html"><i class="fa fa-sign-out"></i> Logout</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <!-- /.col-md-3 -->
+                <?php include "utility/customer-panel.php"; ?>
 
                     <!-- *** CUSTOMER MENU END *** -->
                 </div>

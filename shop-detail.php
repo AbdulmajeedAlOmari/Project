@@ -177,22 +177,6 @@
                             <li>Regular fit</li>
                             <li>The model (height 5'8" and chest 33") is wearing a size S</li>
                         </ul>
-                        <?php
-                        session_start();
-                        if(isset($_SESSION['auth'])||isset($_COOKIE['auth'])) {
-                            ?>
-
-                        <h4>Contact Details</h4>
-                        <ul>
-                            <li>Mobile Number: 055999933</li>
-                            <li>Email: example_group59@ksu.sa</li>
-                            <li>Shipping: World-Wide shipping</li>
-                        </ul>
-                        <?php}?>
-                        <h4>Please sign in to view contact detail</h4>
-
-
-
 
                         <blockquote>
                             <p><em>Define style this season with Armani's new range of trendy tops, crafted with intricate details. Create a chic statement look by teaming this lace number with skinny jeans and pumps.</em>
@@ -331,233 +315,26 @@
                 <!-- *** RIGHT COLUMN ***
       _________________________________________________________ -->
 
-                <div class="col-sm-3">
+                <?php include "utility/categories.php" ?>
 
-                    <!-- *** MENUS AND FILTERS ***
-_________________________________________________________ -->
-                    <div class="panel panel-default sidebar-menu">
+                <!-- *** RIGHT COLUMN END *** -->
 
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Categories</h3>
-                        </div>
-
-                        <div class="panel-body">
-                            <ul class="nav nav-pills nav-stacked category-menu">
-                                <li>
-                                    <a href="shop-category.html">Men <span class="badge pull-right">42</span></a>
-                                    <ul>
-                                        <li><a href="shop-category.html">T-shirts</a>
-                                        </li>
-                                        <li><a href="shop-category.html">Shirts</a>
-                                        </li>
-                                        <li><a href="shop-category.html">Pants</a>
-                                        </li>
-                                        <li><a href="shop-category.html">Accessories</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="active">
-                                    <a href="shop-category.html">Ladies  <span class="badge pull-right">123</span></a>
-                                    <ul>
-                                        <li><a href="shop-category.html">T-shirts</a>
-                                        </li>
-                                        <li><a href="shop-category.html">Skirts</a>
-                                        </li>
-                                        <li><a href="shop-category.html">Pants</a>
-                                        </li>
-                                        <li><a href="shop-category.html">Accessories</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="shop-category.html">Kids  <span class="badge pull-right">11</span></a>
-                                    <ul>
-                                        <li><a href="shop-category.html">T-shirts</a>
-                                        </li>
-                                        <li><a href="shop-category.html">Skirts</a>
-                                        </li>
-                                        <li><a href="shop-category.html">Pants</a>
-                                        </li>
-                                        <li><a href="shop-category.html">Accessories</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                            </ul>
-
-                        </div>
-                    </div>
-
-                    </form>
-
-                </div>
             </div>
-
-
-
-            <!-- *** MENUS AND FILTERS END *** -->
+            <!-- /.row -->
 
         </div>
-        <!-- /.col-md-3 -->
-
-        <!-- *** RIGHT COLUMN END *** -->
-
+        <!-- /.container -->
     </div>
-    <!-- /.row -->
+    <!-- /#content -->
+
+    <!-- *** FOOTER ***
+_________________________________________________________ -->
+
+    <?php include "footer.php"; ?>
+
+
 
 </div>
-<!-- /.container -->
-</div>
-<!-- /#content -->
-
-
-<!-- *** GET IT ***
-_________________________________________________________ -->
-
-
-<!-- *** GET IT END *** -->
-
-
-<!-- *** FOOTER ***
-_________________________________________________________ -->
-
-<footer id="footer">
-    <div class="container">
-        <div class="col-md-3 col-sm-6">
-            <h4>About us</h4>
-
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-
-            <hr>
-
-
-
-            <hr class="hidden-md hidden-lg hidden-sm">
-
-        </div>
-        <!-- /.col-md-3 -->
-
-        <div class="col-md-3 col-sm-6">
-
-            <h4>Blog</h4>
-
-            <div class="blog-entries">
-                <div class="item same-height-row clearfix">
-                    <div class="image same-height-always">
-                        <a href="#">
-                            <img class="img-responsive" src="img/detailsquare.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="name same-height-always">
-                        <h5><a href="#">Blog post name</a></h5>
-                    </div>
-                </div>
-
-                <div class="item same-height-row clearfix">
-                    <div class="image same-height-always">
-                        <a href="#">
-                            <img class="img-responsive" src="img/detailsquare.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="name same-height-always">
-                        <h5><a href="#">Blog post name</a></h5>
-                    </div>
-                </div>
-
-                <div class="item same-height-row clearfix">
-                    <div class="image same-height-always">
-                        <a href="#">
-                            <img class="img-responsive" src="img/detailsquare.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="name same-height-always">
-                        <h5><a href="#">Very very long blog post name</a></h5>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="hidden-md hidden-lg">
-
-        </div>
-        <!-- /.col-md-3 -->
-
-        <div class="col-md-3 col-sm-6">
-
-            <h4>Contact</h4>
-
-            <p><strong>Universal Ltd.</strong>
-                <br>13/25 New Avenue
-                <br>Newtown upon River
-                <br>45Y 73J
-                <br>England
-                <br>
-                <strong>Great Britain</strong>
-            </p>
-
-            <a href="contact.html" class="btn btn-small btn-template-main">Go to contact page</a>
-
-            <hr class="hidden-md hidden-lg hidden-sm">
-
-        </div>
-        <!-- /.col-md-3 -->
-
-
-
-        <div class="col-md-3 col-sm-6">
-
-            <h4>Photostream</h4>
-
-            <div class="photostream">
-                <div>
-                    <a href="#">
-                        <img src="img/detailsquare.jpg" class="img-responsive" alt="#">
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <img src="img/detailsquare2.jpg" class="img-responsive" alt="#">
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <img src="img/detailsquare3.jpg" class="img-responsive" alt="#">
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <img src="img/detailsquare3.jpg" class="img-responsive" alt="#">
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <img src="img/detailsquare2.jpg" class="img-responsive" alt="#">
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <img src="img/detailsquare.jpg" class="img-responsive" alt="#">
-                    </a>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.col-md-3 -->
-    </div>
-    <!-- /.container -->
-</footer>
-<!-- /#footer -->
-
-<!-- *** FOOTER END *** -->
-
-<!-- *** COPYRIGHT ***
-_________________________________________________________ -->
-
-
-<!-- /#copyright -->
-
-<!-- *** COPYRIGHT END *** -->
-
-
 <!-- /#all -->
 
 <!-- #### JAVASCRIPT FILES ### -->
