@@ -43,8 +43,7 @@ if(isset($_POST["submit"])) {
             $error = "ERROR_CHANGE_IMAGE_NAME";
         } else if ($_FILES["fileToUpload"]["size"] > 500000) {
             $error = "ERROR_IMAGE_TOO_LARGE";
-        } else if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-            && $imageFileType != "gif" ) {
+        } else if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
             $error = "ERROR_IMAGE_TYPE";
         }
 

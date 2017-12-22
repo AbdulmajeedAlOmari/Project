@@ -86,15 +86,6 @@ _________________________________________________________ -->
                         <li class="active"><a href="index.php">Home</a></li>
                         <li><a href="about.php">About</a></li>
                         <li><a href="contact.php">Contact</a></li>
-                        <?php
-                            //TODO add (cart-wishlist-account tap)
-                            if(false) {
-                                ?>
-                                <li><a href="shop-basket.php">Shopping Cart</a></li>
-                                <li><a href="customer-wishlist.php">Wishlist</a></li>
-                                <?php
-                            }
-                        ?>
                         <!--                            <li><a href="shop-category-left.php">TESTING</a></li>-->
                     </ul>
                 </div>

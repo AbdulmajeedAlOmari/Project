@@ -1,18 +1,18 @@
 <?php
     require "login_system/db.php";
 
-    $query = "SELECT `itemId`,`image`,`name`,`price` FROM items";
+    $query = "SELECT itemId,image,itemName,price FROM items";
 
     if(isset($_GET['category'])){
         switch($_GET['category']) {
             case "cars":
-                $query = "SELECT `itemId`,`image`,`name`,`price` FROM items WHERE category='cars'";
+                $query = "SELECT itemId,image,itemName,price FROM items WHERE category='cars'";
                 break;
             case "animals":
-                $query = "SELECT `itemId`,`image`,`name`,`price` FROM items WHERE category='animals'";
+                $query = "SELECT itemId,image,itemName,price FROM items WHERE category='animals'";
                 break;
             case "plants":
-                $query = "SELECT `itemId`,`image`,`name`,`price` FROM items WHERE category='plants'";
+                $query = "SELECT itemId,image,itemName,price FROM items WHERE category='plants'";
                 break;
         }
     }
@@ -125,7 +125,7 @@
 
                                         /* text */
                                         echo "<div class=\"text\">";
-                                        echo "<h3><a href=\"shop-detail.php\">". $row['name'] ."</a></h3>";
+                                        echo "<h3><a href=\"shop-detail.php\">". $row['itemName'] ."</a></h3>";
                                         echo "<p class=\"price\">". $row['price'] ."&#36;</p>";
                                         echo "<p class=\"buttons\">";
                                         echo "<a href=\"shop-detail.php?itemId=". $row['itemId'] ."\" class=\"btn btn-default\">View detail</a>";
