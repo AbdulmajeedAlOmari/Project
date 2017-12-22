@@ -92,9 +92,13 @@ if(!isLoggedIn())
                 ?>
 
                 <div class="col-md-9 clearfix" id="customer-account">
+
+                    <p class="lead">Put your item's information here.</p>
+                    <p class="text-muted">It is necessary to fill the item description correctly to get as many customers as possible.</p>
+
                     <div class="box clearfix">
                         <div class="heading">
-                            <h3 class="text-uppercase">Order details</h3>
+                            <h3 class="text-uppercase">Item Description</h3>
                         </div>
 
                         <form name="postItem" action="login_system/postOrder.php" method="post" enctype="multipart/form-data">
@@ -113,33 +117,23 @@ if(!isLoggedIn())
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="name">Item name</label>
+                                        <label for="name">Name</label>
                                         <input type="text" class="form-control" id="name" name="itemName">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="description">Item description</label>
+                                        <label for="description">Description</label>
                                         <input type="text" class="form-control" id="description" name="description">
                                     </div>
                                 </div>
                             </div>
                             <!-- /.row -->
 
-
-                    <p class="lead">Put your item's information here.</p>
-                    <p class="text-muted">It is necessary to fill the item description correctly to get as many customers as possible.</p>
-
-                    <div class="box clearfix">
-                        <div class="heading">
-                            <h3 class="text-uppercase">Item Description</h3>
-                        </div>
-
-                        <form>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="price">Item price</label>
+                                        <label for="price">Price</label>
                                         <input type="text" class="form-control" id="price" name="price">
                                     </div>
                                 </div>
@@ -163,7 +157,7 @@ if(!isLoggedIn())
                             <div class="row">
 
                                 <div class="col-sm-12 text-center">
-                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-save"></i>Post Order</button>
+                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-save"></i> Save changes</button>
 
                                 </div>
 

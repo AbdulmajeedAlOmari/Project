@@ -37,5 +37,5 @@ if (!mysqli_query($con, $query)) {
     die("Query Failed : " . mysqli_error($con));
 } else {
     mysqli_close($con);
-    header("Location: ../new-order.php?neworder-msg=successful");
+    header("Location: ../customer-sell.php?neworder-msg=successful");
 }
