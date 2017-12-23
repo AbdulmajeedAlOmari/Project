@@ -12,13 +12,6 @@ _________________________________________________________ -->
                     </p>
                 </div>
                 <div class="col-xs-7">
-                    <div class="social">
-                        <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                        <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                    </div>
-
                     <div class="login">
                         <?php
 
@@ -31,14 +24,11 @@ _________________________________________________________ -->
                                     $username = $_SESSION['auth'];
 
                                 ?>
-                                <span class="hidden-sm hidden-xs">Welcome, <?php echo "$username"?>!</span>
-                                <a href="login_system/logout.php"><i class="fa fa-sign-out"></i>
-                                    <span class="hidden-xs text-uppercase">Logout</span></a>
-                                <a href="customer-account.php"><i class="fa fa-user"></i> <span
-                                            class="hidden-xs text-uppercase">Account</span></a>
-<!--                                fa-bell-->
-                                <a href="my-items.php"><i class="fa fa-list"></i> <span
-                                            class="hidden-xs text-uppercase">My items</span></a>
+                                <span class="hidden-sm hidden-xs welcomeMessage">Welcome, <?php echo "$username"?>!</span>
+                                <a href="login_system/logout.php"><i class="fa fa-sign-out"></i> <span class="hidden-xs text-uppercase">Logout</span></a>
+                                <a href="customer-account.php"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Account</span></a>
+                                <a href="my-items.php"><i class="fa fa-list"></i> <span class="hidden-xs text-uppercase">My items</span></a>
+                                <a href="customer-notifications.php"><i class="fa fa-bell"></i> <span class="hidden-xs text-uppercase">Notifications</span></a>
                                 <?php
                             } else {
                                 ?>
