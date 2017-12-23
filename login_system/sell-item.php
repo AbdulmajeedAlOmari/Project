@@ -72,6 +72,14 @@ if($uploadOk == 1) {
         mysqli_close($con);
         die("Query Failed : " . mysqli_error($con));
     } else {
+        $lastId = mysqli_insert_id($con);
+        $query = "SELECT id FROM users WHERE interest='$category'";
+        $result = mysqli_query($con,$query) OR die(mysqli_error($con));
+        while($row=mysqli_fetch_array($result)){
+            $recepientId=$row['id'];
+            $query = "INSERT INTO `notifications`(`recepientId`, `itemId`) VALUES ('$recepientId','$lastId')";
+            $result = mysqli_query($con,$query) OR die(mysqli_error($con));
+        }
         mysqli_close($con);
         header("Location: ../customer-sell.php?msg=successful");
     }

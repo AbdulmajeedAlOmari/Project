@@ -1,6 +1,10 @@
 <?php
 require "db.php";
-
+require "check-login.php";
+$itemId = $_GET['itemId'];
+if(!isLoggedIn()){
+    header("location:../shop-detail.php?itemId=$itemId&error=ERROR_NOT_LOGGED_IN");
+}
 if(isset($_COOKIE['auth'])) {
     $username = $_COOKIE['auth'];
 }else {
@@ -11,7 +15,7 @@ $result = mysqli_query($con, $query) OR die(mysqli_error($con));
 $row = mysqli_fetch_assoc($result);
 $id = $row['id'];
 
-$itemId = $_GET['itemId'];
+
 $query = "INSERT INTO `wishlist`(`id`, `itemId`) VALUES ('$id','$itemId')";
 if (!mysqli_query($con, $query)) {
     mysqli_close($con);

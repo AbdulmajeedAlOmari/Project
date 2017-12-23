@@ -152,7 +152,8 @@ if(isset($_GET['itemId']) && isset($_GET['userId'])) {
                                     <div class="form-group">
                                         <label for="category">Category</label>
                                         <select name="category">
-                                            <option <?php if($row['category']=="Cars") echo "selected"; //TODO check if correct ?>>Cars</option>
+                                            <option <?php if($row['category']=="Cars") echo "selected";?>>Cars</option>
+                                            <option <?php if($row['category']=="Furniture") echo "selected";?>>Furniture</option>
                                             <option <?php if($row['category']=="Plants") echo "selected"; ?>>Plants</option>
                                             <option <?php if($row['category']=="Animals") echo "selected"; ?>>Animals</option>
                                         </select>

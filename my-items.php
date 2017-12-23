@@ -132,7 +132,7 @@
                                                 echo "<tr>";
                                                 echo "<td>";
                                                 echo "<a href=\"shop-detail.php?itemId=".$row['itemId']."\">";
-                                                echo "<img src=\"login_system/uploads/".$row['image']."\" alt=\"White Blouse Armani\">";
+                                                echo "<img src=\"login_system/uploads/".$row['image']."\">";
                                                 echo "</a>";
                                                 echo "</td>";
                                                 /* END image */

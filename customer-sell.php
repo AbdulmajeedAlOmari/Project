@@ -111,6 +111,7 @@ if(!isLoggedIn())
                                         <label for="category">Category</label>
                                         <select name="category">
                                             <option>Cars</option>
+                                            <option>Furniture</option>
                                             <option>Plants</option>
                                             <option>Animals</option>
                                         </select>

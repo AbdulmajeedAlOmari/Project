@@ -18,7 +18,9 @@ _________________________________________________________ -->
                 <li>
                     <a href="index.php?category=cars">Cars</a>
                 </li>
-                <!--TODO add "furniture" here -->
+                <li>
+                    <a href="index.php?category=furniture">Furniture</a>
+                </li>
                 <li>
                     <a href="index.php?category=plants">Plants</a>
                 </li>

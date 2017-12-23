@@ -8,7 +8,9 @@
             case "cars":
                 $query = "SELECT itemId,image,itemName,price FROM items WHERE category='cars'";
                 break;
-            //TODO add case "furniture" here
+            case "furniture":
+                $query = "SELECT itemId,image,itemName,price FROM items WHERE category='furniture'";
+                break;
             case "animals":
                 $query = "SELECT itemId,image,itemName,price FROM items WHERE category='animals'";
                 break;
@@ -114,7 +116,12 @@
                                 if(mysqli_num_rows($result) == 0)
                                     echo "<div class=\"alert alert-info\" role=\"alert\"> There are no items now, <strong>comeback later!</strong> </div>";
                                 else {
+                                    $counter=1;
                                     while($row = mysqli_fetch_array($result)) {
+                                        if($counter%3==0) {
+                                            echo "<div class=\"row products\">";
+                                        }
+
                                         echo "<div class=\"col-md-4 col-sm-6\">";
                                         echo "<div class=\"product\">";
                                         /* image */
@@ -127,7 +134,7 @@
 
                                         /* text */
                                         echo "<div class=\"text\">";
-                                        echo "<h3><a href=\"shop-detail.php\">". $row['itemName'] ."</a></h3>";
+                                        echo "<h3><a href=\"shop-detail.php?itemId=". $row['itemId'] ."\">". $row['itemName'] ."</a></h3>";
                                         echo "<p class=\"price\">&#36;". $row['price'] ."</p>";
                                         echo "<p class=\"buttons\">";
                                         echo "<a href=\"shop-detail.php?itemId=". $row['itemId'] ."\" class=\"btn btn-default\">View detail</a>";
@@ -137,6 +144,10 @@
 
                                         echo "</div>";
                                         echo "</div>";
+                                        if($counter%3==0) {
+                                            echo "</div>";
+                                        }
+                                        $counter++;
                                     }
                                 }
                             ?>

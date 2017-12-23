@@ -111,6 +111,11 @@
                                             echo "<div class='alert alert-success' role='alert'>Item has been added to wishlist successfully!</div>";
 
                                         unset($_GET['wishlist-msg']);
+                                    }elseif(isset($_GET['error'])) {
+                                        require "utility/errors.php";
+                                        $error=getError($_GET['error']);
+                                        echo $error;
+                                        unset($_GET['error']);
                                     }
                                 ?>
                                 <?php

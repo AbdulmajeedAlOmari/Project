@@ -1,4 +1,24 @@
 <?php
+require "login_system/db.php";
+
+$flag = false;
+if(isset($_COOKIE['auth']) || isset($_SESSION['auth'])) {
+    if(isset($_COOKIE['auth'])) {
+        $username = $_COOKIE['auth'];
+    } else {
+        $username = $_SESSION['auth'];
+    }
+    $q = "SELECT id FROM users WHERE username='$username'";
+    $r = mysqli_query($con,$q) OR die(mysqli_error($con));
+    $row = mysqli_fetch_array($r);
+    $userId = $row['id'];
+    $q = "SELECT * FROM notifications WHERE recepientId='$userId'";
+    $r = mysqli_query($con,$q) OR die(mysqli_error($con));
+    if(mysqli_num_rows($r)!=0){
+        $flag = true;
+    }
+}
+
 ?>
 <header>
     <!-- *** TOP ***
@@ -28,7 +48,8 @@ _________________________________________________________ -->
                                 <a href="login_system/logout.php"><i class="fa fa-sign-out"></i> <span class="hidden-xs text-uppercase">Logout</span></a>
                                 <a href="customer-account.php"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Account</span></a>
                                 <a href="my-items.php"><i class="fa fa-list"></i> <span class="hidden-xs text-uppercase">My items</span></a>
-                                <a href="customer-notifications.php"><i class="fa fa-bell"></i> <span class="hidden-xs text-uppercase">Notifications</span></a>
+                                <a href="customer-notifications.php"><i class="fa fa-bell"></i> <span class="hidden-xs text-uppercase">Notifications</span>
+                                    <?php if($flag) echo "<i class=\"fa fa-circle red\"></i>"?></a>
                                 <?php
                             } else {
                                 ?>
