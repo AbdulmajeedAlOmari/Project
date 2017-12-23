@@ -1,18 +1,15 @@
 <?php
-    if(isset($_GET['itemId'])) {
-        require "login_system/db.php";
-        $itemId = $_GET['itemId'];
-
-        $query = "SELECT itemId,sellerId,description,image,itemName,price,quantity FROM items WHERE itemId='$itemId'";
-        $result = mysqli_query($con,$query);
-
-        if(mysqli_num_rows($result) == 0)
-            header("Location: index.php?error=ERROR_INCORRECT_ITEM_ID");
-
-        $row = mysqli_fetch_array($result);
-    } else {
+if(isset($_GET['itemId'])) {
+    require "login_system/db.php";
+    $itemId = $_GET['itemId'];
+    $query = "SELECT itemId,sellerId,description,image,itemName,price,quantity FROM items WHERE itemId='$itemId'";
+    $result = mysqli_query($con,$query);
+    if(mysqli_num_rows($result) == 0)
         header("Location: index.php?error=ERROR_INCORRECT_ITEM_ID");
-    }
+    $row = mysqli_fetch_array($result);
+} else {
+    header("Location: index.php?error=ERROR_INCORRECT_ITEM_ID");
+}
 ?>
 
 <!DOCTYPE html>
@@ -106,37 +103,36 @@
                         <div class="col-sm-6">
                             <div class="box">
                                 <?php
-                                    if(isset($_GET['wishlist-msg'])) {
-                                        if ($_GET['wishlist-msg'] == 'successful')
-                                            echo "<div class='alert alert-success' role='alert'>Item has been added to wishlist successfully!</div>";
-
-                                        unset($_GET['wishlist-msg']);
-                                    }elseif(isset($_GET['error'])) {
-                                        require "utility/errors.php";
-                                        $error=getError($_GET['error']);
-                                        echo $error;
-                                        unset($_GET['error']);
-                                    }
+                                if(isset($_GET['wishlist-msg'])) {
+                                    if ($_GET['wishlist-msg'] == 'successful')
+                                        echo "<div class='alert alert-success' role='alert'>Item has been added to wishlist successfully!</div>";
+                                    unset($_GET['wishlist-msg']);
+                                }elseif(isset($_GET['error'])) {
+                                    require "utility/errors.php";
+                                    $error=getError($_GET['error']);
+                                    echo $error;
+                                    unset($_GET['error']);
+                                }
                                 ?>
                                 <?php
                                 //TODO get itemId
                                 $itemId = $row['itemId'];
                                 echo "<form action='login_system/add-to-wishlist.php?itemId=$itemId' method='post'>"
                                 ?>
-                                    <div class="sizes">
-                                        <h3>Price</h3>
-                                    </div>
+                                <div class="sizes">
+                                    <h3>Price</h3>
+                                </div>
 
-                                    <?php
-                                        $price= $row['price'];
-                                        echo "<p class=\"price\">$$price</p>";
-                                    ?>
+                                <?php
+                                $price= $row['price'];
+                                echo "<p class=\"price\">$$price</p>";
+                                ?>
 
-                                    <p class="text-center">
-                                        <form action="login_system/add-to-wishlist.php" method="post">
-                                            <button type="submit" class="btn btn-template-main"><i class="fa fa-heart-o"></i> Add to wishlist</button>
-                                        </form>
-                                    </p>
+                                <p class="text-center">
+                                <form action="login_system/add-to-wishlist.php" method="post">
+                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-heart-o"></i> Add to wishlist</button>
+                                </form>
+                                </p>
                             </div>
                         </div>
 
@@ -146,9 +142,9 @@
                     <div class="box" id="details">
 
                         <?php
-                            //TODO post item details here
-                            echo "<h4>Item Description</h4>";
-                            echo $row['description'] . "<br><br>";
+                        //TODO post item details here
+                        echo "<h4>Item Description</h4>";
+                        echo $row['description'] . "<br><br>";
                         ?>
 
 
@@ -158,18 +154,15 @@
                             $query = "SELECT email,firstName,lastName,phoneNumber,street,zip,state,country FROM users WHERE id='$sellerId'";
                             $result = mysqli_query($con, $query) OR die(mysqli_error($con));
                             $contactInfo = mysqli_fetch_array($result);
-
                             $firstName = $contactInfo['firstName'];
                             $lastName = $contactInfo['lastName'];
                             $name = empty($firstName) && empty($lastName) ? 'Unknown' : $firstName." ".$lastName;
-
                             $phoneNumber = empty($contactInfo['phoneNumber']) ? 'Unknown' : $contactInfo['phoneNumber'];
                             $email = empty($contactInfo['email']) ? 'Unknown' : $contactInfo['email'];
                             $country = empty($contactInfo['country']) ? 'Unknown' : $contactInfo['country'];
                             $state = empty($contactInfo['state']) ? 'Unknown' : $contactInfo['state'];
                             $street = empty($contactInfo['street']) ? 'Unknown' : $contactInfo['street'];
                             $zip = empty($contactInfo['zip']) ? 'Unknown' : $contactInfo['zip'];
-
                             echo "<h4>Contact Details</h4>
                             <ul>
                                 <li>Name: $name</li>
@@ -180,17 +173,16 @@
                                 <li>Street: $street</li>
                                 <li>Zip: $zip</li>
                             </ul> <br>";
-
                             echo "<strong>Current Quantity Available:</strong> " . $row['quantity'];
                         } else {
                             echo "<div class=\"alert alert-warning\" role=\"alert\">You have to login to see contact details and quantity of the item</div>";
                         }
                         ?>
 
-<!--                        <blockquote>-->
-<!--                            <p><em>Define style this season with Armani's new range of trendy tops, crafted with intricate details. Create a chic statement look by teaming this lace number with skinny jeans and pumps.</em>-->
-<!--                            </p>-->
-<!--                        </blockquote>-->
+                        <!--                        <blockquote>-->
+                        <!--                            <p><em>Define style this season with Armani's new range of trendy tops, crafted with intricate details. Create a chic statement look by teaming this lace number with skinny jeans and pumps.</em>-->
+                        <!--                            </p>-->
+                        <!--                        </blockquote>-->
                     </div>
 
                     <div class="box social" id="product-social">

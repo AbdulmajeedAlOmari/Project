@@ -119,8 +119,7 @@ $zip = $row['zip'];
 
                     <div class="col-md-9 clearfix" id="customer-account">
 
-                        <p class="lead">Change your personal details or your password here.</p>
-                        <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                        <p class="lead">Change your contact details or your password here.</p>
 
                         <div class="box">
 
@@ -186,7 +185,7 @@ $zip = $row['zip'];
                         ?>
                         <div class="box clearfix">
                             <div class="heading">
-                                <h3 class="text-uppercase">Personal details</h3>
+                                <h3 class="text-uppercase">contact details</h3>
                             </div>
 
                             <form name="contact-information" action="login_system/edit-contact-information.php" method="post">

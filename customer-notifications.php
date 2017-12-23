@@ -111,10 +111,10 @@ if($userRow['interest'] != "None"){
                                     <div class="form-group">
                                         <label for="category">What are you interested in? </label>
                                         <select name="category">
-                                            <option <?php if($category=="Cars") echo "selected";?>>Cars</option>
-                                            <option <?php if($category=="Furniture") echo "selected";?>>Furniture</option>
-                                            <option <?php if($category=="Plants") echo "selected";?>>Plants</option>
-                                            <option <?php if($category=="Animals") echo "selected";?>>Animals</option>
+                                            <option <?php if($userRow['interest'] != "None" && $category=="Cars") echo "selected";?>>Cars</option>
+                                            <option <?php if($userRow['interest'] != "None" && $category=="Furniture") echo "selected";?>>Furniture</option>
+                                            <option <?php if($userRow['interest'] != "None" && $category=="Plants") echo "selected";?>>Plants</option>
+                                            <option <?php if($userRow['interest'] != "None" && $category=="Animals") echo "selected";?>>Animals</option>
                                         </select>
                                         <button type="submit" name="submit" class="btn btn-template-main"><i class="fa fa-cart-plus"></i>CONFIRM</button>
                                     </div>

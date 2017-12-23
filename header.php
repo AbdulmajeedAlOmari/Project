@@ -10,8 +10,8 @@ if(isset($_COOKIE['auth']) || isset($_SESSION['auth'])) {
     }
     $q = "SELECT id FROM users WHERE username='$username'";
     $r = mysqli_query($con,$q) OR die(mysqli_error($con));
-    $row = mysqli_fetch_array($r);
-    $userId = $row['id'];
+    $headerRow = mysqli_fetch_array($r);
+    $userId = $headerRow['id'];
     $q = "SELECT * FROM notifications WHERE recepientId='$userId'";
     $r = mysqli_query($con,$q) OR die(mysqli_error($con));
     if(mysqli_num_rows($r)!=0){
