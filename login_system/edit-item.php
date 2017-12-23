@@ -33,6 +33,16 @@ $description = $_POST['description'];
 $price = $_POST['price'];
 $quantity = $_POST['quantity'];
 
+if(!isset($itemName) || !isset($description) || !isset($price) || !isset($quantity)||
+    trim($itemName) == '' || trim($description) == '' || trim($price) == '' || trim($quantity) == '')
+    header("Location: ../modify-item.php?itemId=$itemId&userId=$userId&error=ERROR_NOT_FULLY_FILLED");
+
+if(!is_numeric($price))
+    header("Location: ../modify-item.php?itemId=$itemId&userId=$userId&error=ERROR_PRICE_NOT_A_NUMBER");
+
+if(!is_numeric($quantity))
+    header("Location: ../modify-item.php?itemId=$itemId&userId=$userId&error=ERROR_QUANTITY_NOT_A_VALID_NUMBER");
+
 $uploadOk = 0;
 
 if(isset($_POST["submit"])) {
@@ -86,10 +96,10 @@ if($uploadOk == 1) {
     $query = "UPDATE `items` SET `category`='$category',`description`='$description',`itemName`='$itemName',`image`='$image',`price`='$price',`quantity`='$quantity' WHERE itemId='$itemId' AND sellerId='$userId'";
     $result =  mysqli_query($con, $query) OR die(mysqli_error($con));
     mysqli_close($con);
-    header("Location: ../customer-sell.php?msg=successful");
+    header("Location: ../modify-item.php?itemId=$itemId&userId=$userId&msg=successful");
 } else {
     $query = "UPDATE `items` SET `category`='$category',`description`='$description',`itemName`='$itemName',`price`='$price',`quantity`='$quantity' WHERE itemId='$itemId' AND sellerId='$userId'";
     $result =  mysqli_query($con, $query) OR die(mysqli_error($con));
     mysqli_close($con);
-    header("Location: ../customer-sell.php?msg=successful");
+    header("Location: ../modify-item.php?itemId=$itemId&userId=$userId&msg=successful");
 }

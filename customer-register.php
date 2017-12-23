@@ -80,10 +80,8 @@ if(isLoggedIn())
             <?php
                 if(isset($_GET['error'])) {
                     require "utility/errors.php";
-
-                    $error = constant($_GET['error']);
+                    $error = getError($_GET['error']);
                     echo $error;
-
                     unset($_GET['error']);
                 }
             ?>
@@ -93,10 +91,8 @@ if(isLoggedIn())
                         <?php
                         if (isset($_GET['register-error'])) {
                             require "utility/errors.php";
-
-                            $error = constant($_GET['register-error']);
+                            $error = getError($_GET['register-error']);
                             echo $error;
-
                             unset($_GET['error']);
                         } else if (isset($_GET['register-msg'])) {
                             if ($_GET['register-msg'] == 'successful')
@@ -147,7 +143,8 @@ if(isLoggedIn())
                         <?php
                         if (isset($_GET['login-error'])) {
                             require "utility/errors.php";
-                            echo constant($_GET['login-error']);
+                            $error = getError($_GET['login-error']);
+                            echo $error;
                             unset($_GET['login-error']);
                         }
                         ?>

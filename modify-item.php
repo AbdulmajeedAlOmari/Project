@@ -137,6 +137,16 @@ if(isset($_GET['itemId']) && isset($_GET['userId'])) {
                             <h3 class="text-uppercase">Item Description</h3>
                         </div>
                         <form <?php echo "action=\"login_system/edit-item.php?itemId=$itemId&userId=$userId\"" ?> method="post" enctype="multipart/form-data">
+                            <?php
+                            if(isset($_GET['error'])) {
+                                require "utility/errors.php";
+                                $error = getError($_GET['error']);
+                                echo $error==''? '' : "<div class=\"row\">
+                                <div class=\"col-sm-12\">" . constant($_GET['error']) . "</div>
+                            </div>";
+                                unset($_GET['error']);
+                            }
+                            ?>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -153,13 +163,13 @@ if(isset($_GET['itemId']) && isset($_GET['userId'])) {
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name" name="itemName" <?php echo "value=".$row['itemName']?>>
+                                        <input type="text" class="form-control" id="name" name="itemName" required <?php echo "value=".$row['itemName']?>>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="description">Description</label>
-                                        <input type="text" class="form-control" id="description" name="description" <?php echo "value=".$row['description']?>>
+                                        <input type="text" class="form-control" id="description" name="description" required <?php echo "value=".$row['description']?>>
                                     </div>
                                 </div>
                             </div>
@@ -169,25 +179,17 @@ if(isset($_GET['itemId']) && isset($_GET['userId'])) {
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="price">Price</label>
-                                        <input type="text" class="form-control" id="price" name="price" <?php echo "value=".$row['price']?>>
+                                        <input type="text" class="form-control" id="price" name="price" required <?php echo "value=".$row['price']?>>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="quantity">Quantity</label>
-                                        <input type="number" class="form-control" id="quantity" name="quantity" <?php echo "value=".$row['quantity']?>>
+                                        <input type="number" class="form-control" id="quantity" name="quantity" required <?php echo "value=".$row['quantity']?>>
                                     </div>
                                 </div>
                             </div>
-                            <?php
-                                if(isset($_GET['error'])) {
-                                    require "utility/errors.php";
-                                    echo "<div class=\"row\">
-                                <div class=\"col-sm-12\">" . constant($_GET['error']) . "</div>
-                            </div>";
-                                    unset($_GET['error']);
-                                }
-                            ?>
+
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">

@@ -23,6 +23,15 @@ $description = $_POST['description'];
 $price = $_POST['price'];
 $quantity = $_POST['quantity'];
 
+if(empty($itemName) || empty($description) || empty($price) || empty($quantity))
+    header("Location: ../customer-sell.php?error=ERROR_NOT_FULLY_FILLED");
+
+if(!is_numeric($price))
+    header("Location: ../customer-sell.php?error=ERROR_PRICE_NOT_A_NUMBER");
+
+if(!is_numeric($quantity))
+    header("Location: ../customer-sell.php?error=ERROR_QUANTITY_NOT_A_NUMBER");
+
 $uploadOk = 0;
 
 if(isset($_POST["submit"])) {

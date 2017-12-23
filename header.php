@@ -32,10 +32,8 @@ _________________________________________________________ -->
                                 <?php
                             } else {
                                 ?>
-                                <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i>
-                                    <span class="hidden-xs text-uppercase">Sign in</span></a>
-                                <a href="customer-register.php"><i class="fa fa-user"></i> <span
-                                            class="hidden-xs text-uppercase">Sign up</span></a>
+                                <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Sign in</span></a>
+                                <a href="customer-register.php"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Sign up</span></a>
                                 <?php
                             }
                         ?>

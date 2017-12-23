@@ -102,7 +102,8 @@
                         <?php
                             if(isset($_GET['error'])) {
                                 require "utility/errors.php";
-                                echo constant($_GET['error']);
+                                $error = getError($_GET['error']);
+                                echo $error;
                                 unset($_GET['error']);
                             }
                         ?>

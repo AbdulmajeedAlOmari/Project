@@ -121,13 +121,13 @@ if(!isLoggedIn())
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name" name="itemName">
+                                        <input type="text" class="form-control" id="name" name="itemName" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="description">Description</label>
-                                        <input type="text" class="form-control" id="description" name="description">
+                                        <input type="text" class="form-control" id="description" name="description" required>
                                     </div>
                                 </div>
                             </div>
@@ -137,21 +137,22 @@ if(!isLoggedIn())
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="price">Price</label>
-                                        <input type="text" class="form-control" id="price" name="price">
+                                        <input type="text" class="form-control" id="price" name="price" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="quantity">Quantity</label>
-                                        <input type="number" class="form-control" id="quantity" name="quantity">
+                                        <input type="number" class="form-control" id="quantity" name="quantity" required>
                                     </div>
                                 </div>
                             </div>
                             <?php
                                 if(isset($_GET['error'])) {
                                     require "utility/errors.php";
-                                    echo "<div class=\"row\">
-                                <div class=\"col-sm-12\">" . constant($_GET['error']) . "</div>
+                                    $error = getError($_GET['error']);
+                                    echo $error=='' ? '' : "<div class=\"row\">
+                                <div class=\"col-sm-12\">" . $error . "</div>
                             </div>";
                                     unset($_GET['error']);
                                 }
@@ -160,7 +161,7 @@ if(!isLoggedIn())
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="image">Upload image</label>
-                                        <input type="file" name="fileToUpload" id="fileToUpload">
+                                        <input type="file" name="fileToUpload" id="fileToUpload" required>
                                     </div>
                                 </div>
                             </div>

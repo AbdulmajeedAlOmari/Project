@@ -20,6 +20,9 @@ define("ERROR_INCORRECT_ITEM_ID", error("You can only choose items only from her
 define("ERROR_REMOVE_OTHERS_ITEM", error("You can only remove your own items."));
 define("ERROR_REMOVE", error("You can only remove from here."));
 define("ERROR_MODIFY_REJECT", error("Sorry, your attempt to modify was rejected."));
+define("ERROR_NOT_FULLY_FILLED", error("Sorry, you have to fill all the information of the item."));
+define("ERROR_PRICE_NOT_A_NUMBER", error("Sorry, you have to fill a valid positive price."));
+define("ERROR_QUANTITY_NOT_A_VALID_NUMBER", error("Sorry, you have to fill a positive number in quantity."));
 
 function error($msg) {
     return "<div class='alert alert-danger' role='alert'>" . $msg . "</div>";
@@ -43,4 +46,59 @@ function isNotValidUsername() {
                         <li>Username's length is 4-32 characters</li>
                     </ul>
                 </div>";
+}
+
+function getError($error) {
+    switch ($error) {
+        case"ERROR_R_USERNAME_NOTVALID" : return ERROR_R_USERNAME_NOTVALID;
+        break;
+        case"ERROR_R_USERNAME_EXIST" : return ERROR_R_USERNAME_EXIST;
+        break;
+        case"ERROR_R_PASSWORD_NOMATCH" : return ERROR_R_PASSWORD_NOMATCH;
+        break;
+        case"ERROR_R_PASSWORD_NOTVALID" : return ERROR_R_PASSWORD_NOTVALID;
+        break;
+        case"ERROR_R_EMAIL_EXIST" : return ERROR_R_EMAIL_EXIST;
+        break;
+        case"ERROR_R_EMAIL_NOTVALID" : return ERROR_R_EMAIL_NOTVALID;
+        break;
+        case"ERROR_L_INCORRECT" : return ERROR_L_INCORRECT;
+        break;
+        case"ERROR_L_INCORRECT_PASSWORD" : return ERROR_L_INCORRECT_PASSWORD;
+        break;
+        case"ERROR_MUTIPLE_SUBMISSION" : return ERROR_MUTIPLE_SUBMISSION;
+        break;
+        case"ERROR_NOT_LOGGED_IN" : return ERROR_NOT_LOGGED_IN;
+        break;
+        case"ERROR_NOT_SUBMITTED" : return ERROR_NOT_SUBMITTED;
+        break;
+        case"ERROR_NOT_AN_IMAGE" : return ERROR_NOT_AN_IMAGE;
+        break;
+        case"ERROR_NOT_UPLOADED" : return ERROR_NOT_UPLOADED;
+        break;
+        case"ERROR_CHANGE_IMAGE_NAME" : return ERROR_CHANGE_IMAGE_NAME;
+        break;
+        case"ERROR_IMAGE_TOO_LARGE" : return ERROR_IMAGE_TOO_LARGE;
+        break;
+        case"ERROR_IMAGE_TYPE" : return ERROR_IMAGE_TYPE;
+        break;
+        case"ERROR_COULD_NOT_UPLOAD" : return ERROR_COULD_NOT_UPLOAD;
+        break;
+        case"ERROR_INCORRECT_ITEM_ID" : return ERROR_INCORRECT_ITEM_ID;
+        break;
+        case"ERROR_REMOVE_OTHERS_ITEM" : return ERROR_REMOVE_OTHERS_ITEM;
+        break;
+        case"ERROR_REMOVE" : return ERROR_REMOVE;
+        break;
+        case"ERROR_MODIFY_REJECT" : return ERROR_MODIFY_REJECT;
+        break;
+        case"ERROR_NOT_FULLY_FILLED" : return ERROR_NOT_FULLY_FILLED;
+        break;
+        case"ERROR_PRICE_NOT_A_NUMBER" : return ERROR_PRICE_NOT_A_NUMBER;
+        break;
+        case"ERROR_QUANTITY_NOT_A_VALID_NUMBER" : return ERROR_QUANTITY_NOT_A_VALID_NUMBER;
+        break;
+    }
+
+    return '';
 }

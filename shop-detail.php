@@ -10,6 +10,8 @@
             header("Location: index.php?error=ERROR_INCORRECT_ITEM_ID");
 
         $row = mysqli_fetch_array($result);
+    } else {
+        header("Location: index.php?error=ERROR_INCORRECT_ITEM_ID");
     }
 ?>
 

@@ -131,7 +131,8 @@ $zip = $row['zip'];
                             <?php
                                 if(isset($_GET['password-change-error'])) {
                                     require 'utility/errors.php';
-                                    echo constant($_GET['password-change-error']);
+                                    $error = getError($_GET['password-change-error']);
+                                    echo $error;
                                     unset($_GET['password-change-error']);
                                 } else if(isset($_GET['password-change-msg'])) {
                                     if($_GET['password-change-msg'] == "successful")
