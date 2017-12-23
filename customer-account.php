@@ -178,6 +178,10 @@ $zip = $row['zip'];
                                 if ($_GET['contactinfo-msg'] == 'successful')
                                     echo "<div class='alert alert-success' role='alert'>Your contact information has been updated successfully!</div>";
                                 unset($_GET['contactinfo-msg']);
+                            } else if(isset($_GET['error'])) {
+                                require "utility/errors.php";
+                                $error = getError($_GET['error']);
+                                echo $error;
                             }
                         ?>
                         <div class="box clearfix">

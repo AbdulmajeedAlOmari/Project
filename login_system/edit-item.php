@@ -28,19 +28,16 @@ if($sellerId != $_GET['userId'])
     header("Location: ../my-items.php?error=ERROR_MODIFY_REJECT");
 
 $category = $_POST['category'];
-$itemName = $_POST['itemName'];
-$description = $_POST['description'];
-$price = $_POST['price'];
-$quantity = $_POST['quantity'];
 
-if(!isset($itemName) || !isset($description) || !isset($price) || !isset($quantity)||
-    trim($itemName) == '' || trim($description) == '' || trim($price) == '' || trim($quantity) == '')
-    header("Location: ../modify-item.php?itemId=$itemId&userId=$userId&error=ERROR_NOT_FULLY_FILLED");
+$itemName = addslashes($_POST['itemName']);
+$description = addslashes($_POST['description']);
+$price = addslashes($_POST['price']);
+$quantity = addslashes($_POST['quantity']);
 
-if(!is_numeric($price))
+if(!is_numeric($price) || intval($price) < 0 || strlen($price) > 11)
     header("Location: ../modify-item.php?itemId=$itemId&userId=$userId&error=ERROR_PRICE_NOT_A_NUMBER");
 
-if(!is_numeric($quantity))
+if(!is_numeric($quantity) || intval($quantity) < 0 || strlen($quantity) > 11)
     header("Location: ../modify-item.php?itemId=$itemId&userId=$userId&error=ERROR_QUANTITY_NOT_A_VALID_NUMBER");
 
 $uploadOk = 0;

@@ -21,8 +21,10 @@ define("ERROR_REMOVE_OTHERS_ITEM", error("You can only remove your own items."))
 define("ERROR_REMOVE", error("You can only remove from here."));
 define("ERROR_MODIFY_REJECT", error("Sorry, your attempt to modify was rejected."));
 define("ERROR_NOT_FULLY_FILLED", error("Sorry, you have to fill all the information of the item."));
-define("ERROR_PRICE_NOT_A_NUMBER", error("Sorry, you have to fill a valid positive price."));
-define("ERROR_QUANTITY_NOT_A_VALID_NUMBER", error("Sorry, you have to fill a positive number in quantity."));
+define("ERROR_PRICE_NOT_A_NUMBER", error("Sorry, you have to fill a valid positive price and its length must not exceed 11."));
+define("ERROR_QUANTITY_NOT_A_VALID_NUMBER", error("Sorry, you have to fill a positive number in quantity and its length must not exceed 11."));
+define("ERROR_ZIP_NOT_NUMBER", error("Sorry, you have to fill a valid ZIP number and its length must not exceed 7."));
+define("ERROR_PHONE_NOT_NUMBER", error("Sorry, you have to fill a valid Phone Number and its length must not exceed 15."));
 
 function error($msg) {
     return "<div class='alert alert-danger' role='alert'>" . $msg . "</div>";
@@ -97,6 +99,10 @@ function getError($error) {
         case"ERROR_PRICE_NOT_A_NUMBER" : return ERROR_PRICE_NOT_A_NUMBER;
         break;
         case"ERROR_QUANTITY_NOT_A_VALID_NUMBER" : return ERROR_QUANTITY_NOT_A_VALID_NUMBER;
+        break;
+        case"ERROR_ZIP_NOT_NUMBER" : return ERROR_ZIP_NOT_NUMBER;
+        break;
+        case"ERROR_PHONE_NOT_NUMBER" : return ERROR_PHONE_NOT_NUMBER;
         break;
     }
 

@@ -18,18 +18,16 @@ $row = mysqli_fetch_assoc($result);
 $sellerId = $row['id'];
 
 $category = $_POST['category'];
-$itemName = $_POST['itemName'];
-$description = $_POST['description'];
-$price = $_POST['price'];
-$quantity = $_POST['quantity'];
 
-if(empty($itemName) || empty($description) || empty($price) || empty($quantity))
-    header("Location: ../customer-sell.php?error=ERROR_NOT_FULLY_FILLED");
+$itemName = addslashes($_POST['itemName']);
+$description = addslashes($_POST['description']);
+$price = addslashes($_POST['price']);
+$quantity = addslashes($_POST['quantity']);
 
-if(!is_numeric($price))
+if(!is_numeric($price) || intval($price) < 0 || strlen($price) > 11)
     header("Location: ../customer-sell.php?error=ERROR_PRICE_NOT_A_NUMBER");
 
-if(!is_numeric($quantity))
+if(!is_numeric($quantity) || intval($quantity) < 0 || strlen($quantity) > 11)
     header("Location: ../customer-sell.php?error=ERROR_QUANTITY_NOT_A_NUMBER");
 
 $uploadOk = 0;
