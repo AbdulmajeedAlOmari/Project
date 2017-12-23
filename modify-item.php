@@ -72,7 +72,7 @@ if(isset($_GET['itemId']) && isset($_GET['userId'])) {
     <![endif]-->
 
     <!-- Favicon and apple touch icons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/eshop-icon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
@@ -179,13 +179,13 @@ if(isset($_GET['itemId']) && isset($_GET['userId'])) {
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="price">Price</label>
-                                        <input type="text" class="form-control" id="price" name="price" required <?php echo "value=".$row['price']?>>
+                                        <input type="text" class="form-control" id="price" name="price" required="true" <?php echo "value=".$row['price']?>>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="quantity">Quantity</label>
-                                        <input type="number" class="form-control" id="quantity" name="quantity" required <?php echo "value=".$row['quantity']?>>
+                                        <input type="number" class="form-control" id="quantity" name="quantity" <?php echo "value=".$row['quantity']?> required>
                                     </div>
                                 </div>
                             </div>
