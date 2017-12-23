@@ -2,8 +2,8 @@
 
 <div class="col-sm-3">
 
-    <div class="col-sm-12 text-center">
-        <a href="customer-sell.php" class="btn btn-template-main paddingDown"><i class="fa fa-cart-plus fa-3x"></i>Sell Item </a>
+    <div class="col-sm-12 text-center paddingDown">
+        <a href="customer-sell.php" class="btn btn-template-main"><i class="fa fa-cart-plus fa-3x"></i>Sell Item </a>
     </div>
     <!-- *** MENUS AND FILTERS ***
 _________________________________________________________ -->
@@ -18,6 +18,7 @@ _________________________________________________________ -->
                 <li>
                     <a href="index.php?category=cars">Cars</a>
                 </li>
+                <!--TODO add "furniture" here -->
                 <li>
                     <a href="index.php?category=plants">Plants</a>
                 </li>

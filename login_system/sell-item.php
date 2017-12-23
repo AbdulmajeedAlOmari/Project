@@ -28,7 +28,8 @@ $uploadOk = 0;
 if(isset($_POST["submit"])) {
     if(isset($_FILES['fileToUpload']['name'])) {
         $target_dir = "uploads/";
-        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $prefix = rand();
+        $target_file = $target_dir . $prefix . basename($_FILES["fileToUpload"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
         // Check if image file is a actual image or fake image
@@ -54,7 +55,7 @@ if(isset($_POST["submit"])) {
             $uploadOk = 1;
         }
 
-        $image = basename($_FILES["fileToUpload"]["name"]); // used to store the filename in a variable
+        $image = $prefix.basename($_FILES["fileToUpload"]["name"]); // used to store the filename in a variable
     }
 }
 
@@ -65,7 +66,7 @@ if($uploadOk == 1) {
         die("Query Failed : " . mysqli_error($con));
     } else {
         mysqli_close($con);
-        header("Location: ../customer-sell.php?neworder-msg=successful");
+        header("Location: ../customer-sell.php?msg=successful");
     }
 } else {
     header("Location: ../customer-sell.php?error=ERROR_COULD_NOT_UPLOAD");

@@ -3,7 +3,7 @@
         require "login_system/db.php";
         $itemId = $_GET['itemId'];
 
-        $query = "SELECT itemId,sellerId,description,image,itemName,price FROM items WHERE itemId='$itemId'";
+        $query = "SELECT itemId,sellerId,description,image,itemName,price,quantity FROM items WHERE itemId='$itemId'";
         $result = mysqli_query($con,$query);
 
         if(mysqli_num_rows($result) == 0)
@@ -122,7 +122,7 @@
 
                                     <?php
                                         $price= $row['price'];
-                                        echo "<p class=\"price\">$price</p>";
+                                        echo "<p class=\"price\">$$price</p>";
                                     ?>
 
                                     <p class="text-center">
@@ -172,10 +172,13 @@
                                 <li>State: $state</li>
                                 <li>Street: $street</li>
                                 <li>Zip: $zip</li>
-                            </ul>";
+                            </ul> <br>";
+
+                            echo "<strong>Current Quantity Available:</strong> " . $row['quantity'];
                         } else {
-                            echo "<div class=\"alert alert-warning\" role=\"alert\">You have to login to see contact details</div>";
-                        } ?>
+                            echo "<div class=\"alert alert-warning\" role=\"alert\">You have to login to see contact details and quantity of the item</div>";
+                        }
+                        ?>
 
 <!--                        <blockquote>-->
 <!--                            <p><em>Define style this season with Armani's new range of trendy tops, crafted with intricate details. Create a chic statement look by teaming this lace number with skinny jeans and pumps.</em>-->

@@ -8,6 +8,7 @@
             case "cars":
                 $query = "SELECT itemId,image,itemName,price FROM items WHERE category='cars'";
                 break;
+            //TODO add case "furniture" here
             case "animals":
                 $query = "SELECT itemId,image,itemName,price FROM items WHERE category='animals'";
                 break;
@@ -126,7 +127,7 @@
                                         /* text */
                                         echo "<div class=\"text\">";
                                         echo "<h3><a href=\"shop-detail.php\">". $row['itemName'] ."</a></h3>";
-                                        echo "<p class=\"price\">". $row['price'] ."&#36;</p>";
+                                        echo "<p class=\"price\">&#36;". $row['price'] ."</p>";
                                         echo "<p class=\"buttons\">";
                                         echo "<a href=\"shop-detail.php?itemId=". $row['itemId'] ."\" class=\"btn btn-default\">View detail</a>";
                                         echo "</p>";
