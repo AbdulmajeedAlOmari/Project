@@ -3,6 +3,21 @@ include "login_system/check-login.php";
 if(!isLoggedIn())
     header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN");
 ?>
+<?php
+require "login_system/db.php";
+if(isset($_COOKIE['auth'])) {
+    $username = $_COOKIE['auth'];
+}else {
+    $username = $_SESSION['auth'];
+}
+$query = "SELECT id FROM users WHERE username='$username'";
+$result = mysqli_query($con, $query) OR die(mysqli_error($con));
+$row = mysqli_fetch_assoc($result);
+$id = $row['id'];
+
+$query = "SELECT items.itemId,items.image,items.itemName,items.price FROM items, wishlist WHERE wishlist.id='$id' AND wishlist.itemId=items.itemId";
+$result = mysqli_query($con, $query) OR die(mysqli_error($con));
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -85,199 +100,42 @@ if(!isLoggedIn())
 
                     <div class="col-md-9 clearfix">
 
-                        <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                        <p class="lead">Theses are the items in your wishlist</p>
 
                         <div class="row products">
 
-                            <div class="col-md-3 col-sm-4">
-                                <div class="product">
-                                    <div class="image">
-                                        <a href="shop-detail.html">
-                                            <img src="img/product1.jpg" alt="" class="img-responsive image1">
-                                        </a>
-                                    </div>
-                                    <!-- /.image -->
-                                    <div class="text">
-                                        <h3><a href="shop-detail.html">Fur coat with very but very very long name</a></h3>
-                                        <p class="price">$143.00</p>
-                                        <p class="buttons">
-                                            <a href="shop-detail.html" class="btn btn-default">View detail</a>
-                                            <a href="shop-basket.html" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </p>
-                                    </div>
-                                    <!-- /.text -->
-                                </div>
-                                <!-- /.product -->
-                            </div>
+                            <?php
+                            if(mysqli_num_rows($result) == 0)
+                                echo "<div class=\"alert alert-info\" role=\"alert\"> There are no items now, <strong>comeback later!</strong> </div>";
+                            else {
+                                while($row = mysqli_fetch_array($result)) {
+                                    echo "<div class=\"col-md-4 col-sm-6\">";
+                                    echo "<div class=\"product\">";
+                                    /* image */
+                                    echo "<div class=\"image\">";
+                                    echo "<a href=\"shop-detail.php?itemId=". $row['itemId'] ."\">";
+                                    echo "<img src=\"login_system/uploads/".$row['image']."\" alt=\"\" class=\"img-responsive image1\">";
+                                    echo "</a>";
+                                    echo "</div>";
+                                    /* END image */
 
-                            <div class="col-md-3 col-sm-4">
-                                <div class="product">
-                                    <div class="image">
-                                        <a href="shop-detail.html">
-                                            <img src="img/product2.jpg" alt="" class="img-responsive image1">
-                                        </a>
-                                    </div>
-                                    <!-- /.image -->
-                                    <div class="text">
-                                        <h3><a href="shop-detail.html">White Blouse Armani</a></h3>
-                                        <p class="price"><del>$280</del> $143.00</p>
-                                        <p class="buttons">
-                                            <a href="shop-detail.html" class="btn btn-default">View detail</a>
-                                            <a href="shop-basket.html" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </p>
-                                    </div>
-                                    <!-- /.text -->
+                                    /* text */
+                                    echo "<div class=\"text\">";
+                                    echo "<h3><a href=\"shop-detail.php\">". $row['itemName'] ."</a></h3>";
+                                    echo "<p class=\"price\">". $row['price'] ."&#36;</p>";
+                                    echo "<p class=\"buttons\">";
+                                    echo "<a href=\"shop-detail.php?itemId=". $row['itemId'] ."\" class=\"btn btn-default\">View detail</a>";
+                                    echo "</p>";
+                                    echo "</div>";
+                                    /* END text */
 
-                                    <div class="ribbon sale">
-                                        <div class="theribbon">SALE</div>
-                                        <div class="ribbon-background"></div>
-                                    </div>
-                                    <!-- /.ribbon -->
-
-                                    <div class="ribbon new">
-                                        <div class="theribbon">NEW</div>
-                                        <div class="ribbon-background"></div>
-                                    </div>
-                                    <!-- /.ribbon -->
-                                </div>
-                                <!-- /.product -->
-                            </div>
-                            </div>
-
-                            <div class="col-md-3 col-sm-4">
-                                <div class="product">
-                                    <div class="image">
-                                        <a href="shop-detail.html">
-                                            <img src="img/product4.jpg" alt="" class="img-responsive image1">
-                                        </a>
-                                    </div>
-                                    <!-- /.image -->
-                                    <div class="text">
-                                        <h3><a href="shop-detail.html">Black Blouse Versace</a></h3>
-                                        <p class="price">$143.00</p>
-                                        <p class="buttons">
-                                            <a href="shop-detail.html" class="btn btn-default">View detail</a>
-                                            <a href="shop-basket.html" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </p>
-
-                                    </div>
-                                    <!-- /.text -->
-                                </div>
-                                <!-- /.product -->
-                            </div>
-
-                            <div class="col-md-3 col-sm-4">
-                                <div class="product">
-                                    <div class="image">
-                                        <a href="shop-detail.html">
-                                            <img src="img/product3.jpg" alt="" class="img-responsive image1">
-                                        </a>
-                                    </div>
-                                    <!-- /.image -->
-                                    <div class="text">
-                                        <h3><a href="shop-detail.html">White Blouse Armani</a></h3>
-                                        <p class="price"><del>$280</del> $143.00</p>
-                                        <p class="buttons">
-                                            <a href="shop-detail.html" class="btn btn-default">View detail</a>
-                                            <a href="shop-basket.html" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </p>
-                                    </div>
-                                    <!-- /.text -->
-
-                                    <div class="ribbon sale">
-                                        <div class="theribbon">SALE</div>
-                                        <div class="ribbon-background"></div>
-                                    </div>
-                                    <!-- /.ribbon -->
-
-                                    <div class="ribbon new">
-                                        <div class="theribbon">NEW</div>
-                                        <div class="ribbon-background"></div>
-                                    </div>
-                                    <!-- /.ribbon -->
-                                </div>
-                                <!-- /.product -->
-                            </div>
-
-                            <div class="col-md-3 col-sm-4">
-                                <div class="product">
-                                    <div class="image">
-                                        <a href="shop-detail.html">
-                                            <img src="img/product4.jpg" alt="" class="img-responsive image1">
-                                        </a>
-                                    </div>
-                                    <!-- /.image -->
-                                    <div class="text">
-                                        <h3><a href="shop-detail.html">White Blouse Versace</a></h3>
-                                        <p class="price">$143.00</p>
-                                        <p class="buttons">
-                                            <a href="shop-detail.html" class="btn btn-default">View detail</a>
-                                            <a href="shop-basket.html" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </p>
-
-                                    </div>
-                                    <!-- /.text -->
-
-                                    <div class="ribbon new">
-                                        <div class="theribbon">NEW</div>
-                                        <div class="ribbon-background"></div>
-                                    </div>
-                                    <!-- /.ribbon -->
-                                </div>
-                                <!-- /.product -->
-                            </div>
-
-                            <div class="col-md-3 col-sm-4">
-                                <div class="product">
-                                    <div class="image">
-                                        <a href="shop-detail.html">
-                                            <img src="img/product2.jpg" alt="" class="img-responsive image1">
-                                        </a>
-                                    </div>
-                                    <!-- /.image -->
-                                    <div class="text">
-                                        <h3><a href="shop-detail.html">White Blouse Versace</a></h3>
-                                        <p class="price">$143.00</p>
-                                        <p class="buttons">
-                                            <a href="shop-detail.html" class="btn btn-default">View detail</a>
-                                            <a href="shop-basket.html" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </p>
-
-                                    </div>
-                                    <!-- /.text -->
-
-                                    <div class="ribbon new">
-                                        <div class="theribbon">NEW</div>
-                                        <div class="ribbon-background"></div>
-                                    </div>
-                                    <!-- /.ribbon -->
-                                </div>
-                                <!-- /.product -->
-                            </div>
-
-                            <div class="col-md-3 col-sm-4">
-                                <div class="product">
-                                    <div class="image">
-                                        <a href="shop-detail.html">
-                                            <img src="img/product1.jpg" alt="" class="img-responsive image1">
-                                        </a>
-                                    </div>
-                                    <!-- /.image -->
-                                    <div class="text">
-                                        <h3><a href="shop-detail.html">Fur coat</a></h3>
-                                        <p class="price">$143.00</p>
-                                        <p class="buttons">
-                                            <a href="shop-detail.html" class="btn btn-default">View detail</a>
-                                            <a href="shop-basket.html" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </p>
-
-                                    </div>
-                                    <!-- /.text -->
-                                </div>
-                                <!-- /.product -->
-                            </div>
-                            <!-- /.col-md-4 -->
+                                    echo "</div>";
+                                    echo "</div>";
+                                }
+                            }
+                            ?>
                         </div>
+
                         <!-- /.products -->
 
                     </div>
@@ -288,7 +146,7 @@ if(!isLoggedIn())
                     <!-- *** RIGHT COLUMN ***
 		     _________________________________________________________ -->
 
-                    <?php include "utility/customer-panel.php"; ?>
+
 
                     <!-- *** RIGHT COLUMN END *** -->
 
@@ -296,6 +154,7 @@ if(!isLoggedIn())
                 <!-- /.row -->
 
             </div>
+
             <!-- /.container -->
         </div>
         <!-- /#content -->

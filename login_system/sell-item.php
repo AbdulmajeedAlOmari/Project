@@ -59,7 +59,7 @@ if(isset($_POST["submit"])) {
 }
 
 if($uploadOk == 1) {
-    $query = "INSERT INTO `items`(`sellerId`, `category`, `description`, `image`, `name`, `price`, `quantity`) VALUES ('$sellerId','$category','$description','$image','$itemName','$price','$quantity')";
+    $query = "INSERT INTO `items`(`sellerId`, `category`, `description`, `image`, `itemName`, `price`, `quantity`) VALUES ('$sellerId','$category','$description','$image','$itemName','$price','$quantity')";
     if (!mysqli_query($con, $query)) {
         mysqli_close($con);
         die("Query Failed : " . mysqli_error($con));

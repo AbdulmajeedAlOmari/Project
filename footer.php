@@ -21,7 +21,7 @@
                         <div class="blog-entries">
                             <div class="item same-height-row clearfix">
                                 <div class="image same-height-always">
-                                    <a href="#">
+                                    <a href="index.php">
                                         <img class="img-responsive" src="img/home-logo.png" alt="">
                                     </a>
                                 </div>
@@ -32,7 +32,7 @@
 
                             <div class="item same-height-row clearfix">
                                 <div class="image same-height-always">
-                                    <a href="#">
+                                    <a href="customer-sell.php">
                                         <img class="img-responsive" src="img/shopping-cart-logo.png" alt="">
                                     </a>
                                 </div>
@@ -43,7 +43,7 @@
 
                         <div class="item same-height-row clearfix">
                             <div class="image same-height-always">
-                                <a href="#">
+                                <a href="about.php">
                                     <img class="img-responsive" src="img/about-logo.png" alt="">
                                 </a>
                             </div>
@@ -51,6 +51,17 @@
                                 <h5><a href="about.php">About</a></h5>
                             </div>
                         </div>
+
+                            <div class="item same-height-row clearfix">
+                                <div class="image same-height-always">
+                                    <a href="customer-wishlist.php">
+                                        <i class="fa fa-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="name same-height-always">
+                                    <h5><a href="customer-wishlist.php">Wishlist</a></h5>
+                                </div>
+                            </div>
                     </div>
 
                     <hr class="hidden-md hidden-lg">

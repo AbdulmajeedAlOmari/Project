@@ -17,7 +17,7 @@
         }
     }
 
-    $result = mysqli_query($con, $query) OR die(mysqli_error($connection));
+    $result = mysqli_query($con, $query) OR die(mysqli_error($con));
 ?>
 <!DOCTYPE html>
 <html lang="en">

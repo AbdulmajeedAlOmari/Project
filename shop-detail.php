@@ -103,7 +103,14 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="box">
+                                <?php
+                                    if(isset($_GET['wishlist-msg'])) {
+                                        if ($_GET['wishlist-msg'] == 'successful')
+                                            echo "<div class='alert alert-success' role='alert'>Item has been added to wishlist successfully!</div>";
 
+                                        unset($_GET['wishlist-msg']);
+                                    }
+                                ?>
                                 <?php
                                 //TODO get itemId
                                 $itemId = $row['itemId'];
@@ -115,7 +122,7 @@
 
                                     <?php
                                         $price= $row['price'];
-                                        echo "<p class=\"price\">$$price</p>";
+                                        echo "<p class=\"price\">$price</p>";
                                     ?>
 
                                     <p class="text-center">
