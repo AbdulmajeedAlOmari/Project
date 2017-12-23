@@ -1,8 +1,40 @@
-
 <?php
 include "login_system/check-login.php";
 if(!isLoggedIn())
     header("Location: customer-register.php?error=ERROR_NOT_LOGGED_IN");
+
+if(isset($_COOKIE['auth']))
+    $username = $_COOKIE['auth'];
+else
+    $username = $_SESSION['auth'];
+require "login_system/db.php";
+
+if(isset($_GET['itemId']) && isset($_GET['userId'])) {
+    $itemId = $_GET['itemId'];
+    $userId = $_GET['userId'];
+
+    unset($_GET['itemId']);
+    unset($_GET['userId']);
+
+    $query = "SELECT id FROM users WHERE username='$username'";
+    $result = mysqli_query($con, $query) OR die(mysqli_error($con));
+
+    if(mysqli_num_rows($result) != 0) {
+        $row = mysqli_fetch_array($result);
+
+        if($row['id'] == $userId) {
+            $query = "SELECT category,description,itemName,price,quantity FROM items WHERE itemId='$itemId' AND sellerId='$userId'";
+            $result = mysqli_query($con, $query) OR die(mysqli_error($con));
+
+            if(mysqli_num_rows($result) != 0) {
+                $row = mysqli_fetch_array($result);
+            }
+
+        }
+    }
+} else {
+    header("Location: my-items.php?error=ERROR_MODIFY_REJECT");
+}
 ?>
 
 <!DOCTYPE html>
@@ -104,15 +136,15 @@ if(!isLoggedIn())
                         <div class="heading">
                             <h3 class="text-uppercase">Item Description</h3>
                         </div>
-                        <form action="login_system/sell-item.php" method="post" enctype="multipart/form-data">
+                        <form <?php echo "action=\"login_system/edit-item.php?itemId=$itemId&userId=$userId\"" ?> method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="category">Category</label>
                                         <select name="category">
-                                            <option>Cars</option>
-                                            <option>Plants</option>
-                                            <option>Animals</option>
+                                            <option <?php if($row['category']=="Cars") echo "selected"; //TODO check if correct ?>>Cars</option>
+                                            <option <?php if($row['category']=="Plants") echo "selected"; ?>>Plants</option>
+                                            <option <?php if($row['category']=="Animals") echo "selected"; ?>>Animals</option>
                                         </select>
                                     </div>
                                 </div>
@@ -121,13 +153,13 @@ if(!isLoggedIn())
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name" name="itemName">
+                                        <input type="text" class="form-control" id="name" name="itemName" <?php echo "value=".$row['itemName']?>>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="description">Description</label>
-                                        <input type="text" class="form-control" id="description" name="description">
+                                        <input type="text" class="form-control" id="description" name="description" <?php echo "value=".$row['description']?>>
                                     </div>
                                 </div>
                             </div>
@@ -137,13 +169,13 @@ if(!isLoggedIn())
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="price">Price</label>
-                                        <input type="text" class="form-control" id="price" name="price">
+                                        <input type="text" class="form-control" id="price" name="price" <?php echo "value=".$row['price']?>>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="quantity">Quantity</label>
-                                        <input type="number" class="form-control" id="quantity" name="quantity">
+                                        <input type="number" class="form-control" id="quantity" name="quantity" <?php echo "value=".$row['quantity']?>>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +200,7 @@ if(!isLoggedIn())
 
                             <div class="row">
                                 <div class="col-sm-12 text-center">
-                                    <button type="submit" name="submit" class="btn btn-template-main"><i class="fa fa-cart-plus"></i> SELL ITEM</button>
+                                    <button type="submit" name="submit" class="btn btn-template-main"><i class="fa fa-floppy-o"></i> SAVE CHANGES</button>
                                 </div>
                             </div>
                         </form>

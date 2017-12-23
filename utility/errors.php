@@ -17,6 +17,9 @@ define("ERROR_IMAGE_TOO_LARGE", error("Sorry, your image is too large."));
 define("ERROR_IMAGE_TYPE", error("Sorry, only PNG, JPG or JPEG files are allowed."));
 define("ERROR_COULD_NOT_UPLOAD", error("Sorry, there was an error uploading your file."));
 define("ERROR_INCORRECT_ITEM_ID", error("You can only choose items only from here."));
+define("ERROR_REMOVE_OTHERS_ITEM", error("You can only remove your own items."));
+define("ERROR_REMOVE", error("You can only remove from here."));
+define("ERROR_MODIFY_REJECT", error("Sorry, your attempt to modify was rejected."));
 
 function error($msg) {
     return "<div class='alert alert-danger' role='alert'>" . $msg . "</div>";

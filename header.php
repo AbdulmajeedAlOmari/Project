@@ -37,8 +37,8 @@ _________________________________________________________ -->
                                 <a href="customer-account.php"><i class="fa fa-user"></i> <span
                                             class="hidden-xs text-uppercase">Account</span></a>
 <!--                                fa-bell-->
-                                <a href="customer-notifications.php"><i class="fa fa-bell"></i> <span
-                                            class="hidden-xs text-uppercase">Notifications</span></a>
+                                <a href="my-items.php"><i class="fa fa-list"></i> <span
+                                            class="hidden-xs text-uppercase">My items</span></a>
                                 <?php
                             } else {
                                 ?>

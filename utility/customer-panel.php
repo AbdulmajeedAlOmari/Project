@@ -10,8 +10,8 @@ _________________________________________________________ -->
         <div class="panel-body">
 
             <ul class="nav nav-pills nav-stacked">
-                <li class="active">
-                    <a href="customer-orders.php"><i class="fa fa-list"></i> My orders</a>
+                <li>
+                    <a href="my-items.php"><i class="fa fa-list"></i> My items</a>
                 </li>
                 <li>
                     <a href="customer-wishlist.php"><i class="fa fa-heart"></i> My wishlist</a>

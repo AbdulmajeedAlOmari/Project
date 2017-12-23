@@ -106,16 +106,16 @@
 
                                 <?php
                                 //TODO get itemId
-                                $itemid = 0;
-                                echo "<form action='login_system/add-to-wishlist.php?itemid=$itemid' method='post'>"
+                                $itemId = $row['itemId'];
+                                echo "<form action='login_system/add-to-wishlist.php?itemId=$itemId' method='post'>"
                                 ?>
                                     <div class="sizes">
                                         <h3>Price</h3>
                                     </div>
 
                                     <?php
-                                        //TODO add price
-                                        echo "<p class=\"price\">$124.00</p>";
+                                        $price= $row['price'];
+                                        echo "<p class=\"price\">$$price</p>";
                                     ?>
 
                                     <p class="text-center">
