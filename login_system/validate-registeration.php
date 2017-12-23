@@ -8,7 +8,7 @@ require "../utility/is_email.php";
 $email = addslashes($_POST['email']);
 $username = addslashes($_POST['username']);
 $password = addslashes($_POST['password']);
-$confirmPassword = addslashes($_POST['passwordconfirmation']); //TODO check the addSlashes() method effect in condition
+$confirmPassword = addslashes($_POST['passwordconfirmation']);
 
 $result = mysqli_query($con, "SELECT * FROM Users");
 $error = '';
