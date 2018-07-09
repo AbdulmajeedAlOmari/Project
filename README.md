@@ -1,4 +1,4 @@
-This project is from a group of students from Software Engineering Department. It was a requirement project for our Web Devolopement course.
+This project is from a group of students from Software Engineering Department. It was a required project for our Web Devolopement course.
 
 Students Contributed to this project:
 1- Mohammed Tashkandi
